@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="site officiel du festival de musique Donkey à Rennes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donkey</title>
+</head>
+<body>
+
+    {% block header %}
+    <header class="page-header">     
+        <nav>
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li>Programmation</li>
+                <li>Informations pratiques</li>
+                <li>Billetterie</li>
+                {% if session.user is defined %}
+                <li><a href="index.php?route=espace-perso">Espace personnel</a></li>
+                {% else %}
+                <li><a href="index.php?route=connexion">Espace personnel</a></li>
+                {% endif %}
+                <li>Contact</li>
+                <li>Typogragraphie adaptée</li>
+                {% if session.user is defined %}
+                <li><a href="index.php?route=logout"><button>Se déconnecter</button></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% endblock %}
+
+    {% block main %}
+
+    {% endblock %}
+
+    {% block footer %}
+    <p>footer</p>
+    {% endblock %}
+</body>
+</html>

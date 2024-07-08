@@ -11,6 +11,7 @@ abstract class AbstractController
         ]);
 
         $twig->addExtension(new \Twig\Extension\DebugExtension());
+        $twig->addGlobal('session', $_SESSION);
 
         $this->twig = $twig;
     }
@@ -18,5 +19,10 @@ abstract class AbstractController
     protected function render(string $template, array $data) : void
     {
         echo $this->twig->render($template, $data);
+    }
+
+    protected function redirect(string $route) : void
+    {
+        header("Location: $route");
     }
 }

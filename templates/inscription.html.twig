@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="home">
+
+    <h1>Inscription</h1>
+
+    <form action="index.php?route=checkSignUp" method="post">
+        <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+        <fieldset>
+            <label for="last_name">nom de famille :</label>
+            <input type="text" name="last_name" id="last_name">
+        </fieldset>
+        <fieldset>
+            <label for="first_name">prénom :</label>
+            <input type="text" name="first_name" id="first_name">
+        </fieldset>
+        <fieldset>
+            <label for="email">email :</label>
+            <input type="email" name="email" id="email">
+        </fieldset>
+        <fieldset>
+            <label for="password">mot de passe :</label>
+            <input type="password" name="password" id="password">
+        </fieldset>
+        <fieldset>
+            <label for="checkPassword">vérification du mot de passe :</label>
+            <input type="password" name="checkPassword" id="checkPassword">
+        </fieldset>
+        <button type="submit">S'inscrire</button>
+    </form>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

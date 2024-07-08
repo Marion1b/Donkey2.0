@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="espace-perso">
+
+<h1>Bonjour {{ session.user.getFirstName() }}</h1>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

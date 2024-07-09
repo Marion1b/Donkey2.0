@@ -11,9 +11,9 @@
 
 <section class="chose-tickets">
 
-<form action="" method="">
+<form action="./controllers/checkout.php" method="POST">
     <label for="friday">Billet 1 jour vendredi</label>
-    <select name="tickets" id="friday">
+    <select name="friday" id="friday">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -27,7 +27,7 @@
         <option value="10">10</option>
     </select>
     <label for="saturday">Billet 1 jour samedi</label>
-    <select name="tickets" id="saturday">
+    <select name="saturday" id="saturday">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -41,7 +41,7 @@
         <option value="10">10</option>
     </select>
     <label for="sunday">Billet 1 jour dimanche</label>
-    <select name="tickets" id="sunday">
+    <select name="sunday" id="sunday">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -55,7 +55,7 @@
         <option value="10">10</option>
     </select>
     <label for="friday-saturday">Pass 2 jours vendredi et samedi</label>
-    <select name="tickets" id="friday-saturday">
+    <select name="friday-saturday" id="friday-saturday">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -69,7 +69,7 @@
         <option value="10">10</option>
     </select>
     <label for="friday-sunday">Pass 2 jours vendredi et dimanche</label>
-    <select name="tickets" id="friday-sunday">
+    <select name="friday-sunday" id="friday-sunday">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -83,7 +83,7 @@
         <option value="10">10</option>
     </select>
     <label for="saturday-sunday">Pass 2 jours samedi et dimanche</label>
-    <select name="tickets" id="saturday-sunday">
+    <select name="saturday-sunday" id="saturday-sunday">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -97,7 +97,7 @@
         <option value="10">10</option>
     </select>
     <label for="all-days">Pass 3 jours</label>
-    <select name="tickets" id="all-days">
+    <select name="all-days" id="all-days">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -111,7 +111,7 @@
         <option value="10">10</option>
     </select>
     <label for="friday-reduce">Billet 1 jour vendredi - réduit</label>
-    <select name="tickets" id="friday-reduce">
+    <select name="friday-reduce" id="friday-reduce">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -125,7 +125,7 @@
         <option value="10">10</option>
     </select>
     <label for="saturday-reduce">Billet 1 jour samedi - réduit</label>
-    <select name="tickets" id="saturday-reduce">
+    <select name="saturday-reduce" id="saturday-reduce">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -139,7 +139,7 @@
         <option value="10">10</option>
     </select>
     <label for="sunday-reduce">Billet 1 jour dimanche - réduit</label>
-    <select name="tickets" id="sunday-reduce">
+    <select name="sunday-reduce" id="sunday-reduce">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -153,7 +153,7 @@
         <option value="10">10</option>
     </select>
     <label for="friday-saturday-reduce">Pass 2 jours vendredi et samedi - réduit</label>
-    <select name="tickets" id="friday-saturday-reduce">
+    <select name="friday-saturday-reduce" id="friday-saturday-reduce">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -167,7 +167,7 @@
         <option value="10">10</option>
     </select>
     <label for="friday-sunday-reduce">Pass 2 jours vendredi et dimanche - réduit</label>
-    <select name="tickets" id="friday-sunday-reduce">
+    <select name="friday-sunday-reduce" id="friday-sunday-reduce">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -181,7 +181,7 @@
         <option value="10">10</option>
     </select>
     <label for="saturday-sunday-reduce">Pass 2 jours samedi et dimanche - réduit</label>
-    <select name="tickets" id="saturday-sunday-reduce">
+    <select name="saturday-sunday-reduce" id="saturday-sunday-reduce">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -195,7 +195,7 @@
         <option value="10">10</option>
     </select>
     <label for="all-days-reduce">Pass 3 jours - réduit</label>
-    <select name="tickets" id="all-days-reduce">
+    <select name="all-days-reduce" id="all-days-reduce">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -208,6 +208,7 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
+    <input type="hidden" name="ticket-total-input" id="tickets-total-input">
     <button type="submit">Acheter</button>
 </form>
 

@@ -35,6 +35,12 @@ class Router{
             $this->pc->ticketing();
         }else if(isset($get["route"]) && $get["route"] === "achat-billets"){
             $this->pc->buyTickets();
+        }else if(isset($get["route"]) && $get["route"] === "paiement"){
+            $this->pc->payment();
+        }else if(isset($get["route"]) && $get["route"]=== "paiement-valide"){
+            $this->pc->paymentSuccess();
+        }else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
+            $this->pc->paymentCancel();
         }
         else{
             $this->pc->error();

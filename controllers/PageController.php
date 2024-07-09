@@ -35,6 +35,19 @@ class PageController extends AbstractController{
         $this->render("achat-billets.html.twig", []);
     }
 
+    public function payment():void{
+        $this->render("paiement.html.twig", []);
+        require "./controllers/checkout.php";
+    }
+
+    public function paymentSuccess():void{
+        $this->render("paiement-valide.html.twig", []);
+    }
+
+    public function paymentCancel():void{
+        $this->render("paiement-invalide.html.twig", []);
+    }
+
     public function error():void{
         $this->render("error404.html.twig", []);
     }

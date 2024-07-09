@@ -1,5 +1,4 @@
 <?php
-
 abstract class AbstractController
 {
     private \Twig\Environment $twig;

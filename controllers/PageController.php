@@ -27,6 +27,14 @@ class PageController extends AbstractController{
         $this->render("espace-perso.html.twig", []);
     }
 
+    public function ticketing():void{
+        $this->render("billetterie.html.twig",[]);
+    }
+
+    public function buyTickets():void{
+        $this->render("achat-billets.html.twig", []);
+    }
+
     public function error():void{
         $this->render("error404.html.twig", []);
     }

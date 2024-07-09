@@ -1,0 +1,123 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="buy-tickets">
+
+<h1>Billetterie</h1>
+
+<section class="chose-tickets">
+
+<form action="" method="">
+    <label for="friday">Billet 1 jour vendredi</label>
+    <select name="tickets" id="friday">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <label for="saturday">Billet 1 jour samedi</label>
+    <select name="tickets" id="saturday">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <label for="sunday">Billet 1 jour dimanche</label>
+    <select name="tickets" id="sunday">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <label for="friday-saturday">Pass 2 jours vendredi et samedi</label>
+    <select name="tickets" id="friday-saturday">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <label for="friday-sunday">Pass 2 jours vendredi et dimanche</label>
+    <select name="tickets" id="friday-sunday">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <label for="saturday-sunday">Pass 2 jours samedi et dimanche</label>
+    <select name="tickets" id="satuday-sunday">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <label for="all-days">Pass 3 jours</label>
+    <select name="tickets" id="all-days">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <button type="submit">Acheter</button>
+</form>
+
+
+</section>
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

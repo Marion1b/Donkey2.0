@@ -31,6 +31,10 @@ class Router{
             $this->pc->logout();
         }else if(isset($get["route"]) && $get["route"] === "espace-perso"){
             $this->pc->personnalSpace();
+        }else if(isset($get["route"]) && $get["route"] === "billetterie"){
+            $this->pc->ticketing();
+        }else if(isset($get["route"]) && $get["route"] === "achat-billets"){
+            $this->pc->buyTickets();
         }
         else{
             $this->pc->error();

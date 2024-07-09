@@ -1,0 +1,77 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="ticketing">
+
+<h1>Billetterie</h1>
+
+<section class="tickets">
+
+    <article class="ticket-card">
+        <h2>Billet 1 jour</h2>
+        <h3>Vendredi</h3>
+        <p>Plein tarif<br>
+        <span class="ticket-price">24€</span></p>
+        <p>Tarif réduit<br>
+        <span class="ticket-price">14€</span></p>
+        <a href="index.php?route=achat-billets">
+            <button class="ticket-buy">J'achète mon billet</button>
+        </a>
+    </article>
+    <article class="ticket-card">
+        <h2>Billet 1 jour</h2>
+        <h3>Samedi ou dimanche</h3>
+        <p>Plein tarif<br>
+        <span class="ticket-price">32€</span></p>
+        <p>Tarif réduit<br>
+        <span class="ticket-price">22€</span></p>
+        <a href="index.php?route=achat-billets">
+            <button class="ticket-buy">J'achète mon billet</button>
+        </a>
+    </article>
+    <article class="ticket-card">
+        <h2>Pass 2 jours</h2>
+        <h3>Vendredi et samedi/<br>
+        Vendredi et dimanche</h3>
+        <p>Plein tarif<br>
+        <span class="ticket-price">50€</span></p>
+        <p>Tarif réduit<br>
+        <span class="ticket-price">32€</span></p>
+        <a href="index.php?route=achat-billets">
+            <button class="ticket-buy">J'achète mon billet</button>
+        </a>
+    </article>
+    <article class="ticket-card">
+        <h2>Pass 2 jours</h2>
+        <h3>Samedi et dimanche</h3>
+        <p>Plein tarif<br>
+        <span class="ticket-price">58€</span></p>
+        <p>Tarif réduit<br>
+        <span class="ticket-price">40€</span></p>
+        <a href="index.php?route=achat-billets">
+            <button class="ticket-buy">J'achète mon billet</button>
+        </a>
+    </article>
+    <article class="ticket-card">
+        <h2>Pass 3 jours</h2>
+        <p>Plein tarif<br>
+        <span class="ticket-price">80€</span></p>
+        <p>Tarif réduit<br>
+        <span class="ticket-price">50€</span></p>
+        <a href="index.php?route=achat-billets">
+            <button class="ticket-buy">J'achète mon billet</button>
+        </a>
+    </article>
+
+</section>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

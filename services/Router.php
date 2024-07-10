@@ -31,6 +31,16 @@ class Router{
             $this->pc->logout();
         }else if(isset($get["route"]) && $get["route"] === "espace-perso"){
             $this->pc->personnalSpace();
+        }else if(isset($get["route"]) && $get["route"] === "billetterie"){
+            $this->pc->ticketing();
+        }else if(isset($get["route"]) && $get["route"] === "achat-billets"){
+            $this->pc->buyTickets();
+        }else if(isset($get["route"]) && $get["route"] === "paiement"){
+            $this->pc->payment();
+        }else if(isset($get["route"]) && $get["route"]=== "paiement-valide"){
+            $this->pc->paymentSuccess();
+        }else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
+            $this->pc->paymentCancel();
         }
         else{
             $this->pc->error();

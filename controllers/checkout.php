@@ -5,12 +5,11 @@ $dotenv->load();
 \Stripe\Stripe::setApiKey($_ENV["API_KEY"]);
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://donkey/index.php';
-
-$product = \Stripe\Product::create([
-  'name' => 'Total Tickets',
-  'id' => 'total_tickets'
-]);
+$YOUR_DOMAIN = 'http:
+// $product = \Stripe\Product::create([
+//   'name' => 'Total Tickets',
+//   'id' => 'total_tickets'
+// ]);
 
 $price = \Stripe\Price::create([
   'unit_amount' => (int) $_POST["ticket-total-input"] * 100,
@@ -27,6 +26,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
   'mode' => 'payment',
   'success_url' => $YOUR_DOMAIN . '?route=paiement-valide',
   'cancel_url' => $YOUR_DOMAIN . '?route=paiement-invalide',
+  'customer_email' => $_POST["email"]
 ]);
 
 header("HTTP/1.1 303 See Other");

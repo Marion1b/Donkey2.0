@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const tickets = new Tickets(select);
         button.disabled = true;
         let ticketsTotal = false;
-        const tickets = new Tickets(select);
-      
+
         select.forEach((element) =>{
             element.addEventListener('change', (e) =>{
                 par.innerText = tickets.total() + "€";
@@ -29,8 +28,6 @@ document.addEventListener('DOMContentLoaded', function(){
             if(ticketsTotal === true && lastName.value && firstName.value && email.value){
                 button.disabled = false;
             }
-        })
-            })
         })
     }
 })

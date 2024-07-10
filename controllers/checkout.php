@@ -5,7 +5,7 @@ $dotenv->load();
 \Stripe\Stripe::setApiKey($_ENV["API_KEY"]);
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http:
+$YOUR_DOMAIN = 'http:http://donkey/index.php';
 // $product = \Stripe\Product::create([
 //   'name' => 'Total Tickets',
 //   'id' => 'total_tickets'

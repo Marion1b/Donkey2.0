@@ -18,7 +18,7 @@ class AuthController extends AbstractController{
             $password = $post["password"];
             $isPasswordCorrect = password_verify($password, $user->getPassword());
                 if($isPasswordCorrect === true){
-                    $this->redirect("index.php?route=espace-perso");
+                    $this->redirect("index.php?route=espace-perso&&user-id=" . $user->getId());
                     return $user;
                 }else{
                     $this->redirect("index.php?route=connexion");

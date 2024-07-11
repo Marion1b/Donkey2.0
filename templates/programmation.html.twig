@@ -1,0 +1,62 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="programmation-page">
+
+<h1>Programmation</h1>
+
+<nav class="programmation-filter">
+    <ul>
+        <a href="index.php?route=programmation">
+            <li>Tout</li>
+        </a>
+        <a href="index.php?route=programmation&&jour=vendredi">
+            <li>Ven. 05</li>
+        </a>
+        <a href="index.php?route=programmation&&jour=samedi">
+            <li>Sam. 06</li>
+        </a>
+        <a href="index.php?route=programmation&&jour=dimanche">
+            <li>Dim. 07</li>
+        </a>
+    </ul>
+</nav>
+
+{{dump(favoriteArtistsId)}}
+
+{% for artist in artists %}
+<article class="artist-card">
+<a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
+<img src="{{artist.getPicture()}}" alt="">
+<p>{{artist.getName()}}</p>
+<p>{{artist.getDayToString()}}</p>
+</a>
+{% if session.user is defined %}
+<form action="index.php?route=liste-artiste" method="POST">
+    <input type="hidden" name="artist" id="artist" value="{{artist.getId()}}">
+    {% set isFavorite = false %}
+    {% for favoriteArtistId in favoriteArtistsId %}
+        {% if artist.getId() == favoriteArtistId.artist_id %}
+            {% set isFavorite = true %}
+        {% endif %}
+    {% endfor %}
+    {% if isFavorite %}
+        <button type="submit">Retirer de la liste</button>
+    {% else %}
+        <button type="submit">Ajouter à la liste</button>
+    {% endif %}
+</form>
+{% endif %}
+</article>
+{% endfor %}
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

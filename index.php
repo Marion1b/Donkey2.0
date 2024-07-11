@@ -19,5 +19,4 @@ if(empty($_SESSION["csrf_token"])){
     $_SESSION["csrf_token"] = $csrf->generateCSRFToken();
 }
 
-var_dump($_POST);
 var_dump($_SESSION);

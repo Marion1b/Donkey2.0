@@ -59,6 +59,45 @@ class PageController extends AbstractController{
         $this->render("paiement-invalide.html.twig", []);
     }
 
+    public function programmation():void{
+        $am = new ArtistManager();
+        $artists = $am->findAll();
+        if(isset ($_SESSION["user"])){
+            $um = new UserManager();
+            $favoriteArtistsId = $um->getFavoriteArtists();
+            $this->render("programmation.html.twig", ["artists"=>$artists, "favoriteArtistsId" => $favoriteArtistsId]);   
+        }
+        $this->render("programmation.html.twig", ["artists"=>$artists]);
+    }
+
+    public function programmationbyDay(string $day):void{
+        $am = new ArtistManager();
+        $artists = $am->findByDay($day);
+        $this->render("programmation.html.twig", ["artists"=>$artists]);
+    }
+
+    public function artist():void{
+        $am = new ArtistManager();
+        $artist = $am->findByName($_GET["artiste"]);
+        if($artist !== null){
+            $this->render("fiche-artiste.html.twig", ["artist"=>$artist]);
+        }else{
+            $this->error();
+        }
+        
+    }
+
+    public function artistList():void{
+        $um = new UserManager();
+        $isFavorite = $um->isFavorite();
+        if($isFavorite === false){
+            $um->addFavorite();
+        }else{
+            $um->removeFavorite();
+        }
+        $this->redirect("index.php?route=programmation");
+    }
+
     public function error():void{
         $this->render("error404.html.twig", []);
     }

@@ -5,21 +5,15 @@
 {% endblock %}
 
 {% block main %}
-<main class="home">
+<main class="tickets-page">
 
-<h1>Payer</h1>
-
-<p>Valide</p>
-
-<p>Pensez à bien enregistrer vos tickets, si vous n'avez pas de compte ils ne seront plus accessibles.</p>
-<p>N'hésitez pas à nous contacter si vous avez oublié d'enregistrer vos billets.</p>
+<h1>Vos billets</h1>
 
 {% for ticket in tickets %}
 <p> {{ticket.getContent()}} </p>
 <p> {{ticket.getTarif()}} </p>
 <img src={{ticket.getQr()}} alt="qrcode pour le billet" />
 {% endfor %}
-
 
 </main>
 {% endblock %}

@@ -3,10 +3,12 @@
 class Router{
     private AuthController $ac;
     private PageController $pc;
+    private PayController $pay;
     public function __construct()
     {
         $this->ac = new AuthController();
         $this->pc = new PageController();
+        $this->pay = new PayController();
     }
 
     public function handleRequest(array $get):void{
@@ -31,14 +33,24 @@ class Router{
             $this->pc->logout();
         }else if(isset($get["route"]) && $get["route"] === "espace-perso"){
             $this->pc->personnalSpace();
+        }else if(isset($get["route"]) && $get["route"] === "billets"){
+            $this->pc->getTicket();
         }else if(isset($get["route"]) && $get["route"] === "billetterie"){
             $this->pc->ticketing();
         }else if(isset($get["route"]) && $get["route"] === "achat-billets"){
             $this->pc->buyTickets();
         }else if(isset($get["route"]) && $get["route"] === "paiement"){
-            $this->pc->payment();
+            $_SESSION["post_data"]=$_POST;
+            $this->pay->checkPay();
         }else if(isset($get["route"]) && $get["route"]=== "paiement-valide"){
-            $this->pc->paymentSuccess();
+            $randomId = (int) $get["id"];
+            if(isset($get["id"]) && isset($_SESSION['randomId']) && $randomId === $_SESSION['randomId']){
+                $post = $_SESSION['post_data'];
+                $this->pay->generateTicket($post);
+                $this->pc->paymentSuccess();
+                $_SESSION['post_data']="";
+                $_SESSION['randomId']="";
+            }
         }else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
             $this->pc->paymentCancel();
         }

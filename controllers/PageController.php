@@ -24,7 +24,21 @@ class PageController extends AbstractController{
     }
 
     public function personnalSpace():void{
-        $this->render("espace-perso.html.twig", []);
+        if(isset($_SESSION["user"]) && (string) $_SESSION["user"]->getId() === $_GET["user-id"]){
+            $this->render("espace-perso.html.twig", []);
+        }else{
+            $this->connexion();
+        }
+    }
+
+    public function getTicket():void{
+        if(isset($_SESSION["user"]) && (string) $_SESSION["user"]->getId() === $_GET["user-id"]){
+            $tm = new TicketManager();
+            $tickets = $tm->findByUserId($_SESSION["user"]->getId());
+            $this->render("tickets.html.twig", ["tickets"=>$tickets]);
+        }else{
+            $this->ticketing();
+        }
     }
 
     public function ticketing():void{
@@ -35,13 +49,10 @@ class PageController extends AbstractController{
         $this->render("achat-billets.html.twig", []);
     }
 
-    public function payment():void{
-        $this->render("paiement.html.twig", []);
-        require "./controllers/checkout.php";
-    }
-
     public function paymentSuccess():void{
-        $this->render("paiement-valide.html.twig", []);
+        $tm = new TicketManager();
+        $tickets = $tm->findByEmail($_SESSION["post_data"]["email"]);
+        $this->render("paiement-valide.html.twig", ["tickets"=>$tickets]);
     }
 
     public function paymentCancel():void{

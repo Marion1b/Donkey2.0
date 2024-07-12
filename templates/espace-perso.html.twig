@@ -12,7 +12,9 @@
 <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
 
 <h2>Mes artistes</h2>
-<a href=""><button class="planning-button">Ma programmation</button></a>
+<a href="index.php?route=programmation-perso&&jour=vendredi">
+    <button class="planning-button">Ma programmation</button>
+</a>
 
 {% for artist in favoriteArtists %}
 <article class="artist-card">

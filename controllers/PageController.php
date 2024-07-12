@@ -119,6 +119,10 @@ class PageController extends AbstractController{
         }
     }
 
+    public function personnalProg():void{
+        $this->render("programmation-perso.html.twig", []);
+    }
+
     public function dys():void{
         if(isset($_COOKIE["dys"]) && $_COOKIE["dys"] === "on"){
             setcookie("dys", "off");

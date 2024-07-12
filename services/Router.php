@@ -67,6 +67,8 @@ class Router{
             $this->pc->artistList();
         }else if(isset($get["route"]) && $get["route"] === "liste-artiste-fav"){
             $this->pc->personnalArtistList();
+        }else if(isset($get["route"]) && $get["route"] === "programmation-perso"){
+            $this->pc->personnalProg();
         }
         else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
             $this->pc->paymentCancel();

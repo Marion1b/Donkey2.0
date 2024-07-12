@@ -1,0 +1,53 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="espace-perso">
+
+<h1>Bonjour {{ session.user.getFirstName() }}</h1>
+
+<a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
+
+<h2>Ma programmation</h2>
+<a href="index.php?route=liste-artiste-fav">
+    <button class="artist-fav-button">Mes artistes</button>
+</a>
+
+<nav class="personnal-programmation-filter">
+    <ul>
+        <a href="index.php?route=programmation-perso&&jour=vendredi">
+            <li>Ven. 05</li>
+        </a>
+        <a href="index.php?route=programmation-perso&&jour=samedi">
+            <li>Sam. 06</li>
+        </a>
+        <a href="index.php?route=programmation-perso&&jour=dimanche">
+            <li>Dim. 07</li>
+        </a>
+    </ul>
+</nav>
+
+<article class="personnal-prog">
+    {% if get.jour == "vendredi" %}
+        {% for i in 18..23 %}
+            <p>{{i}}h</p>
+        {% endfor %}
+        <p>00h</p>
+    {% elseif get.jour == "samedi" or get.jour == "dimanche" %}
+        {% for i in 14..23 %}
+            <p>{{i}}h</p>
+        {% endfor %}
+        <p>00h</p>
+    {% endif %}
+</article>
+
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

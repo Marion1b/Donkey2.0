@@ -49,4 +49,67 @@ class UserManager extends AbstractManager{
         ];
         $query->execute($parameters);
     }
+
+    public function addFavorite():void{
+        $query = $this->db->prepare(
+            "INSERT INTO
+                artists_users(
+                    artist_id,
+                    user_id
+                )VALUES(
+                    :artist_id,
+                    :user_id
+                )
+        ");
+        $parameters = [
+            'artist_id' => $_POST["artist"],
+            'user_id' => $_SESSION["user"]->getId()
+        ];
+        $query->execute($parameters);
+    }
+
+    public function removeFavorite():void{
+        $query = $this->db->prepare(
+            "DELETE FROM artists_users
+            WHERE artist_id = :artist_id AND user_id = :user_id
+        ");
+        $parameters = [
+            'artist_id' => $_POST["artist"],
+            'user_id' => $_SESSION["user"]->getId()
+        ];
+        $query->execute($parameters);
+    }
+
+    public function isFavorite():bool{
+        $query = $this->db->prepare(
+            "SELECT 
+                artist_id
+            FROM artists_users
+            WHERE artist_id = :artist_id AND user_id = :user_id"
+        );
+        $parameters = [
+            'artist_id' => $_POST["artist"],
+            'user_id' => $_SESSION["user"]->getId()
+        ];
+        $query->execute($parameters);
+        if($query->rowCount()>=1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function getFavoriteArtists():array{
+        $query = $this->db->prepare(
+            "SELECT artist_id
+            FROM artists_users
+            WHERE user_id = :user_id"
+        );
+        $parameters = [
+            'user_id' => $_SESSION["user"]->getId()
+        ];
+        $query->execute($parameters);
+        $artistsId = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $artistsId;
+    }
 }

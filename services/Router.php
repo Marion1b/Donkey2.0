@@ -51,7 +51,22 @@ class Router{
                 $_SESSION['post_data']="";
                 $_SESSION['randomId']="";
             }
-        }else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
+        }else if(isset($get["route"]) && $get["route"] === "programmation"){
+            if(isset($get["jour"]) && $get["jour"] === "vendredi"){
+                $this->pc->programmationbyDay("2024-07-05");
+            }else if(isset($get["jour"]) && $get["jour"] === "samedi"){
+                $this->pc->programmationbyDay("2024-07-06");
+            }else if(isset($get["jour"]) && $get["jour"] === "dimanche"){
+                $this->pc->programmationbyDay("2024-07-07");
+            }else{
+                $this->pc->programmation();
+            }
+        }else if(isset($get["route"]) && $get["route"]==="fiche-artiste"){
+            $this->pc->artist();
+        }else if(isset($get["route"]) && $get["route"] === "liste-artiste"){
+            $this->pc->artistList();
+        }
+        else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
             $this->pc->paymentCancel();
         }
         else{

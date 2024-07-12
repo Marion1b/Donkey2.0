@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="fiche-artiste">
+
+<h1>{{artist.getName()}}</h1>
+
+<img src="{{artist.getPicture()}}" alt="image de {{artist.getName()}}">
+
+<p>{{artist.getBiography()}}</p>
+
+{{artist.getPlaylist()|raw}}
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

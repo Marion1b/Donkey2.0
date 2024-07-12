@@ -25,7 +25,7 @@ class PageController extends AbstractController{
 
     public function personnalSpace():void{
         if(isset($_SESSION["user"]) && (string) $_SESSION["user"]->getId() === $_GET["user-id"]){
-            $this->render("espace-perso.html.twig", []);
+            $this->showArtistList();
         }else{
             $this->connexion();
         }
@@ -96,6 +96,27 @@ class PageController extends AbstractController{
             $um->removeFavorite();
         }
         $this->redirect("index.php?route=programmation");
+    }
+
+    public function personnalArtistList():void{
+        $um = new UserManager();
+        $isFavorite = $um->isFavorite();
+        if($isFavorite === false){
+            $um->addFavorite();
+        }else{
+            $um->removeFavorite();
+        }
+        $this->redirect("index.php?route=espace-perso&&user-id=" . $_SESSION['user']->getId());
+    }
+
+    public function showArtistList():void{
+        $am = new ArtistManager();
+        $isArtist = $am->showFavoriteArtists();
+        if($isArtist!==null){
+            $this->render("espace-perso.html.twig",["favoriteArtists"=>$isArtist]);
+        }else{
+            $this->render("espace-perso.html.twig", []);
+        }
     }
 
     public function error():void{

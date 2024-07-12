@@ -11,6 +11,24 @@
 
 <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
 
+<h2>Mes artistes</h2>
+<a href=""><button class="planning-button">Ma programmation</button></a>
+
+{% for artist in favoriteArtists %}
+<article class="artist-card">
+    <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
+        <img src="{{artist.getPicture()}}" alt="">
+        <p>{{artist.getName()}}</p>
+        <p>{{artist.getDayToString()}}</p>
+    </a>
+<form action="index.php?route=liste-artiste-fav" method="POST">
+    <input type="hidden" name="artist" id="artist" value="{{artist.getId()}}">
+    <button type="submit">Retirer de la liste</button>
+</form>
+</article>
+{% endfor %}
+
+
 </main>
 {% endblock %}
 

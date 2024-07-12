@@ -103,4 +103,40 @@ class ArtistManager extends AbstractManager{
         }
         
     }
+
+    public function getFavArtistByDay(string $day):? array{
+        $query = $this->db->prepare(
+            "SELECT 
+                artists.id,
+                artists.name,
+                artists.picture,
+                artists.date,
+                artists.biography,
+                artists.playlist
+            FROM artists
+            JOIN artists_users ON artists.id = artists_users.artist_id
+            WHERE date LIKE :date AND artists_users.user_id = :user_id
+            ORDER BY artists.date ASC"
+        );
+        $parameters = [
+            "date" => $day . "%",
+            'user_id' => $_SESSION["user"]->getId()
+        ];
+        $query->execute($parameters);
+        $artists = $query->fetchAll(PDO::FETCH_ASSOC);
+        $artistsClass = [];
+        if($query->rowCount()>=1){
+            foreach($artists as $artist){
+                $dateString = $artist["date"];
+                $date = DateTime::createFromFormat('Y-m-d H:i:s', $dateString);
+                $artistObj = new Artist($artist["name"], $artist["picture"], $date, $artist["biography"], $artist["playlist"]);
+                $artistObj->setId($artist["id"]);
+                $artistsClass[] = $artistObj;
+            }
+            return $artistsClass;
+        }else{
+            return null;
+        }
+        
+    }
 }

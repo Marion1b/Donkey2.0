@@ -61,8 +61,12 @@ class UserManager extends AbstractManager{
                     :user_id
                 )
         ");
+        $artist = "";
+        if(isset($_POST["artist"])){
+            $artist = $_POST["artist"];
+        }
         $parameters = [
-            'artist_id' => $_POST["artist"],
+            'artist_id' => $artist,
             'user_id' => $_SESSION["user"]->getId()
         ];
         $query->execute($parameters);
@@ -87,8 +91,12 @@ class UserManager extends AbstractManager{
             FROM artists_users
             WHERE artist_id = :artist_id AND user_id = :user_id"
         );
+        $artist = "";
+        if(isset($_POST["artist"])){
+            $artist = $_POST["artist"];
+        }
         $parameters = [
-            'artist_id' => $_POST["artist"],
+            'artist_id' => $artist,
             'user_id' => $_SESSION["user"]->getId()
         ];
         $query->execute($parameters);

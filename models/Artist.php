@@ -55,6 +55,10 @@ class Artist{
         return $this->date->format('D j');
     }
 
+    public function getHourToString():string{
+        return $this->date->format('H');
+    }
+
     public function setDate(DateTime $date): void
     {
         $this->date = $date;

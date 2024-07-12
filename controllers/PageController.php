@@ -100,12 +100,15 @@ class PageController extends AbstractController{
 
     public function personnalArtistList():void{
         $um = new UserManager();
-        $isFavorite = $um->isFavorite();
-        if($isFavorite === false){
-            $um->addFavorite();
-        }else{
-            $um->removeFavorite();
+        if(isset($_POST["artist"])){
+            $isFavorite = $um->isFavorite();
+            if($isFavorite === false){
+                $um->addFavorite();
+            }else{
+                $um->removeFavorite();
+            }
         }
+        
         $this->redirect("index.php?route=espace-perso&&user-id=" . $_SESSION['user']->getId());
     }
 
@@ -119,8 +122,14 @@ class PageController extends AbstractController{
         }
     }
 
-    public function personnalProg():void{
-        $this->render("programmation-perso.html.twig", []);
+    public function personnalProg(string $day):void{
+        $am = new ArtistManager();
+        $artists = $am->getFavArtistByDay($day);
+        if($artists !== null){
+            $this->render("programmation-perso.html.twig", ["artists"=>$artists]);
+        }else{
+            $this->render("programmation-perso.html.twig", []);
+        }
     }
 
     public function dys():void{

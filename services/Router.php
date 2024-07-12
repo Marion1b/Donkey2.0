@@ -68,7 +68,15 @@ class Router{
         }else if(isset($get["route"]) && $get["route"] === "liste-artiste-fav"){
             $this->pc->personnalArtistList();
         }else if(isset($get["route"]) && $get["route"] === "programmation-perso"){
-            $this->pc->personnalProg();
+            if(isset($get["jour"]) && $get["jour"] === "vendredi"){
+                $this->pc->personnalProg("2024-07-05");
+            }else if(isset($get["jour"]) && $get["jour"] === "samedi"){
+                $this->pc->personnalProg("2024-07-06");
+            }else if(isset($get["jour"]) && $get["jour"] === "dimanche"){
+                $this->pc->personnalProg("2024-07-07");
+            }else{
+                $this->pc->personnalProg($get["jour"]);
+            }
         }
         else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
             $this->pc->paymentCancel();

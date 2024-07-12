@@ -12,7 +12,7 @@
 <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
 
 <h2>Ma programmation</h2>
-<a href="index.php?route=liste-artiste-fav">
+<a href="index.php?route=liste-artiste-fav&&user-id={{session.user.getId()}}">
     <button class="artist-fav-button">Mes artistes</button>
 </a>
 
@@ -34,11 +34,21 @@
     {% if get.jour == "vendredi" %}
         {% for i in 18..23 %}
             <p>{{i}}h</p>
+            {% for artist in artists %}
+                {% if artist.getHourToString() == i %}
+                    <p>{{artist.getName()}}</p>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
         <p>00h</p>
     {% elseif get.jour == "samedi" or get.jour == "dimanche" %}
         {% for i in 14..23 %}
             <p>{{i}}h</p>
+            {% for artist in artists %}
+                {% if artist.getHourToString() == i %}
+                    <p>{{artist.getName()}}</p>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
         <p>00h</p>
     {% endif %}

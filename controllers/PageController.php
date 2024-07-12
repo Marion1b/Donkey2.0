@@ -119,6 +119,19 @@ class PageController extends AbstractController{
         }
     }
 
+    public function dys():void{
+        if(isset($_COOKIE["dys"]) && $_COOKIE["dys"] === "on"){
+            setcookie("dys", "off");
+        }else{
+            setcookie("dys", "on");
+        }
+        if(isset($_SERVER['HTTP_REFERER'])){
+            $this->redirect($_SERVER["HTTP_REFERER"]);
+        }else{
+            $this->redirect("index.php?route=home");
+        }
+    }
+
     public function error():void{
         $this->render("error404.html.twig", []);
     }

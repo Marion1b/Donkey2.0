@@ -70,6 +70,8 @@ class Router{
         }
         else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
             $this->pc->paymentCancel();
+        }else if(isset($get["route"]) && $get["route"] === "dys"){
+            $this->pc->dys();
         }
         else{
             $this->pc->error();

@@ -11,6 +11,7 @@ abstract class AbstractController
 
         $twig->addExtension(new \Twig\Extension\DebugExtension());
         $twig->addGlobal('session', $_SESSION);
+        $twig->addGlobal("cookie", $_COOKIE);
 
         $this->twig = $twig;
     }

@@ -20,3 +20,4 @@ if(empty($_SESSION["csrf_token"])){
 }
 
 var_dump($_SESSION);
+var_dump($_COOKIE);

@@ -15,7 +15,7 @@
 <p>N'hésitez pas à nous contacter si vous avez oublié d'enregistrer vos billets.</p>
 
 {% for ticket in tickets %}
-<p> {{ticket.getContent()}} </p>
+<p> {{ticket.getContent()|escape}} </p>
 <p> {{ticket.getTarif()}} </p>
 <img src={{ticket.getQr()}} alt="qrcode pour le billet" />
 {% endfor %}

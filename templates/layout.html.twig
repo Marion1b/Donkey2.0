@@ -23,14 +23,15 @@
                 <li><a href="index.php?route=connexion">Espace personnel</a></li>
                 {% endif %}
                 <li>Contact</li>
-                <li>Typogragraphie adaptée</li>
+                <li>
+                    <form action="index.php?route=dys" method="POST">
+                        <label for="dys-font">Typographie adaptée</label>
+                        <input type="submit" value={{cookie.dys}} id="dys-font" name="dys-font">
+                    </form>
+                </li>
                 {% if session.user is defined %}
                 <li><a href="index.php?route=logout"><button>Se déconnecter</button></a></li>
                 {% endif %}
-                <form action="index.php?route=dys" method="POST">
-                    <label for="dys-font">Typographie adaptée</label>
-                    <input type="submit" value={{cookie.dys}} id="dys-font" name="dys-font">
-                </form>
             </ul>
         </nav>
     </header>

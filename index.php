@@ -18,6 +18,3 @@ $csrf = new CSRFTokenManager();
 if(empty($_SESSION["csrf_token"])){
     $_SESSION["csrf_token"] = $csrf->generateCSRFToken();
 }
-
-var_dump($_SESSION);
-var_dump($_COOKIE);

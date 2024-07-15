@@ -19,6 +19,7 @@ class AuthController extends AbstractController{
             $isPasswordCorrect = password_verify($password, $user->getPassword());
                 if($isPasswordCorrect === true){
                     $this->redirect("index.php?route=espace-perso&&user-id=" . $user->getId());
+                    // return to router.php
                     return $user;
                 }else{
                     $this->redirect("index.php?route=connexion");
@@ -33,28 +34,35 @@ class AuthController extends AbstractController{
     }
 
     public function checkSignUp($post):? User{
-        $user = new User($post["last_name"], $post["first_name"], $post["email"], $post["password"]);
-        $isUser = $this->um->findByEmail($post["email"]);
-        $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
-        $password = $user->getPassword();
-        if($isUser === null){
-            if(preg_match($pattern,$password)){
-                if($post["password"] === $post["checkPassword"]){
-                    $this->um->create($user);
-                    $this->redirect("espace-perso");
-                    return $user;
+        $csrft = new CSRFTokenManager();
+        if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
+            $user = new User($post["last_name"], $post["first_name"], $post["email"], $post["password"]);
+            $isUser = $this->um->findByEmail($post["email"]);
+            $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+            $password = $user->getPassword();
+            if($isUser === null){
+                // check if the two passwords are the same
+                if(preg_match($pattern,$password)){
+                    if($post["password"] === $post["checkPassword"]){
+                        $this->um->create($user);
+                        $this->redirect("espace-perso");
+                        // return to router.php
+                        return $user;
+                    }else{
+                        $this->redirect("index.php?route=inscription");
+                        return null;
+                    }
                 }else{
                     $this->redirect("index.php?route=inscription");
                     return null;
                 }
+                
             }else{
                 $this->redirect("index.php?route=inscription");
                 return null;
             }
-            
         }else{
-            $this->redirect("index.php?route=inscription");
-            return null;
+            $this->render("inder.php?route=error", []);
         }
     }
 }

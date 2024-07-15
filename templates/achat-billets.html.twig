@@ -12,6 +12,7 @@
 <section class="chose-tickets">
 
 <form action="index.php?route=paiement" method="POST">
+    <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
     <label for="friday">Billet 1 jour vendredi</label>
     <select name="friday" id="friday">
         <option value="0">0</option>
@@ -214,7 +215,7 @@
         <label for="first_name">prénom :</label>
         <input type="text" name="first_name" id="first_name">
         <label for="email">email :</label>
-        <input type="email" name="email" id="email" value={{session.user.getEmail()}}>
+        <input type="email" name="email" id="email" value={{session.user.getEmail()|escape}}>
     {% else %}
         <label for="last_name">nom de famille :</label>
         <input type="text" name="last_name" id="last_name">

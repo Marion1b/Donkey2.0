@@ -51,6 +51,8 @@ class Router{
                 $_SESSION['post_data']="";
                 $_SESSION['randomId']="";
             }
+        }else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
+            $this->pc->paymentCancel();
         }else if(isset($get["route"]) && $get["route"] === "programmation"){
             if(isset($get["jour"]) && $get["jour"] === "vendredi"){
                 $this->pc->programmationbyDay("2024-07-05");
@@ -78,9 +80,7 @@ class Router{
                 $this->pc->personnalProg($get["jour"]);
             }
         }
-        else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
-            $this->pc->paymentCancel();
-        }else if(isset($get["route"]) && $get["route"] === "dys"){
+        else if(isset($get["route"]) && $get["route"] === "dys"){
             $this->pc->dys();
         }
         else{

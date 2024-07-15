@@ -7,7 +7,7 @@
 {% block main %}
 <main class="espace-perso">
 
-<h1>Bonjour {{ session.user.getFirstName() }}</h1>
+<h1>Bonjour {{ session.user.getFirstName()|escape }}</h1>
 
 <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
 

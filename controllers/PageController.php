@@ -29,6 +29,22 @@ class PageController extends AbstractController{
         $this->redirect("index.php?route=connexion");
     }
 
+    public function contact():void{
+        $this->render("contact.html.twig", []);
+    }
+
+    public function information():void{
+        $this->render("infos-pratiques.html.twig", []);
+    }
+
+    public function rgpd():void{
+        $this->render("rgpd.html.twig", []);
+    }
+
+    public function mentionsLegales():void{
+        $this->render("mentions-legales.html.twig", []);
+    }
+
     public function personnalSpace():void{
         if(isset($_SESSION["user"]) && (string) $_SESSION["user"]->getId() === $_GET["user-id"]){
             $this->showArtistList();

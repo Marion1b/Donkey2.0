@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function(){
         const headerNav = document.querySelector(".header-nav");
         burgerMenu.addEventListener('click', ()=>{
             headerNav.classList.toggle("hide");
+            burgerMenu.classList.toggle("open");
+            burgerMenu.classList.toggle("close");
         })
     }
 })

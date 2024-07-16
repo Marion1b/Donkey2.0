@@ -1,3 +1,20 @@
+@keyframes nav {
+  from {
+    right: -500px;
+  }
+  30% {
+    right: 20px;
+  }
+  60% {
+    right: -10px;
+  }
+  80% {
+    right: 10px;
+  }
+  100% {
+    right: 0;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -40,12 +57,37 @@ body h1 {
   grid-column-start: 2;
   width: 100%;
 }
-.page-header .burger-menu span {
+.page-header .open span {
   display: block;
-  width: 40px;
+  width: 30px;
   height: 3px;
   background-color: #FFE500;
   margin: 8px 0;
+  border-radius: 2px;
+  transition: all 200ms ease-in-out;
+}
+.page-header .open .burger-line1, .page-header .open .burger-line2, .page-header .open .burger-line3 {
+  transition: all 400ms ease-in-out;
+}
+.page-header .close span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #FFE500;
+  border-radius: 2px;
+}
+.page-header .close .burger-line1 {
+  transform: rotate(0.15turn) translateY(3px);
+  transition: all 400ms ease-in-out;
+}
+.page-header .close .burger-line2 {
+  transform: rotate(-0.15turn) translateY(-3px);
+  transition: all 500ms ease-in-out;
+}
+.page-header .close .burger-line3 {
+  transform: translateY(12px);
+  width: 26px;
+  transition: all 400ms ease-in-out;
 }
 .page-header .header-nav {
   position: absolute;
@@ -53,8 +95,12 @@ body h1 {
   height: 90vh;
   width: 100%;
   background-color: #FFE500;
+  overflow: hidden;
 }
 .page-header .header-nav ul {
+  position: relative;
+  animation: 500ms nav;
+  animation-iteration-count: 1;
   text-align: end;
   margin: 2rem;
   font-weight: 800;

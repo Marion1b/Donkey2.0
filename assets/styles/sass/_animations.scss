@@ -1,0 +1,13 @@
+@keyframes nav{
+    from{
+        right: -500px;
+    }30%{
+        right: 20px;
+    }60%{
+        right: -10px;
+    }80%{
+        right: 10px;
+    }100%{
+        right: 0;
+    }
+}

@@ -5,14 +5,23 @@
     <meta name="description" content="site officiel du festival de musique Donkey à Rennes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://js.stripe.com/v3/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/css/style.css" />
     <title>Donkey</title>
 </head>
 <body>
 
     {% block header %}
-    <header class="page-header">     
-        <nav>
+    <header class="page-header">
+        <img src="./assets/img/other/Logo.svg" alt="logo" class="logo">
+        <div class="burger-menu open">
+            <span class="burger-line1"></span>
+            <span class="burger-line2"></span>
+            <span class="burger-line3"></span>
+        </div>
+        <nav class="hide header-nav">
             <ul>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="index.php?route=programmation">Programmation</a></li>

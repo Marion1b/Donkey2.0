@@ -1,1 +1,103 @@
 @import "var";
+@import "animations";
+// sass -w assets/styles/sass:assets/styles/css
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Slab", serif;
+    color: $black;
+    a{
+        color: $black;
+        text-decoration: none;
+    }
+    ul{
+        list-style: none;
+    }
+    h1{
+        font-family: "Fascinate Inline", system-ui;
+    }
+}
+
+.page-header{
+    width: 100%;
+    background-color: $black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    .logo{
+        padding: .5rem 0;
+        grid-column-start: 2;
+        width: 100%;
+    }
+    .open{
+        span{
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: $secondary-color;
+            margin:8px 0;
+            border-radius: 2px;
+            transition: all 200ms ease-in-out;
+        }
+        .burger-line1, .burger-line2, .burger-line3{
+            transition: all 400ms ease-in-out;
+        }
+    }
+    .close{
+        span{
+            display: block;
+            width: 30px;
+            height: 4px;
+            background-color: $secondary-color;
+            border-radius: 2px;
+        }
+        .burger-line1{
+            transform: rotate(0.15turn)translateY(3px);
+            transition: all 400ms ease-in-out;
+        }
+        .burger-line2{
+            transform: rotate(-0.15turn)translateY(-3px);
+            transition: all 500ms ease-in-out;
+        }
+        .burger-line3{
+            transform: translateY(12px);
+            width: 26px;
+            transition: all 400ms ease-in-out;
+        }
+    }
+    .header-nav{ 
+        position: absolute;
+        top: 92px;
+        height: 90vh;
+        width: 100%;
+        background-color: $secondary-color;
+        overflow: hidden;
+        ul{
+            position: relative;
+            animation: 500ms nav;
+            animation-iteration-count: 1;
+            text-align: end;
+            margin: 2rem;
+            font-weight: 800;
+            font-size: 1.8rem;
+            line-height: 5rem;
+        }
+    }
+    .hide{
+        display: none;
+    }
+}

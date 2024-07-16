@@ -1,3 +1,114 @@
+@keyframes nav {
+  from {
+    right: -500px;
+  }
+  30% {
+    right: 20px;
+  }
+  60% {
+    right: -10px;
+  }
+  80% {
+    right: 10px;
+  }
+  100% {
+    right: 0;
+  }
+}
+* {
+  box-sizing: border-box;
+}
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", serif;
+  color: #020403;
+}
+body a {
+  color: #020403;
+  text-decoration: none;
+}
+body ul {
+  list-style: none;
+}
+body h1 {
+  font-family: "Fascinate Inline", system-ui;
+}
+
+.page-header {
+  width: 100%;
+  background-color: #020403;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.page-header .logo {
+  padding: 0.5rem 0;
+  grid-column-start: 2;
+  width: 100%;
+}
+.page-header .open span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #FFE500;
+  margin: 8px 0;
+  border-radius: 2px;
+  transition: all 200ms ease-in-out;
+}
+.page-header .open .burger-line1, .page-header .open .burger-line2, .page-header .open .burger-line3 {
+  transition: all 400ms ease-in-out;
+}
+.page-header .close span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #FFE500;
+  border-radius: 2px;
+}
+.page-header .close .burger-line1 {
+  transform: rotate(0.15turn) translateY(3px);
+  transition: all 400ms ease-in-out;
+}
+.page-header .close .burger-line2 {
+  transform: rotate(-0.15turn) translateY(-3px);
+  transition: all 500ms ease-in-out;
+}
+.page-header .close .burger-line3 {
+  transform: translateY(12px);
+  width: 26px;
+  transition: all 400ms ease-in-out;
+}
+.page-header .header-nav {
+  position: absolute;
+  top: 92px;
+  height: 90vh;
+  width: 100%;
+  background-color: #FFE500;
+  overflow: hidden;
+}
+.page-header .header-nav ul {
+  position: relative;
+  animation: 500ms nav;
+  animation-iteration-count: 1;
+  text-align: end;
+  margin: 2rem;
+  font-weight: 800;
+  font-size: 1.8rem;
+  line-height: 5rem;
+}
+.page-header .hide {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -2,6 +2,8 @@ import { Tickets } from "./Tickets.js";
 
 document.addEventListener('DOMContentLoaded', function(){
     const buyTickets = document.querySelector(".buy-tickets");
+    const burgerMenu = document.querySelector(".burger-menu");
+    // Check if buy tickets form is not empty
     if(buyTickets){
         const select = document.querySelectorAll(".buy-tickets select");
         const par = document.querySelector(".tickets-total p");
@@ -28,6 +30,15 @@ document.addEventListener('DOMContentLoaded', function(){
             if(ticketsTotal === true && lastName.value && firstName.value && email.value){
                 button.disabled = false;
             }
+        })
+    }
+    // Show and hide burger nav
+    if(burgerMenu){
+        const headerNav = document.querySelector(".header-nav");
+        burgerMenu.addEventListener('click', ()=>{
+            headerNav.classList.toggle("hide");
+            burgerMenu.classList.toggle("open");
+            burgerMenu.classList.toggle("close");
         })
     }
 })

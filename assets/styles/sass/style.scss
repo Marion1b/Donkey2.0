@@ -25,6 +25,8 @@ body{
     }
     ul{
         list-style: none;
+        margin: 0;
+        padding: 0;
     }
     h1{
         font-family: "Fascinate Inline", system-ui;
@@ -99,5 +101,27 @@ body{
     }
     .hide{
         display: none;
+    }
+}
+
+.page-footer{
+    background-color: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-size: 1rem;
+    padding: 1.5rem 1rem;
+    a{
+        color: $secondary-color;
+    }
+    .footer-social ul{
+        display: flex;
+        font-size: 1.5rem;
+        li{
+            margin: 0 5px;
+        }
+    }
+    .footer-legal{
+        text-align: end;
     }
 }

@@ -82,6 +82,14 @@ class Router{
         }
         else if(isset($get["route"]) && $get["route"] === "dys"){
             $this->pc->dys();
+        }else if(isset($get["route"]) && $get["route"] === "contact"){
+            $this->pc->contact();
+        }else if(isset($get["route"]) && $get["route"] === "infos_pratiques"){
+            $this->pc->information();
+        }else if(isset($get["route"]) && $get["route"] === "rgpd"){
+            $this->pc->rgpd();
+        }else if(isset($get["route"]) && $get["route"] === "mentions_legales"){
+            $this->pc->mentionsLegales();
         }
         else{
             $this->pc->error();

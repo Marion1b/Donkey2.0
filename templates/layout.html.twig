@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/css/style.css" />
+    <script src="https://kit.fontawesome.com/c75c1791b5.js" crossorigin="anonymous"></script>
     <title>Donkey</title>
 </head>
 <body>
@@ -25,14 +26,14 @@
             <ul>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="index.php?route=programmation">Programmation</a></li>
-                <li>Informations pratiques</li>
+                <li><a href="index.php?route=infos_pratiques">Informations pratiques</a></li>
                 <li><a href="index.php?route=billetterie">Billetterie</a></li>
                 {% if session.user is defined %}
                 <li><a href="index.php?route=espace-perso&&user-id={{session.user.getId()}}">Espace personnel</a></li>
                 {% else %}
                 <li><a href="index.php?route=connexion">Espace personnel</a></li>
                 {% endif %}
-                <li>Contact</li>
+                <li><a href="index.php?route=contact">Contact</a></li>
                 <li>
                     <form action="index.php?route=dys" method="POST">
                         <label for="dys-font">Typographie adaptée</label>
@@ -52,7 +53,44 @@
     {% endblock %}
 
     {% block footer %}
-    <p>footer</p>
+    <footer class="page-footer">
+        <section class="footer-page-links">
+            <ul>
+                <a href="index.php?route=contact">
+                    <li>Contact</li>
+                </a>
+                <a href="incex.php?route=billetterie">
+                    <li>Billetterie</li>
+                </a>
+            </ul>
+        </section>
+        <section class="footer-social">
+            <ul>
+                <a href="https://www.instagram.com/">
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                </a>
+                <a href="https://www.tiktok.com/discover?lang=fr">
+                    <li><i class="fa-brands fa-tiktok"></i></li>
+                </a>
+                <a href="https://x.com/?lang=fr">
+                    <li><i class="fa-brands fa-x-twitter"></i></li>
+                </a>
+                <a href="https://www.facebook.com/?locale=fr_FR">
+                    <li><i class="fa-brands fa-square-facebook"></i></li>
+                </a>
+            </ul>
+        </section>
+        <section class="footer-legal">
+            <ul>
+                <a href="index.php?route=rgpd">
+                    <li>RGPD</li>
+                </a>
+                <a href="index.php?route=mentions_legales">
+                    <li>Mentions légales</li>
+                </a>
+            </ul>
+        </section>
+    </footer>
     {% endblock %}
     <script src="./public/script.js" type="module"></script>
 </body>

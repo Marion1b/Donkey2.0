@@ -39,6 +39,8 @@ body a {
 }
 body ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 body h1 {
   font-family: "Fascinate Inline", system-ui;
@@ -109,6 +111,28 @@ body h1 {
 }
 .page-header .hide {
   display: none;
+}
+
+.page-footer {
+  background-color: #020403;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: 1rem;
+  padding: 1.5rem 1rem;
+}
+.page-footer a {
+  color: #FFE500;
+}
+.page-footer .footer-social ul {
+  display: flex;
+  font-size: 1.5rem;
+}
+.page-footer .footer-social ul li {
+  margin: 0 5px;
+}
+.page-footer .footer-legal {
+  text-align: end;
 }
 
 /*# sourceMappingURL=style.css.map */

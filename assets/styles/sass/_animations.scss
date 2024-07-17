@@ -52,3 +52,35 @@
         transform: rotate(30deg)translate(-2px,-3px);
     }
 }
+
+@keyframes formMoveProg1{
+    from{
+        transform: rotate(-90deg)translate(0px,0px);
+    }to{
+        transform: rotate(-75deg)translate(2px,2px);
+    }
+}
+
+@keyframes formMoveProg2a{
+    from{
+        transform: rotate(30deg)translate(0px,0px);
+    }to{
+        transform: rotate(45deg)translate(5px,-5px);
+    }
+}
+
+@keyframes formMoveProg2b{
+    from{
+        transform: rotate(-63deg)translate(0px,0px);
+    }to{
+        transform: rotate(-45deg)translate(3px,-3px);
+    }
+}
+
+@keyframes formMoveProg3{
+    from{
+        transform: rotate(-52deg)translate(0px,0px);
+    }to{
+        transform: rotate(-25deg)translate(2px,-3px);
+    }
+}

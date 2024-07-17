@@ -30,6 +30,7 @@ body{
     }
     h1{
         font-family: "Fascinate Inline", system-ui;
+        text-align: center;
     }
     h2{
         font-size: 2.4rem;
@@ -46,6 +47,7 @@ body{
     }
     .form{
         position: absolute; 
+        z-index: -1;
     }
     .hide{
         display: none;
@@ -120,6 +122,12 @@ body{
         }
     }
 }
+
+// ==========================================================================
+// HOME
+// ==========================================================================
+
+
 
 .home-display-names{
     position: relative;
@@ -205,17 +213,119 @@ body{
     &-form1{
         bottom: -3rem;
         left: -.2rem;
-        z-index: -1;
         animation: 3s linear infinite alternate formMoveHomeInfos1;
     }
     &-form3{
         top: .5rem;
         right: .2rem;
-        z-index: -1;
         animation: 5s linear infinite alternate formMoveHomeInfos3;
     }
 }
 
+// ==========================================================================
+// PROGRAMMATION
+// ==========================================================================
+
+.programmation-page{
+    overflow: hidden;
+    background-color: $main-color;
+    padding: 5rem 0;
+    position: relative;
+    z-index: -5;
+    &-form2a{
+        left: -8rem;
+        top: 15rem;
+        animation: 3s linear infinite alternate formMoveProg2a;
+    }   
+    &-form1{
+        right: -3rem;
+        top: 80rem;
+        animation: 3s linear infinite alternate formMoveProg1;
+    }
+    &-form2b{
+        left: -5rem;
+        bottom: 100rem;
+        animation: 2s linear infinite alternate formMoveProg2b;
+    }
+    &-form3{
+        right: -1rem;
+        bottom: -2rem;
+        animation: 5s linear infinite alternate formMoveProg3;
+    }
+    h1{
+        color: $secondary-color;
+        text-shadow:
+            -1.5px -1.5px 0 $black,  
+            1.5px -1.5px 0 $black,
+            -1.5px  1.5px 0 $black,
+            1.5px  1.5px 0 $black;
+    }
+    ul{
+        display: flex;
+        justify-content: space-around;
+        margin: 3.5rem 0;
+        li{
+            font-size: 1.2rem;
+            border: 1px solid $black;
+            box-shadow: -4px 4px 4px $opacity-black;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            color: $secondary-color;
+            font-weight: 800;
+            text-shadow:
+            -1.5px -1.5px 0 $black,  
+            1.5px -1.5px 0 $black,
+            -1.5px  1.5px 0 $black,
+            1.5px  1.5px 0 $black;
+        }
+    }
+    .programmation-filter-active{
+        background-color: $secondary-color;
+        color: $black;
+        text-shadow: none;
+    }
+    .artist-card{
+        z-index: 5;
+        background-color: $secondary-color;
+        border: 2px solid $black;
+        box-shadow: -8px 8px 8px $opacity-black;
+        margin: 2rem;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        &-image{
+            width: 30rem;
+            height: 18rem;
+            overflow: hidden;
+            border-radius: 2rem;
+            border: 1px solid $black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-top{
+                align-items: flex-start;
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        &-name{
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin: 3rem 0;
+        }
+        &-day{
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+    }
+}
 
 .page-footer{
     background-color: $black;

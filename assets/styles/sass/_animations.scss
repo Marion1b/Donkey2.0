@@ -84,3 +84,27 @@
         transform: rotate(-25deg)translate(2px,-3px);
     }
 }
+
+@keyframes formMoveFiche1{
+    from{
+        transform: rotate(-55deg)translate(0px,0px);
+    }to{
+        transform: rotate(-75deg)translate(2px,2px);
+    }
+}
+
+@keyframes formMoveFiche2{
+    from{
+        transform: rotate(0deg)translate(0px,0px);
+    }to{
+        transform: rotate(15deg)translate(-1px,-3px);
+    }
+}
+
+@keyframes formMoveFiche3{
+    from{
+        transform: rotate(15deg)translate(0px,0px);
+    }to{
+        transform: rotate(50deg)translate(5px,-5px);
+    }
+}

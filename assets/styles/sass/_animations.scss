@@ -11,3 +11,44 @@
         right: 0;
     }
 }
+
+@keyframes formMoveHome1{
+    from{
+        transform: rotate(-145deg)translate(0px, 0px);
+    }to{
+        transform: rotate(-120deg)translate(5px,5px);
+    }
+}
+
+@keyframes formMoveHome2{
+    from{
+        transform: rotate(0deg)translate(0px, 0px);
+    }to{
+        transform: rotate(15deg)translate(-5px,-5px);
+    }
+}
+
+@keyframes formMoveHome3{
+    from{
+        transform: rotate(-20deg)translate(0px, 0px);
+    }
+    to{
+        transform: rotate(-45deg)translate(-5px, 5px);
+    }
+}
+
+@keyframes formMoveHomeInfos1{
+    from{
+        transform: rotate(-80deg)translate(0px, 0px);
+    }to{
+        transform: rotate(-55deg)translate(-5px,-3px);
+    }
+}
+
+@keyframes formMoveHomeInfos3{
+    from{
+        transform: rotate(17deg)translate(0px,0px);
+    }to{
+        transform: rotate(30deg)translate(-2px,-3px);
+    }
+}

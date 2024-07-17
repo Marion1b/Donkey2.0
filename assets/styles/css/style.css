@@ -84,6 +84,7 @@ body ul {
 }
 body h1 {
   font-family: "Fascinate Inline", system-ui;
+  text-align: center;
 }
 body h2 {
   font-size: 2.4rem;
@@ -272,8 +273,73 @@ body .hide {
   animation: 5s linear infinite alternate formMoveHomeInfos3;
 }
 
-.page-header .hide {
-  display: none;
+.programmation-page {
+  background-color: #4F09B9;
+  padding: 5rem 0;
+}
+.programmation-page h1 {
+  color: #FFE500;
+  text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+}
+.programmation-page ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 3.5rem 0;
+}
+.programmation-page ul li {
+  font-size: 1.2rem;
+  border: 1px solid #020403;
+  box-shadow: -4px 4px 4px rgba(2, 4, 3, 0.25);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  color: #FFE500;
+  font-weight: 800;
+  text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+}
+.programmation-page .programmation-filter-active {
+  background-color: #FFE500;
+  color: #020403;
+  text-shadow: none;
+}
+.programmation-page .artist-card {
+  background-color: #FFE500;
+  border: 2px solid #020403;
+  box-shadow: -8px 8px 8px rgba(2, 4, 3, 0.25);
+  margin: 2rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+.programmation-page .artist-card-image {
+  width: 30rem;
+  height: 18rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid #020403;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.programmation-page .artist-card-image-top {
+  align-items: flex-start;
+}
+.programmation-page .artist-card-image img {
+  width: 100%;
+  height: auto;
+}
+.programmation-page .artist-card-name {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 3rem 0;
+}
+.programmation-page .artist-card-day {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
 }
 
 .page-footer {

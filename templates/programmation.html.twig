@@ -7,21 +7,29 @@
 {% block main %}
 <main class="programmation-page">
 
-<h1>Programmation</h1>
+<h1>La programmation</h1>
 
 <nav class="programmation-filter">
     <ul>
         <a href="index.php?route=programmation">
-            <li>Tout</li>
+            <li {% if get.jour is not defined %} class="programmation-filter-active" {% endif %}>
+                Tout
+            </li>
         </a>
         <a href="index.php?route=programmation&&jour=vendredi">
-            <li>Ven. 05</li>
+            <li {% if get.jour == "vendredi" %} class="programmation-filter-active" {% endif %}>
+                Ven. 05
+            </li>
         </a>
         <a href="index.php?route=programmation&&jour=samedi">
-            <li>Sam. 06</li>
+            <li {% if get.jour == "samedi" %} class="programmation-filter-active" {% endif %}>
+                Sam. 06
+            </li>
         </a>
         <a href="index.php?route=programmation&&jour=dimanche">
-            <li>Dim. 07</li>
+            <li {% if get.jour == "dimanche" %} class="programmation-filter-active" {% endif %}>
+                Dim. 07
+            </li>
         </a>
     </ul>
 </nav>
@@ -29,9 +37,9 @@
 {% for artist in artists %}
 <article class="artist-card">
 <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
-<img src="{{artist.getPicture()}}" alt="">
-<p>{{artist.getName()}}</p>
-<p>{{artist.getDayToString()}}</p>
+<div class="artist-card-image {% if artist.getName() == "JeanneTo" or artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} artist-card-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt=""></div>
+<p class="artist-card-name">{{artist.getName()}}</p>
+<p class="artist-card-day">{{artist.getDayToString()}}</p>
 </a>
 {% if session.user is defined %}
 <form action="index.php?route=liste-artiste" method="POST">

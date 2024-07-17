@@ -338,6 +338,81 @@ body{
     }
 }
 
+// ==========================================================================
+// FICHE ARTISTE
+// ==========================================================================
+
+.fiche-artiste{
+    background-color: $main-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5rem 0;
+    position: relative;
+    overflow: hidden;
+    &-form1{
+        top: 25rem;
+        left: -5rem;
+        animation: 3s linear infinite alternate formMoveFiche1;
+    }
+    &-form2{
+        bottom: 12rem;
+        left:-8rem;
+        animation: 2s linear infinite alternate formMoveFiche2;
+    }
+    &-form3{
+        bottom: -1rem;
+        right: 1rem;
+        animation: 5s linear infinite alternate formMoveFiche3;
+    }
+    h1{
+        color: $secondary-color;
+        text-shadow:
+            -1.5px -1.5px 0 $black,  
+            1.5px -1.5px 0 $black,
+            -1.5px  1.5px 0 $black,
+            1.5px  1.5px 0 $black;
+    }
+    &-image{
+        position: relative;
+        z-index: 5;
+        margin: 3.5rem 0;
+        width: 35rem;
+        height: 18rem;
+        overflow: hidden;
+        border: $secondary-color 2px solid;
+        border-radius: 2rem;
+        box-shadow: -8px 8px 6px $opacity-black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-top{
+            align-items: flex-start;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    p{
+        position: relative;
+        z-index: 5;
+        margin: 0 1rem 3.5rem 1rem;
+        padding: 3rem 1.5rem;
+        border: 2px solid $black;
+        border-radius: 2rem;
+        box-shadow: -8px 8px 6px $opacity-black;
+        background-color: $secondary-color;
+        font-weight: 800;
+    }
+    iframe{
+        position: relative;
+        z-index: 5;
+        width: 95%;
+        box-shadow: -8px 8px 6px $opacity-black;
+    }
+}
+
 .page-footer{
     background-color: $black;
     display: flex;

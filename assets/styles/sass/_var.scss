@@ -1,3 +1,16 @@
 $main-color : #4F09B9;
 $secondary-color : #FFE500;
 $black : #020403;
+$opacity-black : rgba(2, 4, 3, 0.25);
+
+@mixin yellow-button(){
+    font-size: 1.4rem;
+    color: $black;
+    font-weight: 800;
+    font-family: "Roboto Slab", serif;
+    border-radius: 1.5rem;
+    background-color: $secondary-color;
+    padding: 1.5rem 4rem;
+    border: solid $black .2rem;
+    box-shadow: -5px 5px 4px $opacity-black;
+}

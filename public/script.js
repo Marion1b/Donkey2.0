@@ -3,6 +3,7 @@ import { Tickets } from "./Tickets.js";
 document.addEventListener('DOMContentLoaded', function(){
     const buyTickets = document.querySelector(".buy-tickets");
     const burgerMenu = document.querySelector(".burger-menu");
+    const main = document.querySelector('main');
     // Check if buy tickets form is not empty
     if(buyTickets){
         const select = document.querySelectorAll(".buy-tickets select");
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function(){
             headerNav.classList.toggle("hide");
             burgerMenu.classList.toggle("open");
             burgerMenu.classList.toggle("close");
+            main.classList.toggle('hide');
         })
     }
 })

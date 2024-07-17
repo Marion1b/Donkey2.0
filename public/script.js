@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(burgerMenu){
         const headerNav = document.querySelector(".header-nav");
         burgerMenu.addEventListener('click', ()=>{
-            headerNav.classList.toggle("hide");
+            headerNav.classList.toggle("header-nav-hide");
             burgerMenu.classList.toggle("open");
             burgerMenu.classList.toggle("close");
             main.classList.toggle('hide');

@@ -133,7 +133,7 @@ body .bold {
 }
 body .form {
   position: absolute;
-  z-index: -1;
+  z-index: 5;
 }
 body .hide {
   display: none;
@@ -185,13 +185,13 @@ body .hide {
   transition: all 400ms ease-in-out;
 }
 .page-header .header-nav {
-  position: absolute;
-  z-index: 100;
   top: 92px;
   height: 90vh;
   width: 100%;
   background-color: #FFE500;
   overflow: hidden;
+  position: absolute;
+  z-index: 200;
 }
 .page-header .header-nav ul {
   position: relative;
@@ -202,6 +202,10 @@ body .hide {
   font-weight: 800;
   font-size: 1.8rem;
   line-height: 5rem;
+}
+.page-header .header-nav-hide {
+  z-index: -100;
+  display: none;
 }
 
 .home-display-names {
@@ -309,7 +313,6 @@ body .hide {
   background-color: #4F09B9;
   padding: 5rem 0;
   position: relative;
-  z-index: -5;
 }
 .programmation-page-form2a {
   left: -8rem;
@@ -349,6 +352,14 @@ body .hide {
   color: #FFE500;
   font-weight: 800;
   text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+}
+.programmation-page ul a {
+  position: relative;
+  z-index: 100;
+}
+.programmation-page article {
+  position: relative;
+  z-index: 100;
 }
 .programmation-page .programmation-filter-active {
   background-color: #FFE500;

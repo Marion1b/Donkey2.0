@@ -272,6 +272,10 @@ body .hide {
   animation: 5s linear infinite alternate formMoveHomeInfos3;
 }
 
+.page-header .hide {
+  display: none;
+}
+
 .page-footer {
   background-color: #020403;
   display: flex;

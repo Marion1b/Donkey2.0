@@ -13,7 +13,8 @@ class PageController extends AbstractController{
     }
 
     public function home():void{
-        $this->render("home.html.twig", []);
+        $artists = $this->am->findAll();
+        $this->render("home.html.twig", ["artists" => $artists]);
     }
 
     public function connexion():void{

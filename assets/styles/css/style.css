@@ -15,8 +15,50 @@
     right: 0;
   }
 }
+@keyframes formMoveHome1 {
+  from {
+    transform: rotate(-145deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-120deg) translate(5px, 5px);
+  }
+}
+@keyframes formMoveHome2 {
+  from {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(15deg) translate(-5px, -5px);
+  }
+}
+@keyframes formMoveHome3 {
+  from {
+    transform: rotate(-20deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+}
+@keyframes formMoveHomeInfos1 {
+  from {
+    transform: rotate(-80deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-55deg) translate(-5px, -3px);
+  }
+}
+@keyframes formMoveHomeInfos3 {
+  from {
+    transform: rotate(17deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(30deg) translate(-2px, -3px);
+  }
+}
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -28,8 +70,6 @@ body {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Roboto Slab", serif;
   color: #020403;
 }
@@ -44,6 +84,25 @@ body ul {
 }
 body h1 {
   font-family: "Fascinate Inline", system-ui;
+}
+body h2 {
+  font-size: 2.4rem;
+}
+body h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+body p {
+  font-size: 1.2rem;
+}
+body .bold {
+  font-weight: bold;
+}
+body .form {
+  position: absolute;
+}
+body .hide {
+  display: none;
 }
 
 .page-header {
@@ -93,6 +152,7 @@ body h1 {
 }
 .page-header .header-nav {
   position: absolute;
+  z-index: 100;
   top: 92px;
   height: 90vh;
   width: 100%;
@@ -109,8 +169,107 @@ body h1 {
   font-size: 1.8rem;
   line-height: 5rem;
 }
-.page-header .hide {
-  display: none;
+
+.home-display-names {
+  position: relative;
+  background-color: #FFE500;
+  margin: 0;
+  padding-bottom: 12rem;
+  padding-top: 3rem;
+  overflow: hidden;
+}
+.home-display-names p {
+  font-size: 2.4rem;
+  font-weight: 800;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+.home-display-names-form1 {
+  bottom: 1rem;
+  right: 2rem;
+  transform: rotate(-145deg);
+  animation: 2.5s linear infinite alternate formMoveHome1;
+}
+.home-display-names-form2 {
+  top: -2rem;
+  right: -7rem;
+  animation: 4s linear infinite alternate formMoveHome2;
+}
+.home-display-names-form3 {
+  left: 3rem;
+  bottom: 2.5rem;
+  transform: rotate(20deg);
+  animation: 3s linear infinite alternate formMoveHome3;
+}
+
+.home-ticketing {
+  background-color: #4F09B9;
+  text-align: center;
+  padding: 10rem 0;
+  color: #FFE500;
+}
+.home-ticketing h2 {
+  font-weight: 800;
+  font-size: 2.4rem;
+}
+.home-ticketing p {
+  font-weight: 800;
+  margin: 2rem 0px 3rem 0;
+}
+.home-ticketing button {
+  font-size: 1.4rem;
+  color: #020403;
+  font-weight: 800;
+  font-family: "Roboto Slab", serif;
+  border-radius: 1.5rem;
+  background-color: #FFE500;
+  padding: 1.5rem 4rem;
+  border: solid #020403 0.2rem;
+  box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
+}
+
+.home-infos {
+  background-color: #FFE500;
+  position: relative;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: -5;
+}
+.home-infos > article {
+  background-color: #FFE500;
+  z-index: 5;
+  width: 34rem;
+  border: 0.2rem solid #020403;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 5px 5px 15px #d9c300 -5px -5px 15px #d9c300;
+}
+.home-infos > article p, .home-infos > article i {
+  margin: 1rem 0;
+}
+.home-infos > article i {
+  font-size: 3rem;
+}
+.home-infos-medias-links {
+  display: flex;
+  justify-content: space-between;
+}
+.home-infos-form1 {
+  bottom: -3rem;
+  left: -0.2rem;
+  z-index: -1;
+  animation: 3s linear infinite alternate formMoveHomeInfos1;
+}
+.home-infos-form3 {
+  top: 0.5rem;
+  right: 0.2rem;
+  z-index: -1;
+  animation: 5s linear infinite alternate formMoveHomeInfos3;
 }
 
 .page-footer {

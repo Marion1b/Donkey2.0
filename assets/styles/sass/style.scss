@@ -47,6 +47,7 @@ body{
     }
     .form{
         position: absolute; 
+        z-index: -1;
     }
     .hide{
         display: none;
@@ -212,13 +213,11 @@ body{
     &-form1{
         bottom: -3rem;
         left: -.2rem;
-        z-index: -1;
         animation: 3s linear infinite alternate formMoveHomeInfos1;
     }
     &-form3{
         top: .5rem;
         right: .2rem;
-        z-index: -1;
         animation: 5s linear infinite alternate formMoveHomeInfos3;
     }
 }
@@ -228,8 +227,31 @@ body{
 // ==========================================================================
 
 .programmation-page{
+    overflow: hidden;
     background-color: $main-color;
     padding: 5rem 0;
+    position: relative;
+    z-index: -5;
+    &-form2a{
+        left: -8rem;
+        top: 15rem;
+        animation: 3s linear infinite alternate formMoveProg2a;
+    }   
+    &-form1{
+        right: -3rem;
+        top: 80rem;
+        animation: 3s linear infinite alternate formMoveProg1;
+    }
+    &-form2b{
+        left: -5rem;
+        bottom: 100rem;
+        animation: 2s linear infinite alternate formMoveProg2b;
+    }
+    &-form3{
+        right: -1rem;
+        bottom: -2rem;
+        animation: 5s linear infinite alternate formMoveProg3;
+    }
     h1{
         color: $secondary-color;
         text-shadow:
@@ -263,6 +285,7 @@ body{
         text-shadow: none;
     }
     .artist-card{
+        z-index: 5;
         background-color: $secondary-color;
         border: 2px solid $black;
         box-shadow: -8px 8px 8px $opacity-black;

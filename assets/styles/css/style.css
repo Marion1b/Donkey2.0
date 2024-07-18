@@ -174,7 +174,6 @@ body ul {
 body h1 {
   font-family: "Fascinate Inline", system-ui;
   text-align: center;
-  font-weight: 400;
 }
 body h2 {
   font-size: 2.4rem;
@@ -182,9 +181,6 @@ body h2 {
 body h3 {
   font-size: 1.4rem;
   font-weight: 800;
-}
-body h4 {
-  font-size: 1.2rem;
 }
 body p {
   font-size: 1.2rem;

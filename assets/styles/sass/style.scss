@@ -6,6 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 html{
@@ -31,6 +32,7 @@ body{
     h1{
         font-family: "Fascinate Inline", system-ui;
         text-align: center;
+        font-weight: 400;
     }
     h2{
         font-size: 2.4rem;
@@ -38,6 +40,9 @@ body{
     h3{
         font-size: 1.4rem;
         font-weight: 800;
+    }
+    h4{
+        font-size: 1.2rem;
     }
     p{
         font-size: 1.2rem;
@@ -194,15 +199,7 @@ body{
     overflow: hidden;
     z-index: -5;
     & > article{
-        background-color: $secondary-color;
-        z-index: 5;
-        width: 34rem;
-        border: .2rem solid $black;
-        border-radius: 1.5rem;
-        padding: 2rem;
-        margin: 1rem 0;
-        box-shadow: 5px 5px 15px #d9c300
-                    -5px -5px 15px #d9c300;
+        @include infos-section();
         p, i{
             margin: 1rem 0;
         }
@@ -412,6 +409,67 @@ body{
         box-shadow: -8px 8px 6px $opacity-black;
     }
 }
+
+// ==========================================================================
+// INFORMATIONS PRATIQUES
+// ==========================================================================
+
+.infos{
+    background-color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5rem 0;
+    position: relative;
+    overflow: hidden;
+    ul{
+        padding-left: 1rem;
+        list-style: disc;
+        font-style: italic;
+    }
+    &-sommaire, section{
+        @include infos-section();
+        h2,h3{
+            margin: 1.5rem 0;
+        }
+        h4{
+        margin: 1rem 0 .5rem 0;
+        }
+    }
+    &-sommaire{
+        margin: 3.5rem 0;
+    }
+    section a{
+        color: $main-color;
+        text-decoration: underline;
+    }
+    &-form2a{
+        top: 7rem;
+        left: -5rem;
+        animation: 5s linear infinite alternate formMoveInfos2a;
+    }
+    &-form3{
+        top: 50rem;
+        right: -1rem;
+        animation: 3s linear infinite alternate formMoveInfos3;
+    }
+    &-form2b{
+        top: 120rem;
+        left: -4rem;
+        animation: 6s linear infinite alternate formMoveInfos2b;
+    }
+    &-form1{
+        bottom: 1rem;
+        right: 0rem;
+        animation: 2s linear infinite alternate formMoveInfos1;
+    }
+}
+
+// ==========================================================================
+// FOOTER
+// ==========================================================================
+
 
 .page-footer{
     background-color: $black;

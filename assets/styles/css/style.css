@@ -111,6 +111,38 @@
     transform: rotate(50deg) translate(5px, -5px);
   }
 }
+@keyframes formMoveInfos2a {
+  from {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-20deg) translate(2px, 3px);
+  }
+}
+@keyframes formMoveInfos3 {
+  from {
+    transform: rotate(25deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(55deg) translate(3px, -4px);
+  }
+}
+@keyframes formMoveInfos2b {
+  from {
+    transform: rotate(27deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(56deg) translate(-2px, 8px);
+  }
+}
+@keyframes formMoveInfos1 {
+  from {
+    transform: rotate(150deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(120deg) translate(2px, 2px);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;

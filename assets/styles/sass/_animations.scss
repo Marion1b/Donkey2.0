@@ -164,3 +164,35 @@
         transform: rotate(-150deg)translate(2px,5px);
     }
 }
+
+@keyframes formMoveBuy1a{
+    from{
+        transform: rotate(-35deg)translate(0px,0px);
+    }to{
+        transform: rotate(-55deg)translate(2px,4px);
+    }
+}
+
+@keyframes formMoveBuy2{
+    from{
+        transform: rotate(20deg)translate(0px,0px);
+    }to{
+        transform: rotate(55deg)translate(-3px,4px);
+    }
+}
+
+@keyframes formMoveBuy3{
+    from{
+        transform: rotate(12deg)translate(0px,0px);
+    }to{
+        transform: rotate(47deg)translate(-5px,5px);
+    }
+}
+
+@keyframes formMoveBuy1b{
+    from{
+        transform: rotate(-35deg)translate(0px,0px);
+    }to{
+        transform: rotate(-67deg)translate(-2px,-4px);
+    }
+}

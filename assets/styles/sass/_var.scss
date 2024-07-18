@@ -14,3 +14,15 @@ $opacity-black : rgba(2, 4, 3, 0.25);
     border: solid $black .2rem;
     box-shadow: -5px 5px 4px $opacity-black;
 }
+
+@mixin infos-section{
+    background-color: $secondary-color;
+    z-index: 5;
+    width: 34rem;
+    border: .2rem solid $black;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin: 1rem 0;
+    box-shadow: 5px 5px 15px #d9c300
+                -5px -5px 15px #d9c300;
+}

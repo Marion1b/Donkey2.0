@@ -115,6 +115,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -141,6 +142,7 @@ body ul {
 body h1 {
   font-family: "Fascinate Inline", system-ui;
   text-align: center;
+  font-weight: 400;
 }
 body h2 {
   font-size: 2.4rem;
@@ -148,6 +150,9 @@ body h2 {
 body h3 {
   font-size: 1.4rem;
   font-weight: 800;
+}
+body h4 {
+  font-size: 1.2rem;
 }
 body p {
   font-size: 1.2rem;
@@ -497,6 +502,65 @@ body .hide {
   z-index: 5;
   width: 95%;
   box-shadow: -8px 8px 6px rgba(2, 4, 3, 0.25);
+}
+
+.infos {
+  background-color: #FFE500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.infos ul {
+  padding-left: 1rem;
+  list-style: disc;
+  font-style: italic;
+}
+.infos-sommaire, .infos section {
+  background-color: #FFE500;
+  z-index: 5;
+  width: 34rem;
+  border: 0.2rem solid #020403;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 5px 5px 15px #d9c300 -5px -5px 15px #d9c300;
+}
+.infos-sommaire h2, .infos-sommaire h3, .infos section h2, .infos section h3 {
+  margin: 1.5rem 0;
+}
+.infos-sommaire h4, .infos section h4 {
+  margin: 1rem 0 0.5rem 0;
+}
+.infos-sommaire {
+  margin: 3.5rem 0;
+}
+.infos section a {
+  color: #4F09B9;
+  text-decoration: underline;
+}
+.infos-form2a {
+  top: 7rem;
+  left: -5rem;
+  animation: 5s linear infinite alternate formMoveInfos2a;
+}
+.infos-form3 {
+  top: 50rem;
+  right: -1rem;
+  animation: 3s linear infinite alternate formMoveInfos3;
+}
+.infos-form2b {
+  top: 120rem;
+  left: -4rem;
+  animation: 6s linear infinite alternate formMoveInfos2b;
+}
+.infos-form1 {
+  bottom: 1rem;
+  right: 0rem;
+  animation: 2s linear infinite alternate formMoveInfos1;
 }
 
 .page-footer {

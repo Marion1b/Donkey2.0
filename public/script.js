@@ -16,10 +16,14 @@ document.addEventListener('DOMContentLoaded', function(){
         const tickets = new Tickets(select);
         button.disabled = true;
         let ticketsTotal = false;
+        if(button.disabled === true){
+            button.style.backgroundColor = "#e0e0e0";
+            button.style.color = "#3d3d3d";
+        }
 
         select.forEach((element) =>{
             element.addEventListener('change', (e) =>{
-                par.innerText = tickets.total() + "€";
+                par.innerText = "Total : " + tickets.total() + "€";
                 hidePrice.value = tickets.total();
                 if(tickets.total()>1){
                     ticketsTotal = true;
@@ -30,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function(){
         buyTickets.addEventListener('input', ()=>{
             if(ticketsTotal === true && lastName.value && firstName.value && email.value){
                 button.disabled = false;
+                button.style.backgroundColor = "#FFE500";
+                button.style.color = "#020403";
+            }
+            if(button.disabled === true){
+                button.style.backgroundColor = "#e0e0e0";
+                button.style.color = "#3d3d3d";
             }
         })
     }

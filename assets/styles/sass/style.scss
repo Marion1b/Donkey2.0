@@ -428,7 +428,10 @@ body{
     }
     &-sommaire, section{
         @include infos-section();
-        h2,h3{
+        h2{
+            margin-bottom: 1.5rem;
+        }
+        h3{
             margin: 1.5rem 0;
         }
         h4{

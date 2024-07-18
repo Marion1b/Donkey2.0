@@ -585,7 +585,10 @@ body .hide {
   margin: 1rem 0;
   box-shadow: 5px 5px 15px #d9c300 -5px -5px 15px #d9c300;
 }
-.infos-sommaire h2, .infos-sommaire h3, .infos section h2, .infos section h3 {
+.infos-sommaire h2, .infos section h2 {
+  margin-bottom: 1.5rem;
+}
+.infos-sommaire h3, .infos section h3 {
   margin: 1.5rem 0;
 }
 .infos-sommaire h4, .infos section h4 {

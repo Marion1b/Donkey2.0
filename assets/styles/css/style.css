@@ -174,6 +174,7 @@ body ul {
 body h1 {
   font-family: "Fascinate Inline", system-ui;
   text-align: center;
+  font-weight: 400;
 }
 body h2 {
   font-size: 2.4rem;
@@ -181,6 +182,9 @@ body h2 {
 body h3 {
   font-size: 1.4rem;
   font-weight: 800;
+}
+body h4 {
+  font-size: 1.2rem;
 }
 body p {
   font-size: 1.2rem;
@@ -589,6 +593,77 @@ body .hide {
   bottom: 1rem;
   right: 0rem;
   animation: 2s linear infinite alternate formMoveInfos1;
+}
+
+.ticketing {
+  background-color: #FFE500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.ticketing .ticket-card {
+  text-align: center;
+  padding: 3rem;
+  border-radius: 2rem;
+  margin: 5rem 0 3rem 0;
+  position: relative;
+  background-color: #4F09B9;
+  color: #FFE500;
+  z-index: 5;
+  border: 0.2rem solid #020403;
+  box-shadow: -8px 8px 6px rgba(2, 4, 3, 0.25);
+}
+.ticketing .ticket-card-tarif {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+}
+.ticketing .ticket-card-tarif .ticket-price {
+  text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+  font-size: 2rem;
+}
+.ticketing .ticket-card-tarif-last {
+  margin-top: 5rem;
+}
+.ticketing .ticket-card p {
+  font-size: 1.6rem;
+}
+.ticketing .ticket-card h2 {
+  text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+}
+.ticketing .ticket-card h3 {
+  margin: 1rem 0 4rem 0;
+}
+.ticketing .ticket-card button {
+  font-size: 1.4rem;
+  color: #020403;
+  font-weight: 800;
+  font-family: "Roboto Slab", serif;
+  border-radius: 1.5rem;
+  background-color: #FFE500;
+  padding: 1.5rem 4rem;
+  border: solid #020403 0.2rem;
+  box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
+  margin-top: 2rem;
+}
+.ticketing-form3 {
+  top: 25rem;
+  right: -5rem;
+  animation: 5s linear infinite alternate formMoveTicket3;
+}
+.ticketing-form1 {
+  top: 75rem;
+  left: -1rem;
+  animation: 3s linear infinite alternate formMoveTicket1;
+}
+.ticketing-form2 {
+  bottom: -3rem;
+  right: -2rem;
+  animation: 5s linear infinite alternate formMoveTicket2;
 }
 
 .page-footer {

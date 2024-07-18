@@ -136,8 +136,6 @@ body{
 // HOME
 // ==========================================================================
 
-
-
 .home-display-names{
     position: relative;
     background-color: $secondary-color;
@@ -463,6 +461,81 @@ body{
         bottom: 1rem;
         right: 0rem;
         animation: 2s linear infinite alternate formMoveInfos1;
+    }
+}
+
+// ==========================================================================
+// BILLETTERIE
+// ==========================================================================
+
+.ticketing{
+    background-color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5rem 0;
+    position: relative;
+    overflow: hidden;
+    .ticket-card{
+        text-align: center;
+        padding: 3rem;
+        border-radius: 2rem;
+        margin: 5rem 0 3rem 0;
+        position: relative;
+        background-color: $main-color;
+        color: $secondary-color;
+        z-index: 5;
+        border: .2rem solid $black;
+        box-shadow: -8px 8px 6px $opacity-black;
+        &-tarif{
+            display: flex;
+            justify-content: space-between;
+            font-weight: 800;
+            .ticket-price{
+                text-shadow:
+                -1.5px -1.5px 0 $black,  
+                1.5px -1.5px 0 $black,
+                -1.5px  1.5px 0 $black,
+                1.5px  1.5px 0 $black;
+                font-size: 2rem;
+            }
+            &-last{
+                margin-top: 5rem;
+            }
+        }
+        p{
+            font-size: 1.6rem;
+        }
+        h2{
+            text-shadow:
+            -1.5px -1.5px 0 $black,  
+            1.5px -1.5px 0 $black,
+            -1.5px  1.5px 0 $black,
+            1.5px  1.5px 0 $black;
+        }
+        h3{
+            margin: 1rem 0 4rem 0;
+        }
+        button{
+            @include yellow-button();
+            margin-top: 2rem;
+        }
+    }
+    &-form3{
+        top: 25rem;
+        right: -5rem;
+        animation: 5s linear infinite alternate formMoveTicket3;
+    }
+    &-form1{
+        top: 75rem;
+        left: -1rem;
+        animation: 3s linear infinite alternate formMoveTicket1;
+    }
+    &-form2{
+        bottom: -3rem;
+        right: -2rem;
+        animation: 5s linear infinite alternate formMoveTicket2;
     }
 }
 

@@ -15,6 +15,23 @@ $opacity-black : rgba(2, 4, 3, 0.25);
     box-shadow: -5px 5px 4px $opacity-black;
 }
 
+@mixin purple-button(){
+    font-size: 1.4rem;
+    border: 2px solid $black;
+    box-shadow: -5px 5px 4px $opacity-black;
+    border-radius: 1.5rem;
+    background-color: $main-color;
+    color: $secondary-color;
+    font-family: 'Roboto slab', serif;
+    font-weight: 800;
+    text-shadow:
+    -1px -1px 0 $black,  
+    1px -1px 0 $black,
+    -1px  1px 0 $black,
+    1px  1px 0 $black;
+    margin:2rem 0;
+}
+
 @mixin infos-section{
     background-color: $secondary-color;
     z-index: 5;
@@ -25,4 +42,60 @@ $opacity-black : rgba(2, 4, 3, 0.25);
     margin: 1rem 0;
     box-shadow: 5px 5px 15px #d9c300
                 -5px -5px 15px #d9c300;
+}
+
+@mixin artist-card{
+    z-index: 5;
+    background-color: $secondary-color;
+    border: 2px solid $black;
+    box-shadow: -8px 8px 8px $opacity-black;
+    margin: 2rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    &-image{
+        width: 30rem;
+        height: 18rem;
+        overflow: hidden;
+        border-radius: 2rem;
+        border: 1px solid $black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-top{
+            align-items: flex-start;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &-name{
+        font-size: 2.4rem;
+        font-weight: 800;
+        margin: 3rem 0;
+    }
+    &-day{
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+    button{
+        border-radius: 1rem;
+        padding: 1rem 3rem;
+        background-color: $main-color;
+        color: $secondary-color;
+        border: 2px solid $black;
+        font-weight: 800;
+        box-shadow: -2px 2px 2px $opacity-black;
+        text-shadow:
+            -.5px -.5px 0 $black,  
+            .5px -.5px 0 $black,
+            -.5px  .5px 0 $black,
+            .5px  .5px 0 $black;
+    }
 }

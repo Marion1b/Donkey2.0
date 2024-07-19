@@ -223,6 +223,54 @@
     transform: rotate(10deg) translate(-2px, 3px);
   }
 }
+@keyframes formMovePersoTickets2 {
+  from {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(15deg) translate(5px, 7px);
+  }
+}
+@keyframes formMovePersoTickets1 {
+  from {
+    transform: rotate(-150deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-175deg) translate(2px, 5px);
+  }
+}
+@keyframes formMovePersoArtists3a {
+  from {
+    transform: rotate(-100deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-85deg) translate(3px, -5px);
+  }
+}
+@keyframes formMovePersoArtists2 {
+  from {
+    transform: rotate(-177deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-143deg) translate(2px, -3px);
+  }
+}
+@keyframes formMovePersoArtists1 {
+  from {
+    transform: rotate(-55deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-25deg) translate(2px, -6px);
+  }
+}
+@keyframes formMovePersoArtists3b {
+  from {
+    transform: rotate(-100deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-76deg) translate(3px, 4px);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -255,6 +303,7 @@ body h1 {
   font-family: "Fascinate Inline", system-ui;
   text-align: center;
   font-weight: 400;
+  font-size: 3.2rem;
 }
 body h2 {
   font-size: 2.4rem;
@@ -877,7 +926,8 @@ body .hide {
 }
 .connexion form button, .inscription form button {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
+  font-size: 1.4rem;
   border: 2px solid #020403;
   box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
   border-radius: 1.5rem;
@@ -906,6 +956,139 @@ body .hide {
   bottom: 12rem;
   left: -5rem;
   animation: 3s linear infinite alternate formMoveInscritpion2;
+}
+
+.espace-perso {
+  background-color: #FFE500;
+  position: relative;
+  overflow: hidden;
+}
+.espace-perso-tickets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+.espace-perso-tickets button {
+  font-size: 1.4rem;
+  border: 2px solid #020403;
+  box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
+  border-radius: 1.5rem;
+  background-color: #4F09B9;
+  color: #FFE500;
+  font-family: "Roboto slab", serif;
+  font-weight: 800;
+  text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+  margin: 2rem 0;
+  padding: 1.5rem 6rem;
+}
+.espace-perso-tickets-form2 {
+  top: 5rem;
+  left: -8rem;
+  animation: 3s linear infinite alternate formMovePersoTickets2;
+}
+.espace-perso-tickets-form1 {
+  top: 8rem;
+  right: -5rem;
+  animation: 5s linear infinite alternate formMovePersoTickets1;
+}
+.espace-perso .planning-button {
+  font-size: 1.4rem;
+  color: #020403;
+  font-weight: 800;
+  font-family: "Roboto Slab", serif;
+  border-radius: 1.5rem;
+  background-color: #FFE500;
+  padding: 1.5rem 4rem;
+  border: solid #020403 0.2rem;
+  box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
+  margin: 3rem 0;
+}
+.espace-perso-artists {
+  background-color: #4F09B9;
+  color: #FFE500;
+  width: 100%;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.espace-perso-artists h1 {
+  text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+}
+.espace-perso-artists .artist-card {
+  z-index: 5;
+  background-color: #FFE500;
+  border: 2px solid #020403;
+  box-shadow: -8px 8px 8px rgba(2, 4, 3, 0.25);
+  margin: 2rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+.espace-perso-artists .artist-card-image {
+  width: 30rem;
+  height: 18rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid #020403;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.espace-perso-artists .artist-card-image-top {
+  align-items: flex-start;
+}
+.espace-perso-artists .artist-card-image img {
+  width: 100%;
+  height: auto;
+}
+.espace-perso-artists .artist-card-name {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 3rem 0;
+}
+.espace-perso-artists .artist-card-day {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.espace-perso-artists .artist-card button {
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  background-color: #4F09B9;
+  color: #FFE500;
+  border: 2px solid #020403;
+  font-weight: 800;
+  box-shadow: -2px 2px 2px rgba(2, 4, 3, 0.25);
+  text-shadow: -0.5px -0.5px 0 #020403, 0.5px -0.5px 0 #020403, -0.5px 0.5px 0 #020403, 0.5px 0.5px 0 #020403;
+}
+.espace-perso-artists-form3a {
+  top: 15rem;
+  right: -5rem;
+  animation: 4s linear infinite alternate formMovePersoArtists3a;
+}
+.espace-perso-artists-form2 {
+  top: 100rem;
+  left: -5rem;
+  animation: 2s linear infinite alternate formMovePersoArtists2;
+}
+.espace-perso-artists-form1 {
+  bottom: 40rem;
+  right: 1rem;
+  animation: 5s linear infinite alternate formMovePersoArtists1;
+}
+.espace-perso-artists-form3b {
+  bottom: -2rem;
+  left: 1rem;
+  animation: 4s linear infinite alternate formMovePersoArtists3b;
 }
 
 .page-footer {

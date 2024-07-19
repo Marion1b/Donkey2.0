@@ -33,6 +33,7 @@ body{
         font-family: "Fascinate Inline", system-ui;
         text-align: center;
         font-weight: 400;
+        font-size: 3.2rem;
     }
     h2{
         font-size: 2.4rem;
@@ -688,20 +689,8 @@ body{
         }
         button{
             width: 100%;
-            padding: 1rem 0;
-            border: 2px solid $black;
-            box-shadow: -5px 5px 4px $opacity-black;
-            border-radius: 1.5rem;
-            background-color: $main-color;
-            color: $secondary-color;
-            font-family: 'Roboto slab', serif;
-            font-weight: 800;
-            text-shadow:
-            -1px -1px 0 $black,  
-            1px -1px 0 $black,
-            -1px  1px 0 $black,
-            1px  1px 0 $black;
-            margin:2rem 0;
+            padding: 1.5rem 0;
+            @include purple-button();
         }
         a{
             color: $main-color;
@@ -723,6 +712,84 @@ body{
         bottom: 12rem;
         left: -5rem;
         animation: 3s linear infinite alternate formMoveInscritpion2;
+    }
+
+}
+
+
+// ==========================================================================
+// ESPACE PERSO
+// ==========================================================================
+
+.espace-perso{
+    background-color: $secondary-color;
+    position: relative;
+    overflow: hidden;
+    &-tickets{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 0;
+        button{
+            @include purple-button();
+            padding: 1.5rem 6rem;
+        }
+        &-form2{
+            top: 5rem;
+            left: -8rem;
+            animation: 3s linear infinite alternate formMovePersoTickets2;
+        }
+        &-form1{
+            top: 8rem;
+            right: -5rem;
+            animation: 5s linear infinite alternate formMovePersoTickets1;
+        }
+    }
+    .planning-button{
+        @include yellow-button();
+        margin: 3rem 0;
+    }
+    &-artists{
+        background-color: $main-color;
+        color: $secondary-color;
+        width: 100%;
+        padding: 5rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        h1{
+            text-shadow:
+            -1px -1px 0 $black,  
+            1px -1px 0 $black,
+            -1px  1px 0 $black,
+            1px  1px 0 $black;
+        }
+        .artist-card{
+            @include artist-card();
+        }
+        &-form3a{
+            top: 15rem;
+            right: -5rem;
+            animation: 4s linear infinite alternate formMovePersoArtists3a;
+        }
+        &-form2{
+            top: 100rem;
+            left: -5rem;
+            animation: 2s linear infinite alternate formMovePersoArtists2;
+        }
+        &-form1{
+            bottom: 40rem;
+            right: 1rem;
+            animation: 5s linear infinite alternate formMovePersoArtists1;
+        }
+        &-form3b{
+            bottom: -2rem;
+            left: 1rem;
+            animation: 4s linear infinite alternate formMovePersoArtists3b;
+        }
     }
 
 }

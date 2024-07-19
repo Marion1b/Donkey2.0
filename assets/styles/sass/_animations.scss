@@ -220,3 +220,51 @@
         transform: rotate(10deg)translate(-2px,3px);
     }
 }
+
+@keyframes formMovePersoTickets2{
+    from{
+        transform: rotate(0deg)translate(0px,0px);
+    }to{
+        transform: rotate(15deg)translate(5px,7px);
+    }
+}
+
+@keyframes formMovePersoTickets1{
+    from{
+        transform: rotate(-150deg)translate(0px,0px);
+    }to{
+        transform: rotate(-175deg)translate(2px, 5px);
+    }
+}
+
+@keyframes formMovePersoArtists3a{
+    from{
+        transform: rotate(-100deg)translate(0px,0px);
+    }to{
+        transform: rotate(-85deg)translate(3px,-5px);
+    }
+}
+
+@keyframes formMovePersoArtists2{
+    from{
+        transform: rotate(-177deg)translate(0px,0px);
+    }to{
+        transform: rotate(-143deg)translate(2px,-3px);
+    }
+}
+
+@keyframes formMovePersoArtists1{
+    from{
+        transform: rotate(-55deg)translate(0px,0px);
+    }to{
+        transform: rotate(-25deg)translate(2px,-6px);
+    }
+}
+
+@keyframes formMovePersoArtists3b{
+    from{
+        transform: rotate(-100deg)translate(0px,0px);
+    }to{
+        transform: rotate(-76deg)translate(3px,4px);
+    }
+}

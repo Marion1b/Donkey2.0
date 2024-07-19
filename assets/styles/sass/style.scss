@@ -635,6 +635,92 @@ body{
 }
 
 // ==========================================================================
+// AUTHENTIFICATION
+// ==========================================================================
+
+// Connexion et inscription
+
+.connexion, .inscription{
+    background-color: $main-color;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:15rem 0;
+    position: relative;
+    overflow: hidden;
+    h1{
+        text-shadow:
+            -1.5px -1.5px 0 $black,  
+            1.5px -1.5px 0 $black,
+            -1.5px  1.5px 0 $black,
+            1.5px  1.5px 0 $black;
+    }
+    form{
+        margin-top: 2.5rem;
+        font-size: 1.2rem;
+        background-color: $secondary-color;
+        color: $black;
+        padding: 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border-radius: 2rem;
+        border: 2px solid $black;
+        box-shadow: -8px 8px 8px $opacity-black;
+        input{
+            margin: 1rem 0 2rem 0;
+            border: 2px solid $black;
+            box-shadow: -4px 4px 4px $opacity-black;
+            border-radius: 1rem;
+            padding: .5rem;
+            width: 100%;
+            background-color: $secondary-color;
+            font-size: 1.2rem;
+            &:focus{
+                outline: none;
+                border: 3px solid $black;
+            }
+        }
+        button{
+            width: 100%;
+            padding: 1rem 0;
+            border: 2px solid $black;
+            box-shadow: -5px 5px 4px $opacity-black;
+            border-radius: 1.5rem;
+            background-color: $main-color;
+            color: $secondary-color;
+            font-family: 'Roboto slab', serif;
+            font-weight: 800;
+            text-shadow:
+            -1px -1px 0 $black,  
+            1px -1px 0 $black,
+            -1px  1px 0 $black,
+            1px  1px 0 $black;
+            margin:2rem 0;
+        }
+        a{
+            color: $main-color;
+            text-decoration: underline;
+        }
+    }
+
+    &-form1{
+        top: 2rem;
+        left: -4rem;
+        animation: 3s linear infinite alternate formMoveConnexion1;
+    }
+    &-form3{
+        bottom: -1rem;
+        right: -2rem;
+        animation: 5s linear infinite alternate formMoveConnexion3;
+    }
+
+}
+
+// ==========================================================================
 // FOOTER
 // ==========================================================================
 

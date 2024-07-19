@@ -44,6 +44,21 @@ $opacity-black : rgba(2, 4, 3, 0.25);
                 -5px -5px 15px #d9c300;
 }
 
+@mixin add-button{
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    background-color: $main-color;
+    color: $secondary-color;
+    border: 2px solid $black;
+    font-weight: 800;
+    box-shadow: -2px 2px 2px $opacity-black;
+    text-shadow:
+        -.5px -.5px 0 $black,  
+        .5px -.5px 0 $black,
+        -.5px  .5px 0 $black,
+        .5px  .5px 0 $black;
+}
+
 @mixin artist-card{
     z-index: 5;
     background-color: $secondary-color;
@@ -85,17 +100,6 @@ $opacity-black : rgba(2, 4, 3, 0.25);
         margin-bottom: 1rem;
     }
     button{
-        border-radius: 1rem;
-        padding: 1rem 3rem;
-        background-color: $main-color;
-        color: $secondary-color;
-        border: 2px solid $black;
-        font-weight: 800;
-        box-shadow: -2px 2px 2px $opacity-black;
-        text-shadow:
-            -.5px -.5px 0 $black,  
-            .5px -.5px 0 $black,
-            -.5px  .5px 0 $black,
-            .5px  .5px 0 $black;
+        @include add-button();
     }
 }

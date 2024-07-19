@@ -19,6 +19,23 @@
 
 {{artist.getPlaylist()|raw}}
 
+{% if session.user is defined %}
+    <form action="index.php?route=liste-artiste" method="POST">
+        <input type="hidden" name="artist" id="artist" value="{{artist.getId()}}">
+        {% set isFavorite = false %}
+        {% for favoriteArtistId in favoriteArtistsId %}
+            {% if artist.getId() == favoriteArtistId.artist_id %}
+                {% set isFavorite = true %}
+            {% endif %}
+        {% endfor %}
+        {% if isFavorite %}
+            <button type="submit">Retirer de la liste</button>
+        {% else %}
+            <button type="submit">Ajouter à la liste</button>
+        {% endif %}
+    </form>
+{% endif %}
+
 </main>
 {% endblock %}
 

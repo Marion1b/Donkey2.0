@@ -5,33 +5,38 @@
 {% endblock %}
 
 {% block main %}
-<main class="home">
+<main class="inscription">
 
     <h1>Inscription</h1>
 
+    <div class="inscription-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
+    <div class="inscription-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
+    <div class="inscription-form2 form"><img src="./assets/img/forms/form2-yellow.png" alt=""></div>
+
     <form action="index.php?route=checkSignUp" method="post">
         <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-        <fieldset>
+    
             <label for="last_name">nom de famille :</label>
             <input type="text" name="last_name" id="last_name">
-        </fieldset>
-        <fieldset>
+        
+    
             <label for="first_name">prénom :</label>
             <input type="text" name="first_name" id="first_name">
-        </fieldset>
-        <fieldset>
+        
+    
             <label for="email">email :</label>
             <input type="email" name="email" id="email">
-        </fieldset>
-        <fieldset>
+        
+    
             <label for="password">mot de passe :</label>
             <input type="password" name="password" id="password">
-        </fieldset>
-        <fieldset>
+        
+    
             <label for="checkPassword">vérification du mot de passe :</label>
             <input type="password" name="checkPassword" id="checkPassword">
-        </fieldset>
+        
         <button type="submit">S'inscrire</button>
+        <p>Déjà un compte ? <a href="index.php?route=connexion">Se connecter </a></p>
     </form>
 
 </main>

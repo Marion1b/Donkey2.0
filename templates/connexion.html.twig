@@ -9,20 +9,18 @@
 
     <h1>Se connecter</h1>
 
+    <div class="connexion-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
+    <div class="connexion-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
+
     <form action="index.php?route=checkLogin" method="post">
         <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-        <fieldset>
-            <label for="email">email :</label>
-            <input type="email" name="email" id="email">
-        </fieldset>
-        <fieldset>
-            <label for="password">password :</label>
-            <input type="password" name="password" id="password">
-        </fieldset>
+        <label for="email">email :</label>
+        <input type="email" name="email" id="email">
+        <label for="password">password :</label>
+        <input type="password" name="password" id="password">
         <button type="submit">Se connecter</button>
-    </form>
-
     <p>Pas encore de compte ? <a href="index.php?route=inscription">S'inscrire </a></p>
+    </form>
 
 </main>
 {% endblock %}

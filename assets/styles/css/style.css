@@ -199,6 +199,30 @@
     transform: rotate(-67deg) translate(-2px, -4px);
   }
 }
+@keyframes formMoveConnexion1 {
+  from {
+    transform: rotate(-130deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-167deg) translate(-8px, 10px);
+  }
+}
+@keyframes formMoveConnexion3 {
+  from {
+    transform: rotate(-25deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-123deg) translate(-3px, 4px);
+  }
+}
+@keyframes formMoveInscritpion2 {
+  from {
+    transform: rotate(-10deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(10deg) translate(-2px, 3px);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -805,6 +829,83 @@ body .hide {
   bottom: 2rem;
   right: -3rem;
   animation: 5s linear infinite alternate formMoveBuy1b;
+}
+
+.connexion, .inscription {
+  background-color: #4F09B9;
+  color: #FFE500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.connexion h1, .inscription h1 {
+  text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+}
+.connexion form, .inscription form {
+  position: relative;
+  z-index: 100;
+  margin-top: 2.5rem;
+  font-size: 1.2rem;
+  background-color: #FFE500;
+  color: #020403;
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 2rem;
+  border: 2px solid #020403;
+  box-shadow: -8px 8px 8px rgba(2, 4, 3, 0.25);
+}
+.connexion form input, .inscription form input {
+  margin: 1rem 0 2rem 0;
+  border: 2px solid #020403;
+  box-shadow: -4px 4px 4px rgba(2, 4, 3, 0.25);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #FFE500;
+  font-size: 1.2rem;
+}
+.connexion form input:focus, .inscription form input:focus {
+  outline: none;
+  border: 3px solid #020403;
+}
+.connexion form button, .inscription form button {
+  width: 100%;
+  padding: 1rem 0;
+  border: 2px solid #020403;
+  box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
+  border-radius: 1.5rem;
+  background-color: #4F09B9;
+  color: #FFE500;
+  font-family: "Roboto slab", serif;
+  font-weight: 800;
+  text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+  margin: 2rem 0;
+}
+.connexion form a, .inscription form a {
+  color: #4F09B9;
+  text-decoration: underline;
+}
+.connexion-form1, .inscription-form1 {
+  top: 2rem;
+  left: -4rem;
+  animation: 3s linear infinite alternate formMoveConnexion1;
+}
+.connexion-form3, .inscription-form3 {
+  bottom: -1rem;
+  right: -2rem;
+  animation: 5s linear infinite alternate formMoveConnexion3;
+}
+.connexion-form2, .inscription-form2 {
+  bottom: 12rem;
+  left: -5rem;
+  animation: 3s linear infinite alternate formMoveInscritpion2;
 }
 
 .page-footer {

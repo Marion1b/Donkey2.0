@@ -196,3 +196,27 @@
         transform: rotate(-67deg)translate(-2px,-4px);
     }
 }
+
+@keyframes formMoveConnexion1{
+    from{
+        transform: rotate(-130deg)translate(0px,0px);
+    }to{
+        transform: rotate(-167deg)translate(-8px,10px);
+    }
+}
+
+@keyframes formMoveConnexion3{
+    from{
+        transform: rotate(-25deg)translate(0px,0px);
+    }to{
+        transform: rotate(-123deg)translate(-3px,4px);
+    }
+}
+
+@keyframes formMoveInscritpion2{
+    from{
+        transform: rotate(-10deg)translate(0px,0px);
+    }to{
+        transform: rotate(10deg)translate(-2px,3px);
+    }
+}

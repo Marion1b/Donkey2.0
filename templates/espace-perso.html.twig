@@ -7,27 +7,32 @@
 {% block main %}
 <main class="espace-perso">
 
-<h1>Bonjour {{ session.user.getFirstName()|escape }}</h1>
+<section class="espace-perso-tickets">
+    <h1>Bonjour {{ session.user.getFirstName()|escape }}</h1>
 
-<a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
+    <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
+</section>
 
-<h2>Mes artistes</h2>
-<a href="index.php?route=programmation-perso&&jour=vendredi">
-    <button class="planning-button">Ma programmation</button>
-</a>
 
-{% for artist in favoriteArtists %}
-<article class="artist-card">
-    <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
-        <img src="{{artist.getPicture()}}" alt="">
-        <p>{{artist.getName()}}</p>
-        <p>{{artist.getDayToString()}}</p>
+<section class="espace-perso-artists">
+    <h2>Mes artistes</h2>
+    <a href="index.php?route=programmation-perso&&jour=vendredi">
+        <button class="planning-button">Ma programmation</button>
     </a>
-<form action="index.php?route=liste-artiste-fav" method="POST">
-    <input type="hidden" name="artist" id="artist" value="{{artist.getId()}}">
-    <button type="submit">Retirer de la liste</button>
-</form>
-</article>
+
+    {% for artist in favoriteArtists %}
+    <article class="artist-card">
+        <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
+            <img src="{{artist.getPicture()}}" alt="">
+            <p>{{artist.getName()}}</p>
+            <p>{{artist.getDayToString()}}</p>
+        </a>
+        <form action="index.php?route=liste-artiste-fav" method="POST">
+            <input type="hidden" name="artist" id="artist" value="{{artist.getId()}}">
+            <button type="submit">Retirer de la liste</button>
+        </form>
+    </article>
+</section>
 {% endfor %}
 
 

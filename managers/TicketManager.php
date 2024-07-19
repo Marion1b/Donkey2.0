@@ -12,12 +12,12 @@ class TicketManager extends AbstractManager{
                 tickets(
                     content,
                     tarif,
-                    qr,
+                    pdf,
                     email
                 )VALUES(
                     :content,
                     :tarif,
-                    :qr,
+                    :pdf,
                     :email
                 )
             "
@@ -25,7 +25,7 @@ class TicketManager extends AbstractManager{
         $parameters = [
             "content" => $ticket->getContent(),
             "tarif" => $ticket->getTarif(),
-            "qr" => $ticket->getQr(),
+            "pdf" => $ticket->getPdf(),
             "email" => $ticket->getEmail()
         ];
         $query->execute($parameters);
@@ -64,7 +64,7 @@ class TicketManager extends AbstractManager{
             $tickets = $query->fetchAll(PDO::FETCH_ASSOC);
             $ticketsClass = [];
             foreach($tickets as $ticket){
-                $ticketObj = new Ticket($ticket["content"], $ticket["tarif"], $ticket["qr"], $ticket["email"]);
+                $ticketObj = new Ticket($ticket["content"], $ticket["tarif"], $ticket["pdf"], $ticket["email"]);
                 $ticketObj->setId($ticket["id"]);
                 $ticketsClass[] = $ticketObj;
             }
@@ -80,7 +80,7 @@ class TicketManager extends AbstractManager{
                 tickets.id,
                 tickets.content,
                 tickets.tarif,
-                tickets.qr,
+                tickets.pdf,
                 tickets.email
             FROM tickets
             JOIN users_tickets ON tickets.id = users_tickets.ticket_id
@@ -96,7 +96,7 @@ class TicketManager extends AbstractManager{
             $tickets = $query->fetchAll(PDO::FETCH_ASSOC);
             $ticketsClass = [];
             foreach($tickets as $ticket){
-                $ticketObj = new Ticket($ticket["content"], $ticket["tarif"], $ticket["qr"], $ticket["email"]);
+                $ticketObj = new Ticket($ticket["content"], $ticket["tarif"], $ticket["pdf"], $ticket["email"]);
                 $ticketObj->setId($ticket["id"]);
                 $ticketsClass[] = $ticketObj;
             }

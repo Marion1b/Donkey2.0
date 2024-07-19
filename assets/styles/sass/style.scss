@@ -658,6 +658,8 @@ body{
             1.5px  1.5px 0 $black;
     }
     form{
+        position: relative;
+        z-index: 100;
         margin-top: 2.5rem;
         font-size: 1.2rem;
         background-color: $secondary-color;
@@ -716,6 +718,11 @@ body{
         bottom: -1rem;
         right: -2rem;
         animation: 5s linear infinite alternate formMoveConnexion3;
+    }
+    &-form2{
+        bottom: 12rem;
+        left: -5rem;
+        animation: 3s linear infinite alternate formMoveInscritpion2;
     }
 
 }

@@ -215,6 +215,14 @@
     transform: rotate(-123deg) translate(-3px, 4px);
   }
 }
+@keyframes formMoveInscritpion2 {
+  from {
+    transform: rotate(-10deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(10deg) translate(-2px, 3px);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -838,6 +846,8 @@ body .hide {
   text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
 }
 .connexion form, .inscription form {
+  position: relative;
+  z-index: 100;
   margin-top: 2.5rem;
   font-size: 1.2rem;
   background-color: #FFE500;
@@ -891,6 +901,11 @@ body .hide {
   bottom: -1rem;
   right: -2rem;
   animation: 5s linear infinite alternate formMoveConnexion3;
+}
+.connexion-form2, .inscription-form2 {
+  bottom: 12rem;
+  left: -5rem;
+  animation: 3s linear infinite alternate formMoveInscritpion2;
 }
 
 .page-footer {

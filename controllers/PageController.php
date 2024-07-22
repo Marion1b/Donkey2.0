@@ -1,5 +1,7 @@
 <?php
 
+use Dompdf\Dompdf;
+
 class PageController extends AbstractController{
     private TicketManager $tm;
     private ArtistManager $am;
@@ -157,6 +159,21 @@ class PageController extends AbstractController{
             $this->redirect($_SERVER["HTTP_REFERER"]);
         }else{
             $this->redirect("index.php?route=home");
+        }
+    }
+
+    public function download(){
+        $ticket = $this->tm->findById($_GET["file"]);
+        if($ticket !== null){
+            $filename = $_GET["file"];
+            $code = $ticket->getCode();
+            $dompdf = new Dompdf();
+            $html = "<h1>Donkey</h1><h2>Du 05 au 07 juillet 2024</h2><p>Vendredi à partir de 18h <br> Samedi et dimanche à partir de 14h</p><p>Par du Thabor, 35000 Rennes</p><h3>" . $ticket->getContent() . "</h3><h3>" .$ticket->getTarif() . "</h3></p>". $ticket->getId() ."</p><br><br>" . $code . "<br><br><p>En achetant ce billet, vous acceptez les conditions générales suivantes : Ce billet est non transférable et non remboursable. L'entrée au festival est strictement réservée aux personnes munies d'un billet valide. Le festival se réserve le droit de refuser l'entrée à toute personne présentant un comportement inapproprié ou dangereux. La consommation d'alcool et de drogues est interdite sur le site du festival. Les mineurs doivent être accompagnés d'un adulte responsable. Le festival décline toute responsabilité en cas de perte ou de vol du billet. En cas de problème, veuillez contacter l'organisateur du festival.</p>";
+            $dompdf->loadHtml($html);
+            $dompdf->render();
+            $dompdf->stream($filename . '.pdf');
+        }else{
+            echo "Pas de billet";
         }
     }
 

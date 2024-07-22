@@ -12,12 +12,12 @@ class TicketManager extends AbstractManager{
                 tickets(
                     content,
                     tarif,
-                    qr,
+                    code,
                     email
                 )VALUES(
                     :content,
                     :tarif,
-                    :qr,
+                    :code,
                     :email
                 )
             "
@@ -25,7 +25,7 @@ class TicketManager extends AbstractManager{
         $parameters = [
             "content" => $ticket->getContent(),
             "tarif" => $ticket->getTarif(),
-            "qr" => $ticket->getQr(),
+            "code" => $ticket->getcode(),
             "email" => $ticket->getEmail()
         ];
         $query->execute($parameters);
@@ -64,7 +64,7 @@ class TicketManager extends AbstractManager{
             $tickets = $query->fetchAll(PDO::FETCH_ASSOC);
             $ticketsClass = [];
             foreach($tickets as $ticket){
-                $ticketObj = new Ticket($ticket["content"], $ticket["tarif"], $ticket["qr"], $ticket["email"]);
+                $ticketObj = new Ticket($ticket["content"], $ticket["tarif"], $ticket["code"], $ticket["email"]);
                 $ticketObj->setId($ticket["id"]);
                 $ticketsClass[] = $ticketObj;
             }
@@ -80,7 +80,7 @@ class TicketManager extends AbstractManager{
                 tickets.id,
                 tickets.content,
                 tickets.tarif,
-                tickets.qr,
+                tickets.code,
                 tickets.email
             FROM tickets
             JOIN users_tickets ON tickets.id = users_tickets.ticket_id
@@ -96,11 +96,32 @@ class TicketManager extends AbstractManager{
             $tickets = $query->fetchAll(PDO::FETCH_ASSOC);
             $ticketsClass = [];
             foreach($tickets as $ticket){
-                $ticketObj = new Ticket($ticket["content"], $ticket["tarif"], $ticket["qr"], $ticket["email"]);
+                $ticketObj = new Ticket($ticket["content"], $ticket["tarif"], $ticket["code"], $ticket["email"]);
                 $ticketObj->setId($ticket["id"]);
                 $ticketsClass[] = $ticketObj;
             }
             return $ticketsClass;
+        }else{
+            return null;
+        }
+
+    }
+
+    public function findById(int $id):? Ticket{
+        $query = $this->db->prepare(
+            "SELECT *
+            FROM tickets 
+            WHERE id = :id"
+        );
+        $parameters = [
+            "id"=>$id
+        ];
+        $query->execute($parameters);
+        if($query->rowCount()>=1){
+            $ticket = $query->fetch(PDO::FETCH_ASSOC);
+            $ticketClass = new Ticket($ticket["content"], $ticket["tarif"], $ticket["code"], $ticket["email"]);
+            $ticketClass->setId($ticket["id"]);
+            return $ticketClass;
         }else{
             return null;
         }

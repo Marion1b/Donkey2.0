@@ -6,7 +6,7 @@ class Ticket{
     public function __construct(
         private string $content,
         private string $tarif,
-        private string $qr,
+        private string $code,
         private string $email
     )
     {
@@ -37,12 +37,12 @@ class Ticket{
         $this->tarif=$tarif;
     }
 
-    public function getQr():string{
-        return $this->qr;
+    public function getCode():string{
+        return $this->code;
     }
 
-    public function setQr(string $qr):void{
-        $this->qr=$qr;
+    public function setCode(string $code):void{
+        $this->code=$code;
     }
 
     public function getEmail():string{

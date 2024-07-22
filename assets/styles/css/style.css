@@ -498,6 +498,35 @@ body .hide {
   animation: 5s linear infinite alternate formMoveHomeInfos3;
 }
 
+.programmation-filter ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 3.5rem 0;
+}
+.programmation-filter ul li {
+  font-size: 1.2rem;
+  border: 1px solid #020403;
+  box-shadow: -4px 4px 4px rgba(2, 4, 3, 0.25);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  color: #FFE500;
+  font-weight: 800;
+  text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+}
+.programmation-filter ul a {
+  position: relative;
+  z-index: 100;
+}
+.programmation-filter article {
+  position: relative;
+  z-index: 100;
+}
+.programmation-filter .programmation-filter-active {
+  background-color: #FFE500;
+  color: #020403;
+  text-shadow: none;
+}
+
 .programmation-page {
   overflow: hidden;
   background-color: #4F09B9;
@@ -527,34 +556,6 @@ body .hide {
 .programmation-page h1 {
   color: #FFE500;
   text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
-}
-.programmation-page ul {
-  display: flex;
-  justify-content: space-around;
-  margin: 3.5rem 0;
-}
-.programmation-page ul li {
-  font-size: 1.2rem;
-  border: 1px solid #020403;
-  box-shadow: -4px 4px 4px rgba(2, 4, 3, 0.25);
-  border-radius: 0.5rem;
-  padding: 0.5rem 1.5rem;
-  color: #FFE500;
-  font-weight: 800;
-  text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
-}
-.programmation-page ul a {
-  position: relative;
-  z-index: 100;
-}
-.programmation-page article {
-  position: relative;
-  z-index: 100;
-}
-.programmation-page .programmation-filter-active {
-  background-color: #FFE500;
-  color: #020403;
-  text-shadow: none;
 }
 .programmation-page .artist-card {
   z-index: 5;
@@ -1017,7 +1018,7 @@ body .hide {
   right: -5rem;
   animation: 5s linear infinite alternate formMovePersoTickets1;
 }
-.espace-perso .planning-button {
+.espace-perso .planning-button, .espace-perso .artist-fav-button {
   font-size: 1.4rem;
   color: #020403;
   font-weight: 800;
@@ -1034,6 +1035,7 @@ body .hide {
   color: #FFE500;
   width: 100%;
   padding: 5rem 0;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1095,12 +1097,12 @@ body .hide {
   text-shadow: -0.5px -0.5px 0 #020403, 0.5px -0.5px 0 #020403, -0.5px 0.5px 0 #020403, 0.5px 0.5px 0 #020403;
 }
 .espace-perso-artists-form3a {
-  top: 15rem;
+  top: 0;
   right: -5rem;
   animation: 4s linear infinite alternate formMovePersoArtists3a;
 }
 .espace-perso-artists-form2 {
-  top: 100rem;
+  top: 10%;
   left: -5rem;
   animation: 2s linear infinite alternate formMovePersoArtists2;
 }
@@ -1114,6 +1116,23 @@ body .hide {
   left: 1rem;
   animation: 4s linear infinite alternate formMovePersoArtists3b;
 }
+.espace-perso-programmation {
+  background-color: #4F09B9;
+  color: #FFE500;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.espace-perso-programmation h1 {
+  text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+}
+.espace-perso-programmation nav {
+  width: 100%;
+}
 
 .page-footer {
   background-color: #020403;
@@ -1122,6 +1141,7 @@ body .hide {
   align-items: end;
   font-size: 1rem;
   padding: 1.5rem 1rem;
+  width: 100%;
 }
 .page-footer a {
   color: #FFE500;

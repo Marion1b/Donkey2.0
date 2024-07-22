@@ -226,6 +226,41 @@ body{
 // PROGRAMMATION
 // ==========================================================================
 
+.programmation-filter{
+    ul{
+        display: flex;
+        justify-content: space-around;
+        margin: 3.5rem 0;
+        li{
+            font-size: 1.2rem;
+            border: 1px solid $black;
+            box-shadow: -4px 4px 4px $opacity-black;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            color: $secondary-color;
+            font-weight: 800;
+            text-shadow:
+            -1.5px -1.5px 0 $black,  
+            1.5px -1.5px 0 $black,
+            -1.5px  1.5px 0 $black,
+            1.5px  1.5px 0 $black;
+        }
+        a{
+            position: relative;
+            z-index: 100;
+        }
+    }
+    article{
+        position: relative;
+        z-index: 100;
+    }
+    .programmation-filter-active{
+        background-color: $secondary-color;
+        color: $black;
+        text-shadow: none;
+    }
+}
+
 .programmation-page{
     overflow: hidden;
     background-color: $main-color;
@@ -258,38 +293,6 @@ body{
             1.5px -1.5px 0 $black,
             -1.5px  1.5px 0 $black,
             1.5px  1.5px 0 $black;
-    }
-    ul{
-        display: flex;
-        justify-content: space-around;
-        margin: 3.5rem 0;
-        li{
-            font-size: 1.2rem;
-            border: 1px solid $black;
-            box-shadow: -4px 4px 4px $opacity-black;
-            border-radius: .5rem;
-            padding: .5rem 1.5rem;
-            color: $secondary-color;
-            font-weight: 800;
-            text-shadow:
-            -1.5px -1.5px 0 $black,  
-            1.5px -1.5px 0 $black,
-            -1.5px  1.5px 0 $black,
-            1.5px  1.5px 0 $black;
-        }
-        a{
-            position: relative;
-            z-index: 100;
-        }
-    }
-    article{
-        position: relative;
-        z-index: 100;
-    }
-    .programmation-filter-active{
-        background-color: $secondary-color;
-        color: $black;
-        text-shadow: none;
     }
     .artist-card{
         @include artist-card();
@@ -714,7 +717,7 @@ body{
             animation: 5s linear infinite alternate formMovePersoTickets1;
         }
     }
-    .planning-button{
+    .planning-button, .artist-fav-button{
         @include yellow-button();
         margin: 3rem 0;
     }
@@ -723,6 +726,7 @@ body{
         color: $secondary-color;
         width: 100%;
         padding: 5rem 0;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -739,12 +743,12 @@ body{
             @include artist-card();
         }
         &-form3a{
-            top: 15rem;
+            top: 0;
             right: -5rem;
             animation: 4s linear infinite alternate formMovePersoArtists3a;
         }
         &-form2{
-            top: 100rem;
+            top: 10%;
             left: -5rem;
             animation: 2s linear infinite alternate formMovePersoArtists2;
         }
@@ -757,6 +761,27 @@ body{
             bottom: -2rem;
             left: 1rem;
             animation: 4s linear infinite alternate formMovePersoArtists3b;
+        }
+    }
+    &-programmation{
+        background-color: $main-color;
+        color: $secondary-color;
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        h1{
+            text-shadow:
+            -1px -1px 0 $black,  
+            1px -1px 0 $black,
+            -1px  1px 0 $black,
+            1px  1px 0 $black;
+        }
+        nav{
+            width: 100%;
         }
     }
 
@@ -774,6 +799,7 @@ body{
     align-items: end;
     font-size: 1rem;
     padding: 1.5rem 1rem;
+    width: 100%;
     a{
         color: $secondary-color;
     }

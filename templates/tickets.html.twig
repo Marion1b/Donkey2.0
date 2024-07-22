@@ -12,7 +12,7 @@
 {% for ticket in tickets %}
 <p> {{ticket.getContent()|escape}} </p>
 <p> {{ticket.getTarif()}} </p>
-<img src={{ticket.getQr()}} alt="qrcode pour le billet" />
+<a href="index.php?route=download&&file={{ticket.getId()}}&&user={{session.user.getId()}}" target="__blank">Mon billet</a>
 {% endfor %}
 
 </main>

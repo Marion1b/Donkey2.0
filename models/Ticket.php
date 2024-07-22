@@ -6,7 +6,7 @@ class Ticket{
     public function __construct(
         private string $content,
         private string $tarif,
-        private string $pdf,
+        private string $code,
         private string $email
     )
     {
@@ -37,12 +37,12 @@ class Ticket{
         $this->tarif=$tarif;
     }
 
-    public function getPdf():string{
-        return $this->pdf;
+    public function getCode():string{
+        return $this->code;
     }
 
-    public function setPdf(string $pdf):void{
-        $this->pdf=$pdf;
+    public function setCode(string $code):void{
+        $this->code=$code;
     }
 
     public function getEmail():string{

@@ -35,6 +35,13 @@ class Router{
             $this->pc->personnalSpace();
         }else if(isset($get["route"]) && $get["route"] === "billets"){
             $this->pc->getTicket();
+        }else if(isset($get["route"]) && $get["route"] === "download"){
+            if(isset($get["file"]) && isset($get["user"]) && (int) $get["user"] === $_SESSION["user"]->getId()){
+                $this->pc->download();
+            }else{
+                echo "coucou";
+                var_dump($get["user"]);
+            }
         }else if(isset($get["route"]) && $get["route"] === "billetterie"){
             $this->pc->ticketing();
         }else if(isset($get["route"]) && $get["route"] === "achat-billets"){

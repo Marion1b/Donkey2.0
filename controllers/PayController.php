@@ -62,17 +62,12 @@ class PayController extends AbstractController{
     public function generateTicket(array $posts):void{
 
         $keys = ['friday', 'saturday', 'sunday', 'friday-saturday', 'friday-sunday', 'saturday-sunday', 'all-days', 'friday-reduce', 'saturday-reduce', 'sunday-reduce', 'friday-saturday-reduce', 'friday-sunday-reduce', 'saturday-sunday-reduce', 'all-days-reduce'];
-        $doc = new Dompdf();
         $barcode = new Picqer\Barcode\BarcodeGeneratorHTML();
         foreach($posts as $key=>$post){
             if(in_array($key, $keys) && (int) $post > 0){
                 for($i = 0; $i< (int) $post; $i++){
-                    $code = $barcode->getBarcode(random_int(100000000000,999999999999), $barcode::TYPE_CODE_128);
-                    $content = "<img src='./assets/img/other/Logo.png'><p>" . $posts["last_name"] . " " . $posts["first_name"] . "</p><p>" . $key . "</p><p>" . $posts["email"] . "</p>" . $code;
-                    $doc->loadHtml($content);
-                    $doc->render();
-                    $pdf = base64_encode($doc->output());
-                    $ticket = new Ticket($posts["last_name"] . " " . $posts["first_name"],$key, $pdf, $posts["email"]);
+                    $code = base64_encode($barcode->getBarcode(random_int(100000000000,999999999999), $barcode::TYPE_CODE_128));
+                    $ticket = new Ticket($posts["last_name"] . " " . $posts["first_name"],$key, $code, $posts["email"]);
                     $this->tm->create($ticket);
                     if(isset($_SESSION["user"])){
                         $this->tm->createTicketUser();

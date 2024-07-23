@@ -60,13 +60,13 @@ document.addEventListener('DOMContentLoaded', function(){
     if(dysButton.value !== "off"){
         body.id = 'dys';
     }else{
-        body.id = 'dys';
+        body.id = '';
     }
     dysButton.addEventListener('click', ()=>{
         if(dysButton.value !== "off"){
             body.id = 'dys';
         }else{
-            body.id = 'dys';
+            body.id = '';
         }
     })
 })

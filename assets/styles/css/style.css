@@ -16,7 +16,7 @@
     right: 0;
   }
 }
-@keyframes formMoveHome1 {
+@keyframes formMoveLay1 {
   from {
     transform: rotate(-145deg) translate(0px, 0px);
   }
@@ -24,135 +24,7 @@
     transform: rotate(-120deg) translate(5px, 5px);
   }
 }
-@keyframes formMoveHome2 {
-  from {
-    transform: rotate(0deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(15deg) translate(-5px, -5px);
-  }
-}
-@keyframes formMoveHome3 {
-  from {
-    transform: rotate(-20deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-45deg) translate(-5px, 5px);
-  }
-}
-@keyframes formMoveHomeInfos1 {
-  from {
-    transform: rotate(-80deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-55deg) translate(-5px, -3px);
-  }
-}
-@keyframes formMoveHomeInfos3 {
-  from {
-    transform: rotate(17deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(30deg) translate(-2px, -3px);
-  }
-}
-@keyframes formMoveProg1 {
-  from {
-    transform: rotate(-90deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-75deg) translate(2px, 2px);
-  }
-}
-@keyframes formMoveProg2a {
-  from {
-    transform: rotate(30deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(45deg) translate(5px, -5px);
-  }
-}
-@keyframes formMoveProg2b {
-  from {
-    transform: rotate(-63deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-45deg) translate(3px, -3px);
-  }
-}
-@keyframes formMoveProg3 {
-  from {
-    transform: rotate(-52deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-25deg) translate(2px, -3px);
-  }
-}
-@keyframes formMoveFiche1 {
-  from {
-    transform: rotate(-55deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-75deg) translate(2px, 2px);
-  }
-}
-@keyframes formMoveFiche2 {
-  from {
-    transform: rotate(0deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(15deg) translate(-1px, -3px);
-  }
-}
-@keyframes formMoveFiche3 {
-  from {
-    transform: rotate(15deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(50deg) translate(5px, -5px);
-  }
-}
-@keyframes formMoveInfos2a {
-  from {
-    transform: rotate(0deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-20deg) translate(2px, 3px);
-  }
-}
-@keyframes formMoveInfos3 {
-  from {
-    transform: rotate(25deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(55deg) translate(3px, -4px);
-  }
-}
-@keyframes formMoveInfos2b {
-  from {
-    transform: rotate(27deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(56deg) translate(-2px, 8px);
-  }
-}
-@keyframes formMoveInfos1 {
-  from {
-    transform: rotate(150deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(120deg) translate(2px, 2px);
-  }
-}
-@keyframes formMoveTicket3 {
-  from {
-    transform: rotate(-15deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-75deg) translate(2px, -2px);
-  }
-}
-@keyframes formMoveTicket1 {
+@keyframes formMoveLeft1 {
   from {
     transform: rotate(-60deg) translate(0px, 0px);
   }
@@ -160,79 +32,7 @@
     transform: rotate(-80deg) translate(3px, 3px);
   }
 }
-@keyframes formMoveTicket2 {
-  from {
-    transform: rotate(-125deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-150deg) translate(2px, 5px);
-  }
-}
-@keyframes formMoveBuy1a {
-  from {
-    transform: rotate(-35deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-55deg) translate(2px, 4px);
-  }
-}
-@keyframes formMoveBuy2 {
-  from {
-    transform: rotate(20deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(55deg) translate(-3px, 4px);
-  }
-}
-@keyframes formMoveBuy3 {
-  from {
-    transform: rotate(12deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(47deg) translate(-5px, 5px);
-  }
-}
-@keyframes formMoveBuy1b {
-  from {
-    transform: rotate(-35deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-67deg) translate(-2px, -4px);
-  }
-}
-@keyframes formMoveConnexion1 {
-  from {
-    transform: rotate(-130deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-167deg) translate(-8px, 10px);
-  }
-}
-@keyframes formMoveConnexion3 {
-  from {
-    transform: rotate(-25deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-123deg) translate(-3px, 4px);
-  }
-}
-@keyframes formMoveInscritpion2 {
-  from {
-    transform: rotate(-10deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(10deg) translate(-2px, 3px);
-  }
-}
-@keyframes formMovePersoTickets2 {
-  from {
-    transform: rotate(0deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(15deg) translate(5px, 7px);
-  }
-}
-@keyframes formMovePersoTickets1 {
+@keyframes formMoveRight1 {
   from {
     transform: rotate(-150deg) translate(0px, 0px);
   }
@@ -240,55 +40,15 @@
     transform: rotate(-175deg) translate(2px, 5px);
   }
 }
-@keyframes formMovePersoArtists3a {
+@keyframes formMoveLeft2 {
   from {
-    transform: rotate(-100deg) translate(0px, 0px);
+    transform: rotate(30deg) translate(0px, 0px);
   }
   to {
-    transform: rotate(-85deg) translate(3px, -5px);
+    transform: rotate(45deg) translate(5px, -5px);
   }
 }
-@keyframes formMovePersoArtists2 {
-  from {
-    transform: rotate(-177deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-143deg) translate(2px, -3px);
-  }
-}
-@keyframes formMovePersoArtists1 {
-  from {
-    transform: rotate(-55deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-25deg) translate(2px, -6px);
-  }
-}
-@keyframes formMovePersoArtists3b {
-  from {
-    transform: rotate(-100deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-76deg) translate(3px, 4px);
-  }
-}
-@keyframes formMoveProgPerso3 {
-  from {
-    transform: rotate(48deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(75deg) translate(2px, -2px);
-  }
-}
-@keyframes formMoveProgPerso1 {
-  from {
-    transform: rotate(145deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(185deg) translate(3px, 3px);
-  }
-}
-@keyframes formMoveProgPerso2 {
+@keyframes formMoveRight2 {
   from {
     transform: rotate(-40deg) translate(0px, 0px);
   }
@@ -296,52 +56,36 @@
     transform: rotate(-60deg) translate(-4px, -5px);
   }
 }
-@keyframes formMoveTickets1 {
+@keyframes formMoveDown2 {
+  from {
+    transform: rotate(-177deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-143deg) translate(2px, -3px);
+  }
+}
+@keyframes formMoveLeft3 {
+  from {
+    transform: rotate(-20deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+}
+@keyframes formMoveDown3 {
   from {
     transform: rotate(15deg) translate(0px, 0px);
   }
   to {
-    transform: rotate(30deg) translate(2px, 2px);
+    transform: rotate(50deg) translate(5px, -5px);
   }
 }
-@keyframes formMoveTickets2 {
+@keyframes formMoveRight3 {
   from {
-    transform: rotate(45deg) translate(0px, 0px);
+    transform: rotate(-100deg) translate(0px, 0px);
   }
   to {
-    transform: rotate(68deg) translate(4px, -3px);
-  }
-}
-@keyframes formMoveTickets3 {
-  from {
-    transform: rotate(-10deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-30deg) translate(-3px, 5px);
-  }
-}
-@keyframes formMoveContact2 {
-  from {
-    transform: rotate(-15deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-47deg) translate(3px, -4px);
-  }
-}
-@keyframes formMoveContact1 {
-  from {
-    transform: rotate(-63deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-90deg) translate(-3px, -6px);
-  }
-}
-@keyframes formMoveContact3 {
-  from {
-    transform: rotate(0deg) translate(0px, 0px);
-  }
-  to {
-    transform: rotate(-43deg) translate(-2px, 3px);
+    transform: rotate(-85deg) translate(3px, -5px);
   }
 }
 * {
@@ -532,7 +276,7 @@ body .hide {
 }
 .home-display-names-form1 img {
   transform: rotate(-145deg);
-  animation: 2.5s linear infinite alternate formMoveHome1;
+  animation: 2.5s linear infinite alternate formMoveLay1;
   position: sticky;
 }
 .home-display-names-form2 {
@@ -540,7 +284,7 @@ body .hide {
   right: -12rem;
 }
 .home-display-names-form2 img {
-  animation: 4s linear infinite alternate formMoveHome2;
+  animation: 4s linear infinite alternate formMoveLeft2;
 }
 .home-display-names-form3 {
   left: 3rem;
@@ -548,7 +292,7 @@ body .hide {
 }
 .home-display-names-form3 img {
   transform: rotate(20deg);
-  animation: 3s linear infinite alternate formMoveHome3;
+  animation: 3s linear infinite alternate formMoveLeft3;
   position: sticky;
 }
 
@@ -612,12 +356,12 @@ body .hide {
 .home-infos-form1 {
   bottom: -3rem;
   left: -0.2rem;
-  animation: 3s linear infinite alternate formMoveHomeInfos1;
+  animation: 3s linear infinite alternate formMoveLeft1;
 }
 .home-infos-form3 {
   top: 0.5rem;
   right: 0.2rem;
-  animation: 5s linear infinite alternate formMoveHomeInfos3;
+  animation: 5s linear infinite alternate formMoveLeft3;
 }
 
 .programmation-filter ul {
@@ -654,22 +398,22 @@ body .hide {
 .programmation-page-form2a {
   left: -8rem;
   top: 15rem;
-  animation: 3s linear infinite alternate formMoveProg2a;
+  animation: 3s linear infinite alternate formMoveLeft2;
 }
 .programmation-page-form1 {
   right: -3rem;
   top: 80rem;
-  animation: 3s linear infinite alternate formMoveProg1;
+  animation: 3s linear infinite alternate formMoveLay1;
 }
 .programmation-page-form2b {
   left: -5rem;
   bottom: 10%;
-  animation: 2s linear infinite alternate formMoveProg2b;
+  animation: 2s linear infinite alternate formMoveRight2;
 }
 .programmation-page-form3 {
   right: -1rem;
   bottom: -2rem;
-  animation: 5s linear infinite alternate formMoveProg3;
+  animation: 5s linear infinite alternate formMoveLeft3;
 }
 .programmation-page h1 {
   color: #FFE500;
@@ -744,17 +488,17 @@ body .hide {
 .fiche-artiste-form1 {
   top: 25rem;
   left: -5rem;
-  animation: 3s linear infinite alternate formMoveFiche1;
+  animation: 3s linear infinite alternate formMoveLeft1;
 }
 .fiche-artiste-form2 {
   bottom: 12rem;
   left: -8rem;
-  animation: 2s linear infinite alternate formMoveFiche2;
+  animation: 2s linear infinite alternate formMoveLeft2;
 }
 .fiche-artiste-form3 {
   bottom: -1rem;
   right: -1rem;
-  animation: 5s linear infinite alternate formMoveFiche3;
+  animation: 5s linear infinite alternate formMoveDown3;
 }
 .fiche-artiste h1 {
   color: #FFE500;
@@ -856,22 +600,22 @@ body .hide {
 .infos-form2a {
   top: 7rem;
   left: -5rem;
-  animation: 5s linear infinite alternate formMoveInfos2a;
+  animation: 5s linear infinite alternate formMoveDown2;
 }
 .infos-form3 {
   top: 50rem;
   right: -1rem;
-  animation: 3s linear infinite alternate formMoveInfos3;
+  animation: 3s linear infinite alternate formMoveDown3;
 }
 .infos-form2b {
   top: 120rem;
   left: -4rem;
-  animation: 6s linear infinite alternate formMoveInfos2b;
+  animation: 6s linear infinite alternate formMoveLeft2;
 }
 .infos-form1 {
   bottom: 1rem;
   right: 0rem;
-  animation: 2s linear infinite alternate formMoveInfos1;
+  animation: 2s linear infinite alternate formMoveRight1;
 }
 
 .ticketing {
@@ -932,17 +676,17 @@ body .hide {
 .ticketing-form3 {
   top: 25rem;
   right: -5rem;
-  animation: 5s linear infinite alternate formMoveTicket3;
+  animation: 5s linear infinite alternate formMoveLeft3;
 }
 .ticketing-form1 {
   top: 75rem;
   left: -1rem;
-  animation: 3s linear infinite alternate formMoveTicket1;
+  animation: 3s linear infinite alternate formMoveLeft1;
 }
 .ticketing-form2 {
   bottom: -3rem;
   right: -2rem;
-  animation: 5s linear infinite alternate formMoveTicket2;
+  animation: 5s linear infinite alternate formMoveRight2;
 }
 
 .buy-tickets {
@@ -1009,22 +753,22 @@ body .hide {
 .buy-tickets-form1a {
   top: 7rem;
   left: -2rem;
-  animation: 3s linear infinite alternate formMoveBuy1a;
+  animation: 3s linear infinite alternate formMoveLeft1;
 }
 .buy-tickets-form2 {
   top: 30rem;
   right: -7rem;
-  animation: 5s linear infinite alternate formMoveBuy2;
+  animation: 5s linear infinite alternate formMoveLeft2;
 }
 .buy-tickets-form3 {
   top: 54rem;
   left: -5rem;
-  animation: 4s linear infinite alternate formMoveBuy3;
+  animation: 4s linear infinite alternate formMoveDown3;
 }
 .buy-tickets-form1b {
   bottom: 2rem;
   right: -3rem;
-  animation: 5s linear infinite alternate formMoveBuy1b;
+  animation: 5s linear infinite alternate formMoveLay1;
 }
 
 .connexion, .inscription {
@@ -1092,17 +836,17 @@ body .hide {
 .connexion-form1, .inscription-form1 {
   top: 2rem;
   left: -4rem;
-  animation: 3s linear infinite alternate formMoveConnexion1;
+  animation: 3s linear infinite alternate formMoveLay1;
 }
 .connexion-form3, .inscription-form3 {
   bottom: -1rem;
   right: -2rem;
-  animation: 5s linear infinite alternate formMoveConnexion3;
+  animation: 5s linear infinite alternate formMoveLeft3;
 }
 .connexion-form2, .inscription-form2 {
   bottom: 12rem;
   left: -5rem;
-  animation: 3s linear infinite alternate formMoveInscritpion2;
+  animation: 3s linear infinite alternate formMoveDown2;
 }
 
 .espace-perso {
@@ -1133,12 +877,12 @@ body .hide {
 .espace-perso-tickets-form2 {
   top: 5rem;
   left: -8rem;
-  animation: 3s linear infinite alternate formMovePersoTickets2;
+  animation: 3s linear infinite alternate formMoveLeft2;
 }
 .espace-perso-tickets-form1 {
   top: 8rem;
   right: -5rem;
-  animation: 5s linear infinite alternate formMovePersoTickets1;
+  animation: 5s linear infinite alternate formMoveRight1;
 }
 .espace-perso .planning-button, .espace-perso .artist-fav-button {
   font-size: 1.4rem;
@@ -1221,22 +965,22 @@ body .hide {
 .espace-perso-artists-form3a {
   top: 0;
   right: -5rem;
-  animation: 4s linear infinite alternate formMovePersoArtists3a;
+  animation: 4s linear infinite alternate formMoveRight3;
 }
 .espace-perso-artists-form2 {
   top: 10%;
   left: -5rem;
-  animation: 2s linear infinite alternate formMovePersoArtists2;
+  animation: 2s linear infinite alternate formMoveDown2;
 }
 .espace-perso-artists-form1 {
   bottom: 40rem;
   right: 1rem;
-  animation: 5s linear infinite alternate formMovePersoArtists1;
+  animation: 5s linear infinite alternate formMoveLeft1;
 }
 .espace-perso-artists-form3b {
   bottom: -2rem;
   left: 1rem;
-  animation: 4s linear infinite alternate formMovePersoArtists3b;
+  animation: 4s linear infinite alternate formMoveRight3;
 }
 .espace-perso-programmation {
   background-color: #4F09B9;
@@ -1318,17 +1062,17 @@ body .hide {
 .espace-perso-programmation-form3 {
   top: 28rem;
   left: -2rem;
-  animation: 2s linear infinite alternate formMoveProgPerso3;
+  animation: 2s linear infinite alternate formMoveDown3;
 }
 .espace-perso-programmation-form1 {
   top: 45rem;
   right: -1rem;
-  animation: 2s linear infinite alternate formMoveProgPerso1;
+  animation: 2s linear infinite alternate formMoveRight1;
 }
 .espace-perso-programmation-form2 {
   bottom: -5rem;
   left: 8rem;
-  animation: 2s linear infinite alternate formMoveProgPerso2;
+  animation: 2s linear infinite alternate formMoveRight2;
 }
 
 .tickets-page, .paiement-valide {
@@ -1376,17 +1120,17 @@ body .hide {
 .tickets-page-form1, .paiement-valide-form1 {
   top: 23rem;
   left: 2rem;
-  animation: 2s linear infinite alternate formMoveTickets1;
+  animation: 2s linear infinite alternate formMoveLay1;
 }
 .tickets-page-form2, .paiement-valide-form2 {
   top: 50rem;
   right: -1rem;
-  animation: 4s linear infinite alternate formMoveTickets2;
+  animation: 4s linear infinite alternate formMoveLeft2;
 }
 .tickets-page-form3, .paiement-valide-form3 {
   bottom: 3rem;
   right: 20rem;
-  animation: 6s linear infinite alternate formMoveTickets3;
+  animation: 6s linear infinite alternate formMoveLeft3;
 }
 
 .contact {
@@ -1419,17 +1163,17 @@ body .hide {
 .contact-form2 {
   top: 5rem;
   left: 1.5rem;
-  animation: 4s linear infinite alternate formMoveContact2;
+  animation: 4s linear infinite alternate formMoveRight2;
 }
 .contact-form1 {
   top: 30rem;
   right: -2rem;
-  animation: 3s linear infinite alternate formMoveContact1;
+  animation: 3s linear infinite alternate formMoveLeft1;
 }
 .contact-form3 {
   bottom: 5rem;
   left: 10rem;
-  animation: 2s linear infinite alternate formMoveContact3;
+  animation: 2s linear infinite alternate formMoveLeft3;
 }
 
 #dys h1, #dys h2, #dys h3, #dys a, #dys label, #dys input, #dys p, #dys button {

@@ -456,6 +456,34 @@ body .hide {
   position: absolute;
   z-index: 200;
 }
+.page-header .header-nav .nav-dys {
+  font-family: "OpenDyslexic";
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.page-header .header-nav .nav-dys button {
+  margin-left: 1rem;
+  font-size: 0;
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid #020403;
+  border-radius: 1rem;
+  background-color: #FFE500;
+}
+.page-header .header-nav .nav-dys button .toggle {
+  margin: 0.5rem 3rem 0.5rem 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #020403;
+  border-radius: 50%;
+  background-color: #FFE500;
+}
+.page-header .header-nav .nav-dys .toggle-button-on {
+  background-color: #4F09B9;
+}
+.page-header .header-nav .nav-dys .toggle-button-on div {
+  margin: 0.5rem 0.5rem 0.5rem 3rem;
+}
 .page-header .header-nav ul {
   position: relative;
   animation: 500ms nav;

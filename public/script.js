@@ -59,14 +59,18 @@ document.addEventListener('DOMContentLoaded', function(){
     // dys button
     if(dysButton.value !== "off"){
         body.id = 'dys';
+        dysButton.classList.add('toggle-button-on');
     }else{
         body.id = '';
+        dysButton.classList.remove('toggle-button-on');
     }
     dysButton.addEventListener('click', ()=>{
         if(dysButton.value !== "off"){
+            dysButton.classList.add('toggle-button-on');
             body.id = 'dys';
         }else{
             body.id = '';
+            dysButton.classList.remove('toggle-button-on');
         }
     })
 })

@@ -519,6 +519,8 @@ body .hide {
   overflow: hidden;
 }
 .home-display-names p {
+  position: relative;
+  z-index: 100;
   font-size: 2.4rem;
   font-weight: 800;
   padding: 1rem;
@@ -527,19 +529,27 @@ body .hide {
 .home-display-names-form1 {
   bottom: 1rem;
   right: 2rem;
+}
+.home-display-names-form1 img {
   transform: rotate(-145deg);
   animation: 2.5s linear infinite alternate formMoveHome1;
+  position: sticky;
 }
 .home-display-names-form2 {
   top: -2rem;
-  right: -7rem;
+  right: -12rem;
+}
+.home-display-names-form2 img {
   animation: 4s linear infinite alternate formMoveHome2;
 }
 .home-display-names-form3 {
   left: 3rem;
   bottom: 2.5rem;
+}
+.home-display-names-form3 img {
   transform: rotate(20deg);
   animation: 3s linear infinite alternate formMoveHome3;
+  position: sticky;
 }
 
 .home-ticketing {
@@ -653,7 +663,7 @@ body .hide {
 }
 .programmation-page-form2b {
   left: -5rem;
-  bottom: 100rem;
+  bottom: 10%;
   animation: 2s linear infinite alternate formMoveProg2b;
 }
 .programmation-page-form3 {

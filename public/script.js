@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const buyTickets = document.querySelector(".buy-tickets");
     const burgerMenu = document.querySelector(".burger-menu");
     const main = document.querySelector('main');
+    const body = document.querySelector('body');
+    const dysButton = document.querySelector('#dys-font');
     // Check if buy tickets form is not empty
     if(buyTickets){
         const select = document.querySelectorAll(".buy-tickets select");
@@ -54,4 +56,17 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     }
     
+    // dys button
+    if(dysButton.value !== "off"){
+        body.id = 'dys';
+    }else{
+        body.id = 'dys';
+    }
+    dysButton.addEventListener('click', ()=>{
+        if(dysButton.value !== "off"){
+            body.id = 'dys';
+        }else{
+            body.id = 'dys';
+        }
+    })
 })

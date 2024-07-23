@@ -37,9 +37,9 @@
                 {% endif %}
                 <li><a href="index.php?route=contact">Contact</a></li>
                 <li>
-                    <form action="index.php?route=dys" method="POST">
+                    <form action="index.php?route=dys" method="POST" class="nav-dys">
                         <label for="dys-font">Typographie adaptée</label>
-                        <input type="submit" value="{{cookie.dys}}" id="dys-font" name="dys-font">
+                        <button type="submit" value="{{cookie.dys}}" id="dys-font" name="dys-font"><div class="toggle"></div></button>
                     </form>
                 </li>
                 {% if session.user is defined %}

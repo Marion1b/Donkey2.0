@@ -61,6 +61,10 @@ body{
     }
 }
 
+// ==========================================================================
+// HEADER
+// ==========================================================================
+
 .page-header{
     width: 100%;
     background-color: $black;
@@ -110,7 +114,7 @@ body{
         }
     }
     .header-nav{ 
-        top: 92px;
+        top: 105px;
         height: 90vh;
         width: 100%;
         background-color: $secondary-color;

@@ -1,3 +1,4 @@
+@import "../../fonts/stylesheet.css";
 @keyframes nav {
   from {
     right: -500px;
@@ -1380,6 +1381,13 @@ body .hide {
   bottom: 5rem;
   left: 10rem;
   animation: 2s linear infinite alternate formMoveContact3;
+}
+
+#dys h1, #dys h2, #dys h3, #dys a, #dys label, #dys input, #dys p, #dys button {
+  font-family: "OpenDyslexic";
+}
+#dys h1, #dys h2, #dys h3 {
+  font-weight: bold;
 }
 
 .page-footer {

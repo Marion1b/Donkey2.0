@@ -1,3 +1,4 @@
+@import "../../fonts/stylesheet.css";
 @import "var";
 @import "animations";
 // sass -w assets/styles/sass:assets/styles/css
@@ -970,6 +971,18 @@ body{
         bottom: 5rem;
         left: 10rem;
         animation: 2s linear infinite alternate formMoveContact3;
+    }
+}
+
+// ==========================================================================
+// DYS
+// ==========================================================================
+#dys{
+    h1, h2, h3, a, label, input, p, button{
+        font-family: 'OpenDyslexic';
+    }
+    h1, h2, h3{
+        font-weight: bold;
     }
 }
 

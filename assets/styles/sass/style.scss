@@ -932,6 +932,47 @@ body{
         animation: 6s linear infinite alternate formMoveTickets3;
     }
 }
+
+// ==========================================================================
+// CONTACT
+// ==========================================================================
+
+.contact{
+    background-color: $secondary-color;
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5rem 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 95vh;
+    &-infos{
+        @include infos-section();
+        margin: 5rem 0;
+        p{
+            margin: 3rem 0;
+        }
+        box-shadow: -8px 8px 8px $opacity-black;
+    }
+    &-form2{
+        top: 5rem;
+        left: 1.5rem;
+        animation: 4s linear infinite alternate formMoveContact2;
+    }
+    &-form1{
+        top: 30rem;
+        right: -2rem;
+        animation: 3s linear infinite alternate formMoveContact1;
+    }
+    &-form3{
+        bottom: 5rem;
+        left: 10rem;
+        animation: 2s linear infinite alternate formMoveContact3;
+    }
+}
+
 // ==========================================================================
 // FOOTER
 // ==========================================================================

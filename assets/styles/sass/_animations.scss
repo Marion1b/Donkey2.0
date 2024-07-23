@@ -12,7 +12,7 @@
     }
 }
 
-@keyframes formMoveHome1{
+@keyframes formMoveLay1{
     from{
         transform: rotate(-145deg)translate(0px, 0px);
     }to{
@@ -20,15 +20,47 @@
     }
 }
 
-@keyframes formMoveHome2{
+@keyframes formMoveLeft1{
     from{
-        transform: rotate(0deg)translate(0px, 0px);
+        transform: rotate(-60deg)translate(0px,0px);
     }to{
-        transform: rotate(15deg)translate(-5px,-5px);
+        transform: rotate(-80deg)translate(3px,3px);
     }
 }
 
-@keyframes formMoveHome3{
+@keyframes formMoveRight1{
+    from{
+        transform: rotate(-150deg)translate(0px,0px);
+    }to{
+        transform: rotate(-175deg)translate(2px, 5px);
+    }
+}
+
+@keyframes formMoveLeft2{
+    from{
+        transform: rotate(30deg)translate(0px,0px);
+    }to{
+        transform: rotate(45deg)translate(5px,-5px);
+    }
+}
+
+@keyframes formMoveRight2{
+    from{
+        transform: rotate(-40deg)translate(0px,0px);
+    }to{
+        transform: rotate(-60deg)translate(-4px,-5px);
+    }
+}
+
+@keyframes formMoveDown2{
+    from{
+        transform: rotate(-177deg)translate(0px,0px);
+    }to{
+        transform: rotate(-143deg)translate(2px,-3px);
+    }
+}
+
+@keyframes formMoveLeft3{
     from{
         transform: rotate(-20deg)translate(0px, 0px);
     }
@@ -37,71 +69,7 @@
     }
 }
 
-@keyframes formMoveHomeInfos1{
-    from{
-        transform: rotate(-80deg)translate(0px, 0px);
-    }to{
-        transform: rotate(-55deg)translate(-5px,-3px);
-    }
-}
-
-@keyframes formMoveHomeInfos3{
-    from{
-        transform: rotate(17deg)translate(0px,0px);
-    }to{
-        transform: rotate(30deg)translate(-2px,-3px);
-    }
-}
-
-@keyframes formMoveProg1{
-    from{
-        transform: rotate(-90deg)translate(0px,0px);
-    }to{
-        transform: rotate(-75deg)translate(2px,2px);
-    }
-}
-
-@keyframes formMoveProg2a{
-    from{
-        transform: rotate(30deg)translate(0px,0px);
-    }to{
-        transform: rotate(45deg)translate(5px,-5px);
-    }
-}
-
-@keyframes formMoveProg2b{
-    from{
-        transform: rotate(-63deg)translate(0px,0px);
-    }to{
-        transform: rotate(-45deg)translate(3px,-3px);
-    }
-}
-
-@keyframes formMoveProg3{
-    from{
-        transform: rotate(-52deg)translate(0px,0px);
-    }to{
-        transform: rotate(-25deg)translate(2px,-3px);
-    }
-}
-
-@keyframes formMoveFiche1{
-    from{
-        transform: rotate(-55deg)translate(0px,0px);
-    }to{
-        transform: rotate(-75deg)translate(2px,2px);
-    }
-}
-
-@keyframes formMoveFiche2{
-    from{
-        transform: rotate(0deg)translate(0px,0px);
-    }to{
-        transform: rotate(15deg)translate(-1px,-3px);
-    }
-}
-
-@keyframes formMoveFiche3{
+@keyframes formMoveDown3{
     from{
         transform: rotate(15deg)translate(0px,0px);
     }to{
@@ -109,234 +77,10 @@
     }
 }
 
-@keyframes formMoveInfos2a{
-    from{
-        transform: rotate(0deg)translate(0px,0px);
-    }to{
-        transform: rotate(-20deg)translate(2px, 3px);
-    }
-}
-
-@keyframes formMoveInfos3{
-    from{
-        transform: rotate(25deg)translate(0px,0px);
-    }to{
-        transform: rotate(55deg)translate(3px,-4px);
-    }
-}
-
-@keyframes formMoveInfos2b{
-    from{
-        transform: rotate(27deg)translate(0px,0px);
-    }to{
-        transform: rotate(56deg)translate(-2px,8px);
-    }
-}
-
-@keyframes formMoveInfos1{
-    from{
-        transform: rotate(150deg)translate(0px,0px);
-    }to{
-        transform: rotate(120deg)translate(2px,2px);
-    }
-}
-
-@keyframes formMoveTicket3{
-    from{
-        transform: rotate(-15deg)translate(0px,0px);
-    }to{
-        transform: rotate(-75deg)translate(2px,-2px);
-    }
-}
-
-@keyframes formMoveTicket1{
-    from{
-        transform: rotate(-60deg)translate(0px,0px);
-    }to{
-        transform: rotate(-80deg)translate(3px,3px);
-    }
-}
-
-@keyframes formMoveTicket2{
-    from{
-        transform: rotate(-125deg)translate(0px,0px);
-    }to{
-        transform: rotate(-150deg)translate(2px,5px);
-    }
-}
-
-@keyframes formMoveBuy1a{
-    from{
-        transform: rotate(-35deg)translate(0px,0px);
-    }to{
-        transform: rotate(-55deg)translate(2px,4px);
-    }
-}
-
-@keyframes formMoveBuy2{
-    from{
-        transform: rotate(20deg)translate(0px,0px);
-    }to{
-        transform: rotate(55deg)translate(-3px,4px);
-    }
-}
-
-@keyframes formMoveBuy3{
-    from{
-        transform: rotate(12deg)translate(0px,0px);
-    }to{
-        transform: rotate(47deg)translate(-5px,5px);
-    }
-}
-
-@keyframes formMoveBuy1b{
-    from{
-        transform: rotate(-35deg)translate(0px,0px);
-    }to{
-        transform: rotate(-67deg)translate(-2px,-4px);
-    }
-}
-
-@keyframes formMoveConnexion1{
-    from{
-        transform: rotate(-130deg)translate(0px,0px);
-    }to{
-        transform: rotate(-167deg)translate(-8px,10px);
-    }
-}
-
-@keyframes formMoveConnexion3{
-    from{
-        transform: rotate(-25deg)translate(0px,0px);
-    }to{
-        transform: rotate(-123deg)translate(-3px,4px);
-    }
-}
-
-@keyframes formMoveInscritpion2{
-    from{
-        transform: rotate(-10deg)translate(0px,0px);
-    }to{
-        transform: rotate(10deg)translate(-2px,3px);
-    }
-}
-
-@keyframes formMovePersoTickets2{
-    from{
-        transform: rotate(0deg)translate(0px,0px);
-    }to{
-        transform: rotate(15deg)translate(5px,7px);
-    }
-}
-
-@keyframes formMovePersoTickets1{
-    from{
-        transform: rotate(-150deg)translate(0px,0px);
-    }to{
-        transform: rotate(-175deg)translate(2px, 5px);
-    }
-}
-
-@keyframes formMovePersoArtists3a{
+@keyframes formMoveRight3{
     from{
         transform: rotate(-100deg)translate(0px,0px);
     }to{
         transform: rotate(-85deg)translate(3px,-5px);
-    }
-}
-
-@keyframes formMovePersoArtists2{
-    from{
-        transform: rotate(-177deg)translate(0px,0px);
-    }to{
-        transform: rotate(-143deg)translate(2px,-3px);
-    }
-}
-
-@keyframes formMovePersoArtists1{
-    from{
-        transform: rotate(-55deg)translate(0px,0px);
-    }to{
-        transform: rotate(-25deg)translate(2px,-6px);
-    }
-}
-
-@keyframes formMovePersoArtists3b{
-    from{
-        transform: rotate(-100deg)translate(0px,0px);
-    }to{
-        transform: rotate(-76deg)translate(3px,4px);
-    }
-}
-
-@keyframes formMoveProgPerso3{
-    from{
-        transform: rotate(48deg)translate(0px,0px);
-    }to{
-        transform: rotate(75deg)translate(2px,-2px);
-    }
-}
-
-@keyframes formMoveProgPerso1{
-    from{
-        transform: rotate(145deg)translate(0px,0px);
-    }to{
-        transform: rotate(185deg)translate(3px,3px);
-    }
-}
-
-@keyframes formMoveProgPerso2{
-    from{
-        transform: rotate(-40deg)translate(0px,0px);
-    }to{
-        transform: rotate(-60deg)translate(-4px,-5px);
-    }
-}
-
-@keyframes formMoveTickets1{
-    from{
-        transform: rotate(15deg)translate(0px,0px);
-    }to{
-        transform: rotate(30deg)translate(2px,2px);
-    }
-}
-
-@keyframes formMoveTickets2{
-    from{
-        transform: rotate(45deg)translate(0px,0px);
-    }to{
-        transform: rotate(68deg)translate(4px,-3px);
-    }
-}
-
-@keyframes formMoveTickets3{
-    from{
-        transform: rotate(-10deg)translate(0px,0px);
-    }to{
-        transform: rotate(-30deg)translate(-3px,5px);
-    }
-}
-
-@keyframes formMoveContact2{
-    from{
-        transform: rotate(-15deg)translate(0px,0px);
-    }to{
-        transform: rotate(-47deg)translate(3px,-4px);
-    }
-}
-
-@keyframes formMoveContact1{
-    from{
-        transform: rotate(-63deg)translate(0px,0px);
-    }to{
-        transform: rotate(-90deg)translate(-3px,-6px);
-    }
-}
-
-@keyframes formMoveContact3{
-    from{
-        transform: rotate(0deg)translate(0px,0px);
-    }to{
-        transform: rotate(-43deg)translate(-2px,3px);
     }
 }

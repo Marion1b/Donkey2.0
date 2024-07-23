@@ -185,6 +185,8 @@ body{
     padding-top: 3rem;
     overflow: hidden;
     p{
+        position: relative;
+        z-index: 100;
         font-size: 2.4rem;
         font-weight: 800;
         padding: 1rem;
@@ -193,19 +195,28 @@ body{
     &-form1{
         bottom:1rem; 
         right: 2rem;
-        transform: rotate(-145deg);
-        animation: 2.5s linear infinite alternate formMoveHome1;
+        img{
+            transform: rotate(-145deg);
+            animation: 2.5s linear infinite alternate formMoveLay1;
+            position: sticky;
+        }
+        
     }
     &-form2{
         top: -2rem;
-        right: -7rem;
-        animation: 4s linear infinite alternate formMoveHome2;
+        right: -12rem;
+        img{
+            animation: 4s linear infinite alternate formMoveLeft2;
+        }
     }
     &-form3{
         left: 3rem;
         bottom: 2.5rem;
-        transform: rotate(20deg);
-        animation: 3s linear infinite alternate formMoveHome3;
+        img{
+            transform: rotate(20deg);
+            animation: 3s linear infinite alternate formMoveLeft3;
+            position: sticky;
+        }
     }
 }
 
@@ -253,12 +264,12 @@ body{
     &-form1{
         bottom: -3rem;
         left: -.2rem;
-        animation: 3s linear infinite alternate formMoveHomeInfos1;
+        animation: 3s linear infinite alternate formMoveLeft1;
     }
     &-form3{
         top: .5rem;
         right: .2rem;
-        animation: 5s linear infinite alternate formMoveHomeInfos3;
+        animation: 5s linear infinite alternate formMoveLeft3;
     }
 }
 
@@ -305,22 +316,22 @@ body{
     &-form2a{
         left: -8rem;
         top: 15rem;
-        animation: 3s linear infinite alternate formMoveProg2a;
+        animation: 3s linear infinite alternate formMoveLeft2;
     }   
     &-form1{
         right: -3rem;
         top: 80rem;
-        animation: 3s linear infinite alternate formMoveProg1;
+        animation: 3s linear infinite alternate formMoveLay1;
     }
     &-form2b{
         left: -5rem;
-        bottom: 100rem;
-        animation: 2s linear infinite alternate formMoveProg2b;
+        bottom: 10%;
+        animation: 2s linear infinite alternate formMoveRight2;
     }
     &-form3{
         right: -1rem;
         bottom: -2rem;
-        animation: 5s linear infinite alternate formMoveProg3;
+        animation: 5s linear infinite alternate formMoveLeft3;
     }
     h1{
         color: $secondary-color;
@@ -356,17 +367,17 @@ body{
     &-form1{
         top: 25rem;
         left: -5rem;
-        animation: 3s linear infinite alternate formMoveFiche1;
+        animation: 3s linear infinite alternate formMoveLeft1;
     }
     &-form2{
         bottom: 12rem;
         left:-8rem;
-        animation: 2s linear infinite alternate formMoveFiche2;
+        animation: 2s linear infinite alternate formMoveLeft2;
     }
     &-form3{
         bottom: -1rem;
         right: -1rem;
-        animation: 5s linear infinite alternate formMoveFiche3;
+        animation: 5s linear infinite alternate formMoveDown3;
     }
     h1{
         color: $secondary-color;
@@ -461,22 +472,22 @@ body{
     &-form2a{
         top: 7rem;
         left: -5rem;
-        animation: 5s linear infinite alternate formMoveInfos2a;
+        animation: 5s linear infinite alternate formMoveDown2;
     }
     &-form3{
         top: 50rem;
         right: -1rem;
-        animation: 3s linear infinite alternate formMoveInfos3;
+        animation: 3s linear infinite alternate formMoveDown3;
     }
     &-form2b{
         top: 120rem;
         left: -4rem;
-        animation: 6s linear infinite alternate formMoveInfos2b;
+        animation: 6s linear infinite alternate formMoveLeft2;
     }
     &-form1{
         bottom: 1rem;
         right: 0rem;
-        animation: 2s linear infinite alternate formMoveInfos1;
+        animation: 2s linear infinite alternate formMoveRight1;
     }
 }
 
@@ -541,17 +552,17 @@ body{
     &-form3{
         top: 25rem;
         right: -5rem;
-        animation: 5s linear infinite alternate formMoveTicket3;
+        animation: 5s linear infinite alternate formMoveLeft3;
     }
     &-form1{
         top: 75rem;
         left: -1rem;
-        animation: 3s linear infinite alternate formMoveTicket1;
+        animation: 3s linear infinite alternate formMoveLeft1;
     }
     &-form2{
         bottom: -3rem;
         right: -2rem;
-        animation: 5s linear infinite alternate formMoveTicket2;
+        animation: 5s linear infinite alternate formMoveRight2;
     }
 }
 
@@ -628,22 +639,22 @@ body{
     &-form1a{
         top: 7rem;
         left: -2rem;
-        animation: 3s linear infinite alternate formMoveBuy1a;
+        animation: 3s linear infinite alternate formMoveLeft1;
     }
     &-form2{
         top: 30rem;
         right: -7rem;
-        animation: 5s linear infinite alternate formMoveBuy2;
+        animation: 5s linear infinite alternate formMoveLeft2;
     }
     &-form3{
         top: 54rem;
         left: -5rem;
-        animation: 4s linear infinite alternate formMoveBuy3;
+        animation: 4s linear infinite alternate formMoveDown3;
     }
     &-form1b{
         bottom: 2rem;
         right: -3rem;
-        animation: 5s linear infinite alternate formMoveBuy1b;
+        animation: 5s linear infinite alternate formMoveLay1;
     }
 }
 
@@ -713,17 +724,17 @@ body{
     &-form1{
         top: 2rem;
         left: -4rem;
-        animation: 3s linear infinite alternate formMoveConnexion1;
+        animation: 3s linear infinite alternate formMoveLay1;
     }
     &-form3{
         bottom: -1rem;
         right: -2rem;
-        animation: 5s linear infinite alternate formMoveConnexion3;
+        animation: 5s linear infinite alternate formMoveLeft3;
     }
     &-form2{
         bottom: 12rem;
         left: -5rem;
-        animation: 3s linear infinite alternate formMoveInscritpion2;
+        animation: 3s linear infinite alternate formMoveDown2;
     }
 
 }
@@ -750,12 +761,12 @@ body{
         &-form2{
             top: 5rem;
             left: -8rem;
-            animation: 3s linear infinite alternate formMovePersoTickets2;
+            animation: 3s linear infinite alternate formMoveLeft2;
         }
         &-form1{
             top: 8rem;
             right: -5rem;
-            animation: 5s linear infinite alternate formMovePersoTickets1;
+            animation: 5s linear infinite alternate formMoveRight1;
         }
     }
     .planning-button, .artist-fav-button{
@@ -786,22 +797,22 @@ body{
         &-form3a{
             top: 0;
             right: -5rem;
-            animation: 4s linear infinite alternate formMovePersoArtists3a;
+            animation: 4s linear infinite alternate formMoveRight3;
         }
         &-form2{
             top: 10%;
             left: -5rem;
-            animation: 2s linear infinite alternate formMovePersoArtists2;
+            animation: 2s linear infinite alternate formMoveDown2;
         }
         &-form1{
             bottom: 40rem;
             right: 1rem;
-            animation: 5s linear infinite alternate formMovePersoArtists1;
+            animation: 5s linear infinite alternate formMoveLeft1;
         }
         &-form3b{
             bottom: -2rem;
             left: 1rem;
-            animation: 4s linear infinite alternate formMovePersoArtists3b;
+            animation: 4s linear infinite alternate formMoveRight3;
         }
     }
     &-programmation{
@@ -891,17 +902,17 @@ body{
         &-form3{
             top: 28rem;
             left: -2rem;
-            animation: 2s linear infinite alternate formMoveProgPerso3;
+            animation: 2s linear infinite alternate formMoveDown3;
         }
         &-form1{
             top: 45rem;
             right: -1rem;
-            animation: 2s linear infinite alternate formMoveProgPerso1;
+            animation: 2s linear infinite alternate formMoveRight1;
         }
         &-form2{
             bottom: -5rem;
             left: 8rem;
-            animation: 2s linear infinite alternate formMoveProgPerso2;
+            animation: 2s linear infinite alternate formMoveRight2;
         }
     }
 
@@ -959,17 +970,17 @@ body{
     &-form1{
         top: 23rem;
         left: 2rem;
-        animation: 2s linear infinite alternate formMoveTickets1;
+        animation: 2s linear infinite alternate formMoveLay1;
     }
     &-form2{
         top: 50rem;
         right: -1rem;
-        animation: 4s linear infinite alternate formMoveTickets2;
+        animation: 4s linear infinite alternate formMoveLeft2;
     }
     &-form3{
         bottom: 3rem;
         right: 20rem;
-        animation: 6s linear infinite alternate formMoveTickets3;
+        animation: 6s linear infinite alternate formMoveLeft3;
     }
 }
 
@@ -999,17 +1010,17 @@ body{
     &-form2{
         top: 5rem;
         left: 1.5rem;
-        animation: 4s linear infinite alternate formMoveContact2;
+        animation: 4s linear infinite alternate formMoveRight2;
     }
     &-form1{
         top: 30rem;
         right: -2rem;
-        animation: 3s linear infinite alternate formMoveContact1;
+        animation: 3s linear infinite alternate formMoveLeft1;
     }
     &-form3{
         bottom: 5rem;
         left: 10rem;
-        animation: 2s linear infinite alternate formMoveContact3;
+        animation: 2s linear infinite alternate formMoveLeft3;
     }
 }
 

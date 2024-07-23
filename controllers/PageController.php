@@ -88,8 +88,9 @@ class PageController extends AbstractController{
             // Check if a user is connected to add the button for the personnal artist list
             $favoriteArtistsId = $this->um->getFavoriteArtists();
             $this->render("programmation.html.twig", ["artists"=>$artists, "favoriteArtistsId" => $favoriteArtistsId]);   
+        }else{
+            $this->render("programmation.html.twig", ["artists"=>$artists]);
         }
-        $this->render("programmation.html.twig", ["artists"=>$artists]);
     }
 
     public function programmationbyDay(string $day):void{

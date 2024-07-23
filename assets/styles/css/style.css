@@ -295,6 +295,30 @@
     transform: rotate(-60deg) translate(-4px, -5px);
   }
 }
+@keyframes formMoveTickets1 {
+  from {
+    transform: rotate(15deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(30deg) translate(2px, 2px);
+  }
+}
+@keyframes formMoveTickets2 {
+  from {
+    transform: rotate(45deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(68deg) translate(4px, -3px);
+  }
+}
+@keyframes formMoveTickets3 {
+  from {
+    transform: rotate(-10deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-30deg) translate(-3px, 5px);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1173,7 +1197,7 @@ body .hide {
   border-radius: 1.5rem;
   border: #020403 2px solid;
   color: #020403;
-  box-shadow: -4px 4px 6px #020403;
+  box-shadow: -8px 8px 8px rgba(2, 4, 3, 0.25);
   position: relative;
   z-index: 100;
 }
@@ -1231,6 +1255,64 @@ body .hide {
   bottom: -5rem;
   left: 8rem;
   animation: 2s linear infinite alternate formMoveProgPerso2;
+}
+
+.tickets-page, .paiement-valide {
+  background-color: #4F09B9;
+  color: #FFE500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 95vh;
+}
+.tickets-page h1, .paiement-valide h1 {
+  text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+  margin-bottom: 2rem;
+}
+.tickets-page .tickets, .paiement-valide .tickets {
+  position: relative;
+  z-index: 100;
+  line-height: 3rem;
+  margin: 2rem;
+  color: #020403;
+  width: 50%;
+  text-align: center;
+  background-color: #FFE500;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  border: 2px solid #020403;
+  box-shadow: -4px 4px 6px rgba(2, 4, 3, 0.25);
+}
+.tickets-page .tickets-name, .paiement-valide .tickets-name {
+  font-weight: bold;
+}
+.tickets-page .tickets a, .paiement-valide .tickets a {
+  width: 100%;
+  border: 1px solid #020403;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.tickets-page-infos, .paiement-valide-infos {
+  padding: 2rem;
+}
+.tickets-page-form1, .paiement-valide-form1 {
+  top: 23rem;
+  left: 2rem;
+  animation: 2s linear infinite alternate formMoveTickets1;
+}
+.tickets-page-form2, .paiement-valide-form2 {
+  top: 50rem;
+  right: -1rem;
+  animation: 4s linear infinite alternate formMoveTickets2;
+}
+.tickets-page-form3, .paiement-valide-form3 {
+  bottom: 3rem;
+  right: 20rem;
+  animation: 6s linear infinite alternate formMoveTickets3;
 }
 
 .page-footer {

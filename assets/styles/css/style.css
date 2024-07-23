@@ -319,6 +319,30 @@
     transform: rotate(-30deg) translate(-3px, 5px);
   }
 }
+@keyframes formMoveContact2 {
+  from {
+    transform: rotate(-15deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-47deg) translate(3px, -4px);
+  }
+}
+@keyframes formMoveContact1 {
+  from {
+    transform: rotate(-63deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-90deg) translate(-3px, -6px);
+  }
+}
+@keyframes formMoveContact3 {
+  from {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-43deg) translate(-2px, 3px);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1313,6 +1337,49 @@ body .hide {
   bottom: 3rem;
   right: 20rem;
   animation: 6s linear infinite alternate formMoveTickets3;
+}
+
+.contact {
+  background-color: #FFE500;
+  color: #020403;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 95vh;
+}
+.contact-infos {
+  background-color: #FFE500;
+  z-index: 5;
+  width: 34rem;
+  border: 0.2rem solid #020403;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 5px 5px 15px #d9c300 -5px -5px 15px #d9c300;
+  margin: 5rem 0;
+  box-shadow: -8px 8px 8px rgba(2, 4, 3, 0.25);
+}
+.contact-infos p {
+  margin: 3rem 0;
+}
+.contact-form2 {
+  top: 5rem;
+  left: 1.5rem;
+  animation: 4s linear infinite alternate formMoveContact2;
+}
+.contact-form1 {
+  top: 30rem;
+  right: -2rem;
+  animation: 3s linear infinite alternate formMoveContact1;
+}
+.contact-form3 {
+  bottom: 5rem;
+  left: 10rem;
+  animation: 2s linear infinite alternate formMoveContact3;
 }
 
 .page-footer {

@@ -316,3 +316,27 @@
         transform: rotate(-30deg)translate(-3px,5px);
     }
 }
+
+@keyframes formMoveContact2{
+    from{
+        transform: rotate(-15deg)translate(0px,0px);
+    }to{
+        transform: rotate(-47deg)translate(3px,-4px);
+    }
+}
+
+@keyframes formMoveContact1{
+    from{
+        transform: rotate(-63deg)translate(0px,0px);
+    }to{
+        transform: rotate(-90deg)translate(-3px,-6px);
+    }
+}
+
+@keyframes formMoveContact3{
+    from{
+        transform: rotate(0deg)translate(0px,0px);
+    }to{
+        transform: rotate(-43deg)translate(-2px,3px);
+    }
+}

@@ -484,6 +484,17 @@ body .hide {
 .page-header .header-nav .nav-dys .toggle-button-on div {
   margin: 0.5rem 0.5rem 0.5rem 3rem;
 }
+.page-header .header-nav .nav-logout {
+  background-color: #FFE500;
+  border: 1px solid #020403;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 800;
+}
+.page-header .header-nav .nav-logout i {
+  margin-left: 0.5rem;
+}
 .page-header .header-nav ul {
   position: relative;
   animation: 500ms nav;

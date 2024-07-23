@@ -192,7 +192,7 @@ body .hide {
   transition: all 400ms ease-in-out;
 }
 .page-header .header-nav {
-  top: 92px;
+  top: 105px;
   height: 90vh;
   width: 100%;
   background-color: #FFE500;

@@ -292,3 +292,27 @@
         transform: rotate(-60deg)translate(-4px,-5px);
     }
 }
+
+@keyframes formMoveTickets1{
+    from{
+        transform: rotate(15deg)translate(0px,0px);
+    }to{
+        transform: rotate(30deg)translate(2px,2px);
+    }
+}
+
+@keyframes formMoveTickets2{
+    from{
+        transform: rotate(45deg)translate(0px,0px);
+    }to{
+        transform: rotate(68deg)translate(4px,-3px);
+    }
+}
+
+@keyframes formMoveTickets3{
+    from{
+        transform: rotate(-10deg)translate(0px,0px);
+    }to{
+        transform: rotate(-30deg)translate(-3px,5px);
+    }
+}

@@ -800,7 +800,7 @@ body{
             border-radius: 1.5rem;
             border: $black 2px solid;
             color: $black;
-            box-shadow: -4px 4px 6px $black;
+            box-shadow: -8px 8px 8px $opacity-black;
             position: relative;
             z-index: 100;
             &-row{
@@ -867,6 +867,71 @@ body{
 
 }
 
+// ==========================================================================
+// BILLETS
+// ==========================================================================
+
+.tickets-page, .paiement-valide{
+    background-color: $main-color;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5rem 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 95vh;
+    h1{
+        text-shadow:
+            -1.5px -1.5px 0 $black,  
+            1.5px -1.5px 0 $black,
+            -1.5px  1.5px 0 $black,
+            1.5px  1.5px 0 $black;
+            margin-bottom: 2rem;
+    }
+    .tickets{
+        position: relative;
+        z-index: 100;
+        line-height: 3rem;
+        margin: 2rem;
+        color: $black;
+        width: 50%;
+        text-align: center;
+        background-color: $secondary-color;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        border: 2px solid $black;
+        box-shadow: -4px 4px 6px $opacity-black;
+        &-name{
+            font-weight: bold;
+        }
+        a{
+            width: 100%;
+            border: 1px solid $black;
+            padding: .5rem;
+            border-radius: .5rem;
+        }
+    }
+    &-infos{
+        padding: 2rem;
+    }
+    &-form1{
+        top: 23rem;
+        left: 2rem;
+        animation: 2s linear infinite alternate formMoveTickets1;
+    }
+    &-form2{
+        top: 50rem;
+        right: -1rem;
+        animation: 4s linear infinite alternate formMoveTickets2;
+    }
+    &-form3{
+        bottom: 3rem;
+        right: 20rem;
+        animation: 6s linear infinite alternate formMoveTickets3;
+    }
+}
 // ==========================================================================
 // FOOTER
 // ==========================================================================

@@ -19,6 +19,11 @@
 
 <section class="espace-perso-programmation">
     <h1>Ma programmation</h1>
+
+    <div class="espace-perso-programmation-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
+    <div class="espace-perso-programmation-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
+    <div class="espace-perso-programmation-form2 form"><img src="./assets/img/forms/form2-yellow.png" alt=""></div>
+
     <a href="index.php?route=liste-artiste-fav&&user-id={{session.user.getId()}}">
         <button class="artist-fav-button">Mes artistes</button>
     </a>
@@ -43,7 +48,7 @@
         </ul>
     </nav>
 
-    <article class="personnal-prog">
+    <article class="personnal-prog {% if get.jour == "vendredi" %}personnal-prog-ven{% else %} personnal-prog-other {% endif %}">
         {% if get.jour == "vendredi" %}
             {% for i in 18..23 %}
             <div class="personnal-prog-row">
@@ -52,7 +57,7 @@
                     {% if artist.getHourToString() == i %}
                     <article class="personnal-prog-artist">
                         <p class="personnal-prog-artist-name">{{artist.getName()}}</p>
-                        <aside>
+                        <aside class="{% if artist.getName() == "JeanneTo"%} personnal-prog-image-top {% endif %}">
                             <img src="{{artist.getPicture()}}" alt="">
                         </aside>
                     </article>

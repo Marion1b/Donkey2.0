@@ -132,11 +132,7 @@ class PageController extends AbstractController{
 
     public function showArtistList():void{
         $isArtist = $this->am->showFavoriteArtists();
-        if($isArtist!==null){
-            $this->render("espace-perso.html.twig",["favoriteArtists"=>$isArtist]);
-        }else{
-            $this->render("espace-perso.html.twig", []);
-        }
+        $this->render("espace-perso.html.twig",["favoriteArtists"=>$isArtist]);
     }
 
     public function personnalProg(string $day):void{

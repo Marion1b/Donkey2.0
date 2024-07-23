@@ -268,3 +268,27 @@
         transform: rotate(-76deg)translate(3px,4px);
     }
 }
+
+@keyframes formMoveProgPerso3{
+    from{
+        transform: rotate(48deg)translate(0px,0px);
+    }to{
+        transform: rotate(75deg)translate(2px,-2px);
+    }
+}
+
+@keyframes formMoveProgPerso1{
+    from{
+        transform: rotate(145deg)translate(0px,0px);
+    }to{
+        transform: rotate(185deg)translate(3px,3px);
+    }
+}
+
+@keyframes formMoveProgPerso2{
+    from{
+        transform: rotate(-40deg)translate(0px,0px);
+    }to{
+        transform: rotate(-60deg)translate(-4px,-5px);
+    }
+}

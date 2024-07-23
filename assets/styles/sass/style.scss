@@ -226,6 +226,37 @@ body{
 // PROGRAMMATION
 // ==========================================================================
 
+.programmation-filter{
+    ul{
+        display: flex;
+        justify-content: space-around;
+        margin: 3.5rem 0;
+        li{
+            font-size: 1.2rem;
+            border: 1px solid $black;
+            box-shadow: -4px 4px 4px $opacity-black;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            color: $secondary-color;
+            font-weight: 800;
+            text-shadow:
+            -1.5px -1.5px 0 $black,  
+            1.5px -1.5px 0 $black,
+            -1.5px  1.5px 0 $black,
+            1.5px  1.5px 0 $black;
+        }
+        a{
+            position: relative;
+            z-index: 100;
+        }
+    }
+    .programmation-filter-active{
+        background-color: $secondary-color;
+        color: $black;
+        text-shadow: none;
+    }
+}
+
 .programmation-page{
     overflow: hidden;
     background-color: $main-color;
@@ -259,38 +290,11 @@ body{
             -1.5px  1.5px 0 $black,
             1.5px  1.5px 0 $black;
     }
-    ul{
-        display: flex;
-        justify-content: space-around;
-        margin: 3.5rem 0;
-        li{
-            font-size: 1.2rem;
-            border: 1px solid $black;
-            box-shadow: -4px 4px 4px $opacity-black;
-            border-radius: .5rem;
-            padding: .5rem 1.5rem;
-            color: $secondary-color;
-            font-weight: 800;
-            text-shadow:
-            -1.5px -1.5px 0 $black,  
-            1.5px -1.5px 0 $black,
-            -1.5px  1.5px 0 $black,
-            1.5px  1.5px 0 $black;
-        }
-        a{
-            position: relative;
-            z-index: 100;
-        }
-    }
     article{
         position: relative;
         z-index: 100;
     }
-    .programmation-filter-active{
-        background-color: $secondary-color;
-        color: $black;
-        text-shadow: none;
-    }
+    
     .artist-card{
         @include artist-card();
     }
@@ -714,7 +718,7 @@ body{
             animation: 5s linear infinite alternate formMovePersoTickets1;
         }
     }
-    .planning-button{
+    .planning-button, .artist-fav-button{
         @include yellow-button();
         margin: 3rem 0;
     }
@@ -723,6 +727,7 @@ body{
         color: $secondary-color;
         width: 100%;
         padding: 5rem 0;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -739,12 +744,12 @@ body{
             @include artist-card();
         }
         &-form3a{
-            top: 15rem;
+            top: 0;
             right: -5rem;
             animation: 4s linear infinite alternate formMovePersoArtists3a;
         }
         &-form2{
-            top: 100rem;
+            top: 10%;
             left: -5rem;
             animation: 2s linear infinite alternate formMovePersoArtists2;
         }
@@ -757,6 +762,106 @@ body{
             bottom: -2rem;
             left: 1rem;
             animation: 4s linear infinite alternate formMovePersoArtists3b;
+        }
+    }
+    &-programmation{
+        background-color: $main-color;
+        color: $secondary-color;
+        width: 100%;
+        padding: 5rem 0;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        h1{
+            text-shadow:
+            -1px -1px 0 $black,  
+            1px -1px 0 $black,
+            -1px  1px 0 $black,
+            1px  1px 0 $black;
+        }
+        nav{
+            width: 100%;
+        }
+        .personnal-prog-ven{
+            display: grid;
+            grid-template-rows: repeat(6, 1fr);
+        }
+        .personnal-prog-other{
+            display: grid;
+            grid-template-rows: repeat(10, 1fr);
+        }
+        .personnal-prog{
+            padding: 2rem;
+            width: 35rem;
+            background-color: $secondary-color;
+            border-radius: 1.5rem;
+            border: $black 2px solid;
+            color: $black;
+            box-shadow: -4px 4px 6px $black;
+            position: relative;
+            z-index: 100;
+            &-row{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            &-hour{
+                align-self: flex-start;
+                border-bottom: 1px solid $black;
+                border-top: 1px solid $black;
+                width: 100%;
+            }
+            &-image-top{
+                align-self: flex-start;
+            }
+            &-artist{
+                width: 80%;
+                height: 5rem;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                background-color: $main-color;
+                border: 1px solid $black;
+                border-radius: 1.2rem;
+                text-align: right;
+                overflow: hidden;
+                aside{
+                    width: 10rem;
+                    overflow: hidden;
+                    border: 1px solid $black;
+                    img{
+                        width: 100%;
+                    }
+                }
+                &-name{
+                    color: $secondary-color;
+                    text-shadow:
+                        -1px -1px 0 $black,  
+                        1px -1px 0 $black,
+                        -1px  1px 0 $black,
+                        1px  1px 0 $black;
+                    font-weight: 800;
+                    margin-right: 1rem;
+                }
+            }
+        }
+        &-form3{
+            top: 28rem;
+            left: -2rem;
+            animation: 2s linear infinite alternate formMoveProgPerso3;
+        }
+        &-form1{
+            top: 45rem;
+            right: -1rem;
+            animation: 2s linear infinite alternate formMoveProgPerso1;
+        }
+        &-form2{
+            bottom: -5rem;
+            left: 8rem;
+            animation: 2s linear infinite alternate formMoveProgPerso2;
         }
     }
 

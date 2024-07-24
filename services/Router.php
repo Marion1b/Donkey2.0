@@ -45,8 +45,8 @@ class Router{
             if((int) $get["admin-id"] === $_SESSION["user"]->getId() && $_SESSION["user"]->getAdmin() === "ADMIN"){
                 $this->pc->adminSpace();
             }
-        }else if(isset($get["route"]) && $get["route"] === "search-user"){
-            $this->pc->searchUser($_POST["user-search"]);
+        }else if(isset($get["route"]) && $get["route"]==="check-modif"){
+            $this->pc->checkModifUser();
         }else if(isset($get["route"]) && $get["route"] === "billetterie"){
             $this->pc->ticketing();
         }else if(isset($get["route"]) && $get["route"] === "achat-billets"){

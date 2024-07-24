@@ -57,12 +57,23 @@ class PageController extends AbstractController{
     }
 
     public function adminSpace():void{
-        $this->render("espace-admin.html.twig", []);
+        if(isset($_POST["user-search"])){
+            $usersFind = $this->um->findUser($_POST["user-search"]);
+            $this->render("espace-admin.html.twig", ["usersFind"=>$usersFind]);
+        }else if(isset($_GET["utilisateur-id"])){
+            $user = $this->um->findById((int) $_GET["utilisateur-id"]);
+            $this->render("modifier-user.html.twig", ["user"=> $user]);
+        }else{
+            $this->render("espace-admin.html.twig", []);
+        }
     }
 
-    public function searchUser($user):void{
-        $usersFind = $this->um->findUser($user);
-        $this->render("espace-admin.html.twig", ["usersFind"=>$usersFind]);
+    public function checkModifUser():void{
+        $csrft = new CSRFTokenManager();
+        if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
+            $this->um->modifyUser();
+            $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
+        }
     }
 
     public function getTicket():void{

@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="modifier-page">
+
+<h1>Espace Admin {{ session.user.getFirstName()|escape }}</h1>
+
+<section class="modifier-user">
+    <h2>Modifier {{user.getFirstName}}</h2>
+    <form action="index.php?route=check-modif" method="post">
+        <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+        <input type="hidden" name="user-id" id="user-id" value="{{user.getId()}}">
+        <label for="last_name">Nom : </label>
+        <input type="text" name="last_name" id="last_name" value="{{user.getLastName()}}">
+        <label for="first_name">Prénom</label>
+        <input type="text" name="first_name" id="first_name" value="{{user.getFirstName()}}">
+        <label for="email">Email : </label>
+        <input type="email" name="email" id="email" value="{{user.getEmail()}}">
+        <label for="ADMIN">ADMIN : </label>
+        <select name="ADMIN" id="ADMIN">
+            {% if user.getAdmin() == "USER" %}
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
+            {% else %}
+                <option value="ADMIN">ADMIN</option>
+                <option value="USER">USER</option>
+            {% endif %}
+        </select>
+        <button type="submit">Modifier</button>
+    </form>
+</section>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

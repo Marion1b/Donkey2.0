@@ -18,6 +18,12 @@
     <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
 </section>
 
+{% if session.user.getAdmin() == "ADMIN" %}
+    <section class="espacec-perso-admin-space">
+        <h1 hidden>Espace administrateur</h1>
+        <a href="index.php?route=espace-admin&&admin-id={{session.user.getId()}}"><button class="admin-space-button">Espace admin</button></a>
+    </section>
+{% endif %}
 
 <section class="espace-perso-artists">
     <h1>Mes artistes</h1>

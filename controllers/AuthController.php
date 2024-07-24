@@ -45,7 +45,7 @@ class AuthController extends AbstractController{
                 if(preg_match($pattern,$password)){
                     if($post["password"] === $post["checkPassword"]){
                         $this->um->create($user);
-                        $this->redirect("espace-perso");
+                        $this->redirect("index.php?route=espace-perso&&user-id=" . $user->getId());
                         // return to router.php
                         return $user;
                     }else{

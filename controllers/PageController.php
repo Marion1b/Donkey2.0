@@ -56,10 +56,18 @@ class PageController extends AbstractController{
         }
     }
 
+    public function adminSpace():void{
+        $this->render("espace-admin.html.twig", []);
+    }
+
     public function getTicket():void{
         if(isset($_SESSION["user"]) && (string) $_SESSION["user"]->getId() === $_GET["user-id"]){
             $tickets = $this->tm->findByUserId($_SESSION["user"]->getId());
-            $this->render("tickets.html.twig", ["tickets"=>$tickets]);
+            if($tickets !== null){
+                $this->render("tickets.html.twig", ["tickets"=>$tickets]);
+            }else{
+                $this->render("tickets.html.twig", []);
+            }
         }else{
             $this->ticketing();
         }

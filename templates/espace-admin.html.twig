@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="admin-space">
+
+    <h1>Espace Admin {{ session.user.getFirstName()|escape }}</h1>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}

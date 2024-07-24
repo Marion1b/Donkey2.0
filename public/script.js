@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const main = document.querySelector('main');
     const body = document.querySelector('body');
     const dysButton = document.querySelector('#dys-font');
-    const userDelete = document.querySelector('.user-delete');
+    const userDelete = document.querySelectorAll('.user-delete');
+    const ticketDelete = document.querySelectorAll('.ticket-delete');
     // Check if buy tickets form is not empty
     if(buyTickets){
         const select = document.querySelectorAll(".buy-tickets select");
@@ -75,17 +76,36 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     })
 
-    if(userDelete){
+    if(userDelete.length > 0){
         const p = document.querySelector('.espace-admin-modal p');
         const modal = document.querySelector(".espace-admin-modal");
         const no = document.querySelector(".espace-admin-modal-no");
         const input = document.querySelector(".espace-admin-modal-user-email");
-        userDelete.addEventListener('click', ()=>{
-            console.log(modal);
-            p.innerText+=userDelete.id + " ?";
-            input.value = userDelete.id;
-            modal.classList.remove('hide');
+        for(let i =0; i<userDelete.length; i++){
+            userDelete[i].addEventListener('click', ()=>{
+                p.innerText+=userDelete[i].id + " ?";
+                input.value = userDelete[i].id;
+                modal.classList.remove('hide');
+            })
+        }
+        no.addEventListener('click', ()=>{
+            modal.classList.add('hide');
         })
+    }
+
+    if(ticketDelete.length > 0){
+        console.log("coucou");
+        const p = document.querySelector(".espace-admin-ticket-modal p");
+        const modal = document.querySelector(".espace-admin-ticket-modal");
+        const no = document.querySelector(".espace-admin-ticket-modal-no");
+        const input = document.querySelector(".espace-admin-modal-ticket-id");
+        for(let i=0; i<ticketDelete.length; i++){
+            ticketDelete[i].addEventListener('click', ()=>{
+                p.innerText+=ticketDelete[i].id + "?";
+                input.value = ticketDelete[i].id;
+                modal.classList.remove('hide');
+            })
+        }
         no.addEventListener('click', ()=>{
             modal.classList.add('hide');
         })

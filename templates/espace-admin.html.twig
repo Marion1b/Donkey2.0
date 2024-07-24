@@ -30,7 +30,6 @@
             </thead>
             <tbody>
                 {%for user in usersFind%}
-
                     <tr>
                         <td>{{user.getId()}}</td>
                         <td>{{user.getLastName()}}</td>
@@ -54,6 +53,48 @@
             <button type="submit">Oui</button>
         </form>
         <button class="espace-admin-modal-no">Non</button>
+    </section>
+
+    <form action="index.php?route=espace-admin&&admin-id={{session.user.getId()}}" method="post">
+        <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+        <label for="ticket-search">Chercher un billet (id, nom, prénom, email) :</label>
+        <input type="search" name="ticket-search" id="ticket-search">
+        <button type="submit">Go</button>
+    </form>
+
+    {% if ticketsFind is defined %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom-prénom</th>
+                    <th>Tarif</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+                <tbody>
+                    {% for ticket in ticketsFind %}
+                        <tr>
+                            <td>{{ticket.getId()}}</td>
+                            <td>{{ticket.getContent()}}</td>
+                            <td>{{ticket.getTarif()}}</td>
+                            <td>{{ticket.getEmail()}}</td>
+                            <td class="ticket-delete" id="{{ticket.getId()}}">Supprimer</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </thead>
+        </table>
+    {% endif %}
+
+    <section class="espace-admin-ticket-modal hide">
+        <p>ëtes-vous sûr de vouloir supprimer le ticket </p>
+        <form action="index.php?route=checkDeleteTicket" method="post">
+            <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+            <input type="hidden" name="modal-ticket-id" id="modal-ticket-id" value="" class="espace-admin-modal-ticket-id">
+            <button type="submit">Oui</button>
+        </form>
+        <button class="espace-admin-ticket-modal-no">Non</button>
     </section>
 </main>
 {% endblock %}

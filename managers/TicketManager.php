@@ -125,6 +125,49 @@ class TicketManager extends AbstractManager{
         }else{
             return null;
         }
+    }
 
+    public function findTicket(string $ticketSearch):? array{
+        $query = $this->db->prepare(
+            "SELECT *
+            FROM tickets
+            WHERE id = :ticket OR content LIKE :ticket OR email = :ticket"
+        );
+
+        $parameters = [
+            "ticket"=>$ticketSearch,
+        ];
+        $query->execute($parameters);
+        if($query->rowCount()>=1){
+            $tickets = $query->fetchAll(PDO::FETCH_ASSOC);
+            $ticketsClass = [];
+            foreach($tickets as $ticket){
+                $ticketObj =  new Ticket($ticket["content"], $ticket["tarif"], $ticket["email"], $ticket["email"]);
+                $ticketObj->setId($ticket["id"]);
+                $ticketsClass[]=$ticketObj;
+            }
+            return $ticketsClass;
+        }else{
+            return null;
+        }
+    }
+
+    public function deleteTicket(int $id):void{
+        $query = $this->db->prepare(
+            "DELETE FROM users_tickets
+            WHERE ticket_id = :id"
+        );
+        $parameters = [
+            "id"=>$id
+        ];
+        $query->execute($parameters);
+        $query = $this->db->prepare(
+            "DELETE FROM tickets
+            WHERE id = :id"
+        );
+        $parameters = [
+            "id"=>$id
+        ];
+        $query->execute($parameters);
     }
 }

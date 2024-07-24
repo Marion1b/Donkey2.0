@@ -63,6 +63,11 @@ class PageController extends AbstractController{
                 $usersFind = $this->um->findUser($_POST["user-search"]);
                 $this->render("espace-admin.html.twig", ["usersFind"=>$usersFind]);
             }
+        }else if(isset($_POST["ticket-search"])){
+            if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
+                $ticketsFind = $this->tm->findTicket($_POST["ticket-search"]);
+                $this->render("espace-admin.html.twig", ["ticketsFind"=>$ticketsFind]);
+            }
         }else if(isset($_GET["utilisateur-id"])){
             $user = $this->um->findById((int) $_GET["utilisateur-id"]);
             $this->render("modifier-user.html.twig", ["user"=> $user]);
@@ -83,6 +88,14 @@ class PageController extends AbstractController{
         $csrft = new CSRFTokenManager();
         if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
             $this->um->deleteUser($_POST["modal-user-email"]);
+            $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
+        }
+    }
+
+    public function checkDeleteTicket():void{
+        $csrft = new CSRFTokenManager();
+        if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
+            $this->tm->deleteTicket($_POST["modal-ticket-id"]);
             $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
         }
     }

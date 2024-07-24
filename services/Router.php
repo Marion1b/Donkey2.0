@@ -49,6 +49,8 @@ class Router{
             $this->pc->checkModifUser();
         }else if(isset($get["route"]) && $get["route"]==="checkDelete"){
             $this->pc->checkDeleteUser();
+        }else if(isset($get["route"]) && $get["route"]==="checkDeleteTicket"){
+            $this->pc->checkDeleteTicket();
         }else if(isset($get["route"]) && $get["route"] === "billetterie"){
             $this->pc->ticketing();
         }else if(isset($get["route"]) && $get["route"] === "achat-billets"){

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const main = document.querySelector('main');
     const body = document.querySelector('body');
     const dysButton = document.querySelector('#dys-font');
+    const userDelete = document.querySelector('.user-delete');
     // Check if buy tickets form is not empty
     if(buyTickets){
         const select = document.querySelectorAll(".buy-tickets select");
@@ -73,4 +74,20 @@ document.addEventListener('DOMContentLoaded', function(){
             dysButton.classList.remove('toggle-button-on');
         }
     })
+
+    if(userDelete){
+        const p = document.querySelector('.espace-admin-modal p');
+        const modal = document.querySelector(".espace-admin-modal");
+        const no = document.querySelector(".espace-admin-modal-no");
+        const input = document.querySelector(".espace-admin-modal-user-email");
+        userDelete.addEventListener('click', ()=>{
+            console.log(modal);
+            p.innerText+=userDelete.id + " ?";
+            input.value = userDelete.id;
+            modal.classList.remove('hide');
+        })
+        no.addEventListener('click', ()=>{
+            modal.classList.add('hide');
+        })
+    }
 })

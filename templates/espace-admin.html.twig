@@ -10,6 +10,7 @@
     <h1>Espace Admin {{ session.user.getFirstName()|escape }}</h1>
 
     <form action="index.php?route=espace-admin&&admin-id={{session.user.getId()}}" method="post">
+        <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
         <label for="user-search">Chercher un utilisateur (nom, prénom ou email) :</label>
         <input type="search" name="user-search" id="user-search">
         <button type="submit">Go</button>
@@ -29,6 +30,7 @@
             </thead>
             <tbody>
                 {%for user in usersFind%}
+
                     <tr>
                         <td>{{user.getId()}}</td>
                         <td>{{user.getLastName()}}</td>
@@ -36,12 +38,23 @@
                         <td>{{user.getEmail()}}</td>
                         <td>{{user.getAdmin()}}</td>
                         <td><a href="index.php?route=espace-admin&&admin-id={{session.user.getId()}}&&utilisateur-id={{user.getId()}}">Modifier</a></td>
-                        <td><a href=""></a>Supprimer</td>
+                        <td class="user-delete" id="{{user.getEmail()}}">Supprimer</td>
+                        {# <td><a href="index.php?route=espace-admin&&admin-id={{session.user.getId()}}&&modal=true&&user-name={{user.getLastName()}}-{{user.getFirstName()}}">Supprimer</a></td> #}
                     </tr>
                 {%endfor%}
             </tbody>
         </table>
     {% endif %}
+
+    <section class="espace-admin-modal hide">
+        <p>ëtes-vous sûr de vouloir supprimer </p>
+        <form action="index.php?route=checkDelete" method="post">
+            <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+            <input type="hidden" name="modal-user-email" id="modal-user-email" value="" class="espace-admin-modal-user-email">
+            <button type="submit">Oui</button>
+        </form>
+        <button class="espace-admin-modal-no">Non</button>
+    </section>
 </main>
 {% endblock %}
 

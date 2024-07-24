@@ -57,9 +57,12 @@ class PageController extends AbstractController{
     }
 
     public function adminSpace():void{
+        $csrft = new CSRFTokenManager();
         if(isset($_POST["user-search"])){
-            $usersFind = $this->um->findUser($_POST["user-search"]);
-            $this->render("espace-admin.html.twig", ["usersFind"=>$usersFind]);
+            if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
+                $usersFind = $this->um->findUser($_POST["user-search"]);
+                $this->render("espace-admin.html.twig", ["usersFind"=>$usersFind]);
+            }
         }else if(isset($_GET["utilisateur-id"])){
             $user = $this->um->findById((int) $_GET["utilisateur-id"]);
             $this->render("modifier-user.html.twig", ["user"=> $user]);
@@ -72,6 +75,14 @@ class PageController extends AbstractController{
         $csrft = new CSRFTokenManager();
         if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
             $this->um->modifyUser();
+            $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
+        }
+    }
+
+    public function checkDeleteUser():void{
+        $csrft = new CSRFTokenManager();
+        if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
+            $this->um->deleteUser($_POST["modal-user-email"]);
             $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
         }
     }

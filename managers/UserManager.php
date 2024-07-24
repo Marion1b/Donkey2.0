@@ -120,6 +120,27 @@ class UserManager extends AbstractManager{
         $query->execute($parameters);
     }
 
+    public function deleteUser(string $email):void{
+        $user = $this->findByEmail($email);
+        $id = $user->getId();
+        $query = $this->db->prepare(
+            "DELETE FROM users_tickets
+            WHERE user_id = :id"
+        );
+        $parameters = [
+            "id"=>$id
+        ];
+        $query->execute($parameters);
+        $query = $this->db->prepare(
+            "DELETE FROM users
+            WHERE email = :email"
+        );
+        $parameters = [
+            "email"=>$email
+        ];
+        $query->execute($parameters);
+    }
+
     public function addFavorite():void{
         $query = $this->db->prepare(
             "INSERT INTO

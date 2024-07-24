@@ -9,6 +9,36 @@
 
     <h1>Espace Admin {{ session.user.getFirstName()|escape }}</h1>
 
+    <form action="index.php?route=search-user" method="post">
+        <label for="user-search">Chercher un utilisateur (nom, prénom ou email) :</label>
+        <input type="search" name="user-search" id="user-search">
+        <button type="submit">Go</button>
+    </form>
+
+    {% if usersFind is defined %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>ADMIN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for user in usersFind%}
+                    <tr>
+                        <td>{{user.getId()}}</td>
+                        <td>{{user.getLastName()}}</td>
+                        <td>{{user.getFirstName()}}</td>
+                        <td>{{user.getEmail()}}</td>
+                        <td>{{user.getAdmin()}}</td>
+                    </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    {% endif %}
 </main>
 {% endblock %}
 

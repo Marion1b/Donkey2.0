@@ -28,6 +28,31 @@ class UserManager extends AbstractManager{
         }
     }
 
+    public function findUser(string $name):? array{
+        $query = $this->db->prepare(
+            "SELECT *
+            FROM users
+            WHERE last_name = :name OR first_name = :name OR email = :name"
+        );
+        $parameters = [
+            "name"=>$name
+        ];
+        $query->execute($parameters);
+        if($query->rowCount()>=1){
+            $users = $query->fetchAll(PDO::FETCH_ASSOC);
+            $usersClass = [];
+            foreach($users as $user){
+                $userObj =  new User($user["last_name"], $user["first_name"], $user["email"], $user["password"]);
+                $userObj->setAdmin($user["ADMIN"]);
+                $userObj->setId($user["id"]);
+                $usersClass[]=$userObj;
+            }
+            return $usersClass;
+        }else{
+            return null;
+        }
+    }
+
     public function create(User $user):void{
         $query = $this->db->prepare(
             "INSERT INTO

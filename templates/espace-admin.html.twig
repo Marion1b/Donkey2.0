@@ -24,6 +24,7 @@
                     <th>Prénom</th>
                     <th>Email</th>
                     <th>ADMIN</th>
+                    <th colspan="2">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +35,8 @@
                         <td>{{user.getFirstName()}}</td>
                         <td>{{user.getEmail()}}</td>
                         <td>{{user.getAdmin()}}</td>
+                        <td><button>Modifier</button></td>
+                        <td><button>Supprimer<button></td>
                     </tr>
                 {%endfor%}
             </tbody>

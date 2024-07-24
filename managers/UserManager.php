@@ -20,6 +20,7 @@ class UserManager extends AbstractManager{
         if($query->rowCount()===1){
             $user = $query->fetch(PDO::FETCH_ASSOC);
             $userClass = new User($user["last_name"], $user["first_name"], $user["email"], $user["password"]);
+            $userClass->setAdmin($user["ADMIN"]);
             $userClass->setId($user["id"]);
             return $userClass;
         }else{
@@ -48,6 +49,7 @@ class UserManager extends AbstractManager{
             'password' => password_hash($user->getPassword(), PASSWORD_DEFAULT)
         ];
         $query->execute($parameters);
+        $user->setId($this->db->lastInsertId());
     }
 
     public function addFavorite():void{

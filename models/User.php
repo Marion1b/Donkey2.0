@@ -2,6 +2,7 @@
 
 class User{
     private ? int $id=null;
+    private string $admin = "USER";
     public function __construct(
         private string $last_name,
         private string $first_name,
@@ -18,6 +19,14 @@ class User{
 
     public function setID(int $id):void{
         $this->id = $id;
+    }
+
+    public function getAdmin():string{
+        return $this->admin;
+    }
+
+    public function setAdmin(string $admin):void{
+        $this->admin = $admin;
     }
 
     /**

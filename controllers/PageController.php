@@ -57,12 +57,15 @@ class PageController extends AbstractController{
     }
 
     public function adminSpace():void{
-        $this->render("espace-admin.html.twig", []);
-    }
-
-    public function searchUser($user):void{
-        $usersFind = $this->um->findUser($user);
-        $this->render("espace-admin.html.twig", ["usersFind"=>$usersFind]);
+        if(isset($_POST["user-search"])){
+            $usersFind = $this->um->findUser($_POST["user-search"]);
+            $this->render("espace-admin.html.twig", ["usersFind"=>$usersFind]);
+        }else if(isset($_GET["utilisateur-id"])){
+            $user = $this->um->findById((int) $_GET["utilisateur-id"]);
+            $this->render("modifier-user.html.twig", ["user"=> $user]);
+        }else{
+            $this->render("espace-admin.html.twig", []);
+        }
     }
 
     public function getTicket():void{

@@ -9,7 +9,7 @@
 
     <h1>Espace Admin {{ session.user.getFirstName()|escape }}</h1>
 
-    <form action="index.php?route=search-user" method="post">
+    <form action="index.php?route=espace-admin&&admin-id={{session.user.getId()}}" method="post">
         <label for="user-search">Chercher un utilisateur (nom, prénom ou email) :</label>
         <input type="search" name="user-search" id="user-search">
         <button type="submit">Go</button>
@@ -35,8 +35,8 @@
                         <td>{{user.getFirstName()}}</td>
                         <td>{{user.getEmail()}}</td>
                         <td>{{user.getAdmin()}}</td>
-                        <td><button>Modifier</button></td>
-                        <td><button>Supprimer<button></td>
+                        <td><a href="index.php?route=espace-admin&&admin-id={{session.user.getId()}}&&utilisateur-id={{user.getId()}}">Modifier</a></td>
+                        <td><a href=""></a>Supprimer</td>
                     </tr>
                 {%endfor%}
             </tbody>

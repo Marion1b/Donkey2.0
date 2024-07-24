@@ -6,6 +6,28 @@ class UserManager extends AbstractManager{
         parent::__construct();
     }
 
+    public function findById(int $id):? User{
+        $query = $this->db->prepare(
+            "SELECT *
+            FROM users
+            WHERE id = :id"
+        );
+
+        $parameters = [
+            "id" => $id
+        ];
+        $query->execute($parameters);
+        if($query->rowCount()===1){
+            $user = $query->fetch(PDO::FETCH_ASSOC);
+            $userClass = new User($user["last_name"], $user["first_name"], $user["email"], $user["password"]);
+            $userClass->setAdmin($user["ADMIN"]);
+            $userClass->setId($user["id"]);
+            return $userClass;
+        }else{
+            return null;
+        }
+    }
+
     public function findByEmail(string $email):? User{
         $query = $this->db->prepare(
             "SELECT *
@@ -75,6 +97,13 @@ class UserManager extends AbstractManager{
         ];
         $query->execute($parameters);
         $user->setId($this->db->lastInsertId());
+    }
+
+    public function modifyUser():void{
+        // changer un user
+        // $query = $this->db->prepare(
+        //     ""
+        // )
     }
 
     public function addFavorite():void{

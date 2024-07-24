@@ -87,8 +87,13 @@ class PageController extends AbstractController{
     public function checkDeleteUser():void{
         $csrft = new CSRFTokenManager();
         if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
-            $this->um->deleteUser($_POST["modal-user-email"]);
-            $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
+            if(isset($_POST["delete-user-tickets"])){
+                $this->um->deleteUserWithTickets($_POST["modal-user-email"]);
+                $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
+            }else{
+                $this->um->deleteUser($_POST["modal-user-email"]);
+                $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
+            }
         }
     }
 

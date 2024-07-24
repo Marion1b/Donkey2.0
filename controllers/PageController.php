@@ -68,6 +68,14 @@ class PageController extends AbstractController{
         }
     }
 
+    public function checkModifUser():void{
+        $csrft = new CSRFTokenManager();
+        if (!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
+            $this->um->modifyUser();
+            $this->redirect("index.php?route=espace-admin&&admin-id=" . $_SESSION["user"]->getId());
+        }
+    }
+
     public function getTicket():void{
         if(isset($_SESSION["user"]) && (string) $_SESSION["user"]->getId() === $_GET["user-id"]){
             $tickets = $this->tm->findByUserId($_SESSION["user"]->getId());

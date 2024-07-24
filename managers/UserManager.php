@@ -100,10 +100,24 @@ class UserManager extends AbstractManager{
     }
 
     public function modifyUser():void{
-        // changer un user
-        // $query = $this->db->prepare(
-        //     ""
-        // )
+        $query = $this->db->prepare(
+            "UPDATE users
+            SET last_name = :last_name,
+            first_name = :first_name,
+            email = :email,
+            ADMIN = :ADMIN
+            WHERE id = :id"
+        );
+
+        $parameters = [
+            "last_name"=>$_POST["last_name"],
+            "first_name"=>$_POST["first_name"],
+            "email"=>$_POST["email"],
+            "ADMIN" =>$_POST["ADMIN"],
+            "id"=>$_POST["user-id"]
+        ];
+
+        $query->execute($parameters);
     }
 
     public function addFavorite():void{

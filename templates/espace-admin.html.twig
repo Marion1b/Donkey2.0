@@ -50,6 +50,8 @@
         <form action="index.php?route=checkDelete" method="post">
             <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
             <input type="hidden" name="modal-user-email" id="modal-user-email" value="" class="espace-admin-modal-user-email">
+            <input type="checkbox" name="delete-user-tickets" id="delete-user-tickets">
+            <label for="delete-user-tickets">Supprimer aussi tous ses billets</label>
             <button type="submit">Oui</button>
         </form>
         <button class="espace-admin-modal-no">Non</button>

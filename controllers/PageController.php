@@ -60,6 +60,11 @@ class PageController extends AbstractController{
         $this->render("espace-admin.html.twig", []);
     }
 
+    public function searchUser($user):void{
+        $usersFind = $this->um->findUser($user);
+        $this->render("espace-admin.html.twig", ["usersFind"=>$usersFind]);
+    }
+
     public function getTicket():void{
         if(isset($_SESSION["user"]) && (string) $_SESSION["user"]->getId() === $_GET["user-id"]){
             $tickets = $this->tm->findByUserId($_SESSION["user"]->getId());

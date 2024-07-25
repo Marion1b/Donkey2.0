@@ -56,6 +56,9 @@ body{
     .form{
         position: absolute; 
         z-index: 5;
+        @media screen and (min-width: 1024px){
+            transform: scale(1.5);
+        }
     }
     .hide{
         display: none;
@@ -294,6 +297,13 @@ body{
     padding-bottom: 12rem;
     padding-top: 3rem;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-container{
+        position: relative;
+        max-width: 120rem;
+    }
     p{
         position: relative;
         z-index: 100;
@@ -305,27 +315,38 @@ body{
     &-form1{
         bottom:1rem; 
         right: 2rem;
-        img{
-            transform: rotate(-145deg);
-            animation: 2.5s linear infinite alternate formMoveLay1;
-            position: sticky;
-        }
+        animation: 2.5s linear infinite alternate formMoveLay1;
         
     }
     &-form2{
         top: -2rem;
         right: -12rem;
-        img{
-            animation: 4s linear infinite alternate formMoveLeft2;
-        }
+        animation: 4s linear infinite alternate formMoveLeft2;
     }
     &-form3{
         left: 3rem;
         bottom: 2.5rem;
-        img{
-            transform: rotate(20deg);
-            animation: 3s linear infinite alternate formMoveLeft3;
-            position: sticky;
+        animation: 3s linear infinite alternate formMoveLeft3;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .home-display-names{
+        padding:15rem 0;
+        p{
+            text-align: center;
+            font-size: 4rem;
+            background-color: #ffe60091;
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+        }
+        &-form1{
+            bottom: -6rem;
+            right: -4rem;
+        }
+        &-form3{
+            bottom: -9rem;
+            left: -3rem;
         }
     }
 }
@@ -348,6 +369,63 @@ body{
     }
 }
 
+@media screen and (min-width:1024px){
+    .home-ticketing{
+        padding: 20rem 0;
+        position: relative;
+        a{
+            position: relative;
+            z-index: 100;
+        }
+        .home-ticketing-circle{
+            display: block;
+            width: 50rem;
+            height: 50rem;
+            overflow: hidden;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: $main-color;
+            transform: translate(-50%, -50%)scale(0);
+            transition: all 400ms;
+        }
+        button{
+            transition: all 400ms;
+        }
+        a:hover{
+            button{
+                @include purple-button;
+                margin: 0;
+            }
+        }
+        a:hover + .home-ticketing-circle{
+            transform: translate(-50%, -50%) scale(1);
+            background-color: $secondary-color;
+            h2, p{
+                min-width: 100%;
+                color: $black;
+                margin-top: 10rem;
+            }
+            h2{
+                animation: 5s linear infinite alternate ticketsH2;
+            }
+            p{
+                margin: 2rem 0px 3rem 0;
+            }
+            .p1{
+                animation: 2s linear infinite alternate ticketsP1;
+            }
+            .p2{
+                animation: 4s linear infinite alternate ticketsP2;
+            }
+            .p3{
+                animation: 3s linear infinite alternate ticketsP3;
+            }
+        }
+    }
+}
+
 .home-infos{
     background-color: $secondary-color;
     position: relative;
@@ -358,7 +436,11 @@ body{
     align-items: center;
     overflow: hidden;
     z-index: -5;
-    & > article{
+    &-container{
+        position: relative;
+        max-width: 120rem;
+    }
+    &-container > article{
         @include infos-section();
         p, i{
             margin: 1rem 0;
@@ -380,6 +462,20 @@ body{
         top: .5rem;
         right: .2rem;
         animation: 5s linear infinite alternate formMoveLeft3;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .home-infos-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 120rem;
+        padding: 15rem 0;
+        & > article{
+            width: 32rem;
+        }
     }
 }
 

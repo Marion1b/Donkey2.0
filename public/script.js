@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const dysButton = document.querySelector('#dys-font');
     const userDelete = document.querySelectorAll('.user-delete');
     const ticketDelete = document.querySelectorAll('.ticket-delete');
-    console.log(dysButton.value);
+    const formImg = document.querySelectorAll('.form img');
     // Check if buy tickets form is not empty
     if(buyTickets){
         const select = document.querySelectorAll(".buy-tickets select");
@@ -109,6 +109,17 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         no.addEventListener('click', ()=>{
             modal.classList.add('hide');
+        })
+    }
+
+    // shapes follows mouse movment
+    if(formImg.length > 0){
+        main.addEventListener('mousemove', (e)=>{
+            let x = e.clientX;
+            let y = e.clientY;
+            for(let i=0; i<formImg.length; i++ ){
+                formImg[i].style.transform = `translate(${x/50}px, ${y/50}px)`;
+            }
         })
     }
 })

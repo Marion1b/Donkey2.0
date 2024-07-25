@@ -11934,6 +11934,38 @@ textarea.form-control-lg {
     transform: rotate(-85deg) translate(3px, -5px);
   }
 }
+@keyframes ticketsH2 {
+  from {
+    transform: rotate(5deg) translate(-5px, 6px);
+  }
+  to {
+    transform: rotate(15deg) translate(-2px, 4px);
+  }
+}
+@keyframes ticketsP1 {
+  from {
+    transform: rotate(-6deg) translate(-20px, 7px);
+  }
+  to {
+    transform: rotate(-16deg) translate(-30px, 13px);
+  }
+}
+@keyframes ticketsP2 {
+  from {
+    transform: rotate(2deg) translate(30px, -3px);
+  }
+  to {
+    transform: rotate(-8deg) translate(20px, -5px);
+  }
+}
+@keyframes ticketsP3 {
+  from {
+    transform: rotate(-8deg) translate(2px, 0px);
+  }
+  to {
+    transform: rotate(-18deg) translate(12px, 0px);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11987,6 +12019,11 @@ body .bold {
 body .form {
   position: absolute;
   z-index: 5;
+}
+@media screen and (min-width: 1024px) {
+  body .form {
+    transform: scale(1.5);
+  }
 }
 body .hide {
   display: none;
@@ -12211,6 +12248,13 @@ body .hide {
   padding-bottom: 12rem;
   padding-top: 3rem;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-display-names-container {
+  position: relative;
+  max-width: 120rem;
 }
 .home-display-names p {
   position: relative;
@@ -12223,29 +12267,39 @@ body .hide {
 .home-display-names-form1 {
   bottom: 1rem;
   right: 2rem;
-}
-.home-display-names-form1 img {
-  transform: rotate(-145deg);
   animation: 2.5s linear infinite alternate formMoveLay1;
-  position: sticky;
 }
 .home-display-names-form2 {
   top: -2rem;
   right: -12rem;
-}
-.home-display-names-form2 img {
   animation: 4s linear infinite alternate formMoveLeft2;
 }
 .home-display-names-form3 {
   left: 3rem;
   bottom: 2.5rem;
-}
-.home-display-names-form3 img {
-  transform: rotate(20deg);
   animation: 3s linear infinite alternate formMoveLeft3;
-  position: sticky;
 }
 
+@media screen and (min-width: 1024px) {
+  .home-display-names {
+    padding: 15rem 0;
+  }
+  .home-display-names p {
+    text-align: center;
+    font-size: 4rem;
+    background-color: rgba(255, 230, 0, 0.568627451);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+  }
+  .home-display-names-form1 {
+    bottom: -6rem;
+    right: -4rem;
+  }
+  .home-display-names-form3 {
+    bottom: -9rem;
+    left: -3rem;
+  }
+}
 .home-ticketing {
   background-color: #4F09B9;
   text-align: center;
@@ -12272,6 +12326,69 @@ body .hide {
   box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
 }
 
+@media screen and (min-width: 1024px) {
+  .home-ticketing {
+    padding: 20rem 0;
+    position: relative;
+  }
+  .home-ticketing a {
+    position: relative;
+    z-index: 100;
+  }
+  .home-ticketing .home-ticketing-circle {
+    display: block;
+    width: 50rem;
+    height: 50rem;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #4F09B9;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 400ms;
+  }
+  .home-ticketing button {
+    transition: all 400ms;
+  }
+  .home-ticketing a:hover button {
+    font-size: 1.4rem;
+    border: 2px solid #020403;
+    box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
+    border-radius: 1.5rem;
+    background-color: #4F09B9;
+    color: #FFE500;
+    font-family: "Roboto slab", serif;
+    font-weight: 800;
+    text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+    margin: 2rem 0;
+    margin: 0;
+  }
+  .home-ticketing a:hover + .home-ticketing-circle {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #FFE500;
+  }
+  .home-ticketing a:hover + .home-ticketing-circle h2, .home-ticketing a:hover + .home-ticketing-circle .h2, .home-ticketing a:hover + .home-ticketing-circle p {
+    min-width: 100%;
+    color: #020403;
+    margin-top: 10rem;
+  }
+  .home-ticketing a:hover + .home-ticketing-circle h2, .home-ticketing a:hover + .home-ticketing-circle .h2 {
+    animation: 5s linear infinite alternate ticketsH2;
+  }
+  .home-ticketing a:hover + .home-ticketing-circle p {
+    margin: 2rem 0px 3rem 0;
+  }
+  .home-ticketing a:hover + .home-ticketing-circle .p1 {
+    animation: 2s linear infinite alternate ticketsP1;
+  }
+  .home-ticketing a:hover + .home-ticketing-circle .p2 {
+    animation: 4s linear infinite alternate ticketsP2;
+  }
+  .home-ticketing a:hover + .home-ticketing-circle .p3 {
+    animation: 3s linear infinite alternate ticketsP3;
+  }
+}
 .home-infos {
   background-color: #FFE500;
   position: relative;
@@ -12283,7 +12400,11 @@ body .hide {
   overflow: hidden;
   z-index: -5;
 }
-.home-infos > article {
+.home-infos-container {
+  position: relative;
+  max-width: 120rem;
+}
+.home-infos-container > article {
   background-color: #FFE500;
   z-index: 5;
   width: 34rem;
@@ -12293,10 +12414,10 @@ body .hide {
   margin: 1rem 0;
   box-shadow: 5px 5px 15px #d9c300 -5px -5px 15px #d9c300;
 }
-.home-infos > article p, .home-infos > article i {
+.home-infos-container > article p, .home-infos-container > article i {
   margin: 1rem 0;
 }
-.home-infos > article i {
+.home-infos-container > article i {
   font-size: 3rem;
 }
 .home-infos-medias-links {
@@ -12314,6 +12435,19 @@ body .hide {
   animation: 5s linear infinite alternate formMoveLeft3;
 }
 
+@media screen and (min-width: 1024px) {
+  .home-infos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 120rem;
+    padding: 15rem 0;
+  }
+  .home-infos-container > article {
+    width: 32rem;
+  }
+}
 .programmation-filter ul {
   display: flex;
   justify-content: space-around;

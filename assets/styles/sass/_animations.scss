@@ -84,3 +84,35 @@
         transform: rotate(-85deg)translate(3px,-5px);
     }
 }
+
+@keyframes ticketsH2{
+    from{
+        transform: rotate(5deg)translate(-5px,6px);
+    }to{
+        transform: rotate(15deg)translate(-2px,4px);
+    }
+}
+
+@keyframes ticketsP1{
+    from{
+        transform: rotate(-6deg)translate(-20px,7px);
+    }to{
+        transform: rotate(-16deg)translate(-30px,13px);
+    }
+}
+
+@keyframes ticketsP2{
+    from{
+        transform: rotate(2deg)translate(30px,-3px);
+    }to{
+        transform: rotate(-8deg)translate(20px, -5px);
+    }
+}
+
+@keyframes ticketsP3{
+    from{
+        transform: rotate(-8deg)translate(2px, 0px);
+    }to{
+        transform: rotate(-18deg)translate(12px,0px);
+    }
+}

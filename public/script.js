@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const dysButton = document.querySelector('#dys-font');
     const userDelete = document.querySelectorAll('.user-delete');
     const ticketDelete = document.querySelectorAll('.ticket-delete');
+    console.log(dysButton.value);
     // Check if buy tickets form is not empty
     if(buyTickets){
         const select = document.querySelectorAll(".buy-tickets select");
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     
     // dys button
-    if(dysButton.value !== "off"){
+    if(dysButton.value === "on"){
         body.id = 'dys';
         dysButton.classList.add('toggle-button-on');
     }else{
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function(){
         dysButton.classList.remove('toggle-button-on');
     }
     dysButton.addEventListener('click', ()=>{
-        if(dysButton.value !== "off"){
+        if(dysButton.value === "on"){
             dysButton.classList.add('toggle-button-on');
             body.id = 'dys';
         }else{

@@ -13168,11 +13168,15 @@ body .hide {
 
 .page-footer {
   background-color: #020403;
+}
+.page-footer-container {
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: end;
   font-size: 1rem;
   padding: 1.5rem 1rem;
+  max-width: 175rem;
 }
 .page-footer a {
   color: #FFE500;
@@ -13186,6 +13190,15 @@ body .hide {
 }
 .page-footer .footer-legal {
   text-align: end;
+}
+
+@media screen and (min-width: 768px) {
+  .page-footer a {
+    font-size: 1.2rem;
+  }
+  .page-footer .footer-social a {
+    font-size: 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

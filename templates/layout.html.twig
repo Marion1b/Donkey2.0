@@ -53,14 +53,14 @@
 
     <header class="page-header-desktop">
         <nav>
-            <ul>
+            <ul class="page-header-ul-1">
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="index.php?route=programmation">Programmation</a></li>
                 <li><a href="index.php?route=infos_pratiques">Informations pratiques</a></li>
                 <li><a href="index.php?route=billetterie">Billetterie</a></li>
             </ul>
                 <img src="./assets/img/other/Logo.svg" alt="logo" class="logo">
-            <ul>
+            <ul class="page-header-ul-2">
                 {% if session.user is defined %}
                     <li><a href="index.php?route=espace-perso&&user-id={{session.user.getId()}}">Espace personnel</a></li>
                 {% else %}

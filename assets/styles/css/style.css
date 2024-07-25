@@ -11991,7 +11991,7 @@ body .form {
 body .hide {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   body h1, body .h1 {
     font-size: 4.8rem;
   }
@@ -12122,7 +12122,7 @@ body .hide {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1480px) {
   .page-header-mobile {
     display: none;
   }
@@ -12141,11 +12141,18 @@ body .hide {
   }
   .page-header-desktop nav {
     max-width: 175rem;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+  }
+  .page-header-desktop .page-header-ul-1 {
+    justify-self: end;
+  }
+  .page-header-desktop .page-header-ul-2 {
+    justify-self: start;
   }
   .page-header-desktop ul {
     display: flex;
+    justify-content: end;
     align-items: center;
   }
   .page-header-desktop ul li {
@@ -12154,11 +12161,13 @@ body .hide {
   .page-header-desktop a {
     color: #FFE500;
     font-weight: 800;
+    font-size: 1.4rem;
   }
   .page-header-desktop .nav-dys {
     font-family: "OpenDyslexic";
     display: flex;
     flex-direction: column;
+    font-size: 1.4rem;
   }
   .page-header-desktop .nav-dys button {
     margin-top: 1rem;
@@ -13192,7 +13201,7 @@ body .hide {
   text-align: end;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .page-footer a {
     font-size: 1.2rem;
   }

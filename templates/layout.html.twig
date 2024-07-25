@@ -17,7 +17,7 @@
 <body>
 
     {% block header %}
-    <header class="page-header">
+    <header class="page-header-mobile">
         <img src="./assets/img/other/Logo.svg" alt="logo" class="logo">
         <div class="burger-menu open">
             <span class="burger-line1"></span>
@@ -34,6 +34,37 @@
                 <li><a href="index.php?route=espace-perso&&user-id={{session.user.getId()}}">Espace personnel</a></li>
                 {% else %}
                 <li><a href="index.php?route=connexion">Espace personnel</a></li>
+                {% endif %}
+                <li><a href="index.php?route=contact">Contact</a></li>
+                <li>
+                    <form action="index.php?route=dys" method="POST" class="nav-dys">
+                        <label for="dys-font">Typographie adaptée</label>
+                        <button type="submit" value="{{cookie.dys}}" id="dys-font" name="dys-font"><div class="toggle"></div></button>
+                    </form>
+                </li>
+                {% if session.user is defined %}
+                    <li><a href="index.php?route=logout"><button class="nav-logout">Se déconnecter <i class="fa-solid fa-right-from-bracket"></i></button></a></li>
+                {% else %}
+                    <li><a href="index.php?route=connexion"><button class="nav-logout">Se connecter <i class="fa-solid fa-right-to-bracket"></i></button></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <header class="page-header-desktop">
+        <nav>
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="index.php?route=programmation">Programmation</a></li>
+                <li><a href="index.php?route=infos_pratiques">Informations pratiques</a></li>
+                <li><a href="index.php?route=billetterie">Billetterie</a></li>
+            </ul>
+                <img src="./assets/img/other/Logo.svg" alt="logo" class="logo">
+            <ul>
+                {% if session.user is defined %}
+                    <li><a href="index.php?route=espace-perso&&user-id={{session.user.getId()}}">Espace personnel</a></li>
+                {% else %}
+                    <li><a href="index.php?route=connexion">Espace personnel</a></li>
                 {% endif %}
                 <li><a href="index.php?route=contact">Contact</a></li>
                 <li>

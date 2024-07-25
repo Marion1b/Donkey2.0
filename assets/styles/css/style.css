@@ -12920,6 +12920,25 @@ body .hide {
   left: 8rem;
   animation: 2s linear infinite alternate formMoveRight2;
 }
+.espace-perso-admin-space {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.espace-perso .admin-space-button {
+  font-size: 1.4rem;
+  border: 2px solid #020403;
+  box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
+  border-radius: 1.5rem;
+  background-color: #4F09B9;
+  color: #FFE500;
+  font-family: "Roboto slab", serif;
+  font-weight: 800;
+  text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+  margin: 2rem 0;
+  padding: 1.5rem 5rem;
+}
 
 .tickets-page, .paiement-valide {
   background-color: #4F09B9;

@@ -76,7 +76,7 @@ body{
     .logo{
         padding: .5rem 0;
         grid-column-start: 2;
-        width: 100%;
+        width: 10rem;
     }
     .open{
         span{
@@ -115,7 +115,7 @@ body{
         }
     }
     .header-nav{ 
-        top: 105px;
+        top: 76px;
         height: 90vh;
         width: 100%;
         background-color: $secondary-color;

@@ -13,8 +13,8 @@
         <h2 hidden>Chercher un utilisateur</h2>
         <form action="index.php?route=espace-admin&&admin-id={{session.user.getId()}}" method="post">
             <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-            <label for="user-search">Chercher un utilisateur (nom, prénom ou email) :</label>
-            <input type="search" name="user-search" id="user-search" class="input-group my-3">
+            <label for="user-search" class="form-label">Chercher un utilisateur (nom, prénom ou email) :</label>
+            <input type="search" name="user-search" id="user-search" class="form-control fs-5 my-3">
             <button type="submit" class="btn btn-dark fs-5 w-100">Go</button>
         </form>
 
@@ -51,29 +51,32 @@
     </section>
 
     <section class="espace-admin-modal hide">
-        <p>ëtes-vous sûr de vouloir supprimer </p>
-        <form action="index.php?route=checkDelete" method="post">
-            <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-            <input type="hidden" name="modal-user-email" id="modal-user-email" value="" class="espace-admin-modal-user-email">
-            <input type="checkbox" name="delete-user-tickets" id="delete-user-tickets">
-            <label for="delete-user-tickets">Supprimer aussi tous ses billets</label>
-            <button type="submit">Oui</button>
-        </form>
-        <button class="espace-admin-modal-no">Non</button>
+        <article class="user-modal">
+            <p>ëtes-vous sûr de vouloir supprimer </p>
+            <form action="index.php?route=checkDelete" method="post">
+                <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+                <input type="hidden" name="modal-user-email" id="modal-user-email" value="" class="espace-admin-modal-user-email">
+                <input type="checkbox" name="delete-user-tickets" id="delete-user-tickets">
+                <label for="delete-user-tickets">Supprimer aussi tous ses billets</label>
+                <button type="submit" class="btn btn-dark fs-5">Oui</button>
+            </form>
+            <button class="espace-admin-modal-no btn btn-dark my-5 fs-5">Non</button>
+        </article>
     </section>
 
     <section class="m-4">
         <h2 hidden>Chercher un billet</h2>
         <form action="index.php?route=espace-admin&&admin-id={{session.user.getId()}}" method="post">
             <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-            <label for="ticket-search">Chercher un billet (id, nom, prénom, email) :</label>
-            <input type="search" name="ticket-search" id="ticket-search" class="input-group my-3 form-control">
+            <label for="ticket-search" class="form-label">Chercher un billet (id, nom, prénom, email) :</label>
+            <input type="search" name="ticket-search" id="ticket-search" class="form-control fs-5 my-3 form-control">
             <button type="submit" class="btn btn-dark fs-5 w-100 mb-6">Go</button>
         </form>
 
         {% if ticketsFind is defined %}
-            <table>
-                <thead>
+        <article class="overflow-scroll w-100">
+            <table class="table table-striped my-3">
+                <thead class="table-dark">
                     <tr>
                         <th>ID</th>
                         <th>Nom-prénom</th>
@@ -88,23 +91,26 @@
                                 <td>{{ticket.getContent()}}</td>
                                 <td>{{ticket.getTarif()}}</td>
                                 <td>{{ticket.getEmail()}}</td>
-                                <td class="ticket-delete" id="{{ticket.getId()}}">Supprimer</td>
+                                <td class="ticket-delete" id="{{ticket.getId()}}"><button class="btn btn-dark fs-5">Supprimer</button></td>
                             </tr>
                         {% endfor %}
                     </tbody>
                 </thead>
             </table>
+        </article>
         {% endif %}
     </section>
 
     <section class="espace-admin-ticket-modal hide">
-        <p>ëtes-vous sûr de vouloir supprimer le ticket </p>
-        <form action="index.php?route=checkDeleteTicket" method="post">
-            <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-            <input type="hidden" name="modal-ticket-id" id="modal-ticket-id" value="" class="espace-admin-modal-ticket-id">
-            <button type="submit">Oui</button>
-        </form>
-        <button class="espace-admin-ticket-modal-no">Non</button>
+        <article class="ticket-modal">
+            <p>ëtes-vous sûr de vouloir supprimer le ticket </p>
+            <form action="index.php?route=checkDeleteTicket" method="post">
+                <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+                <input type="hidden" name="modal-ticket-id" id="modal-ticket-id" value="" class="espace-admin-modal-ticket-id">
+                <button type="submit" class="btn btn-dark fs-5">Oui</button>
+            </form>
+            <button class="espace-admin-ticket-modal-no btn btn-dark my-5 fs-5">Non</button>
+        </article>
     </section>
 </main>
 {% endblock %}

@@ -1045,10 +1045,27 @@ body{
 // ESPACE ADMIN
 // ==========================================================================
 
-.admin-space{
+.admin-space, .modifier-page{
     min-height: 95vh;
     padding:5rem 0;
     overflow: hidden;
+    position: relative;
+    .input-group{
+        position: static;
+    }
+    .espace-admin-modal, .espace-admin-ticket-modal{
+        position: absolute;
+        width: 100%;
+        background-color: #bdbdbd91;
+        top: 0;
+    }
+    .user-modal, .ticket-modal{
+        padding: 1rem;
+        border: 1px solid $black;
+        margin-top: 33vh;
+        margin-bottom: 45vh;
+        background-color: #fff;
+    }
 }
 
 // ==========================================================================

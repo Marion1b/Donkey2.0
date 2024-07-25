@@ -7,21 +7,21 @@
 {% block main %}
 <main class="modifier-page">
 
-<h1>Espace Admin {{ session.user.getFirstName()|escape }}</h1>
+<h1 class="mb-5">Espace Admin {{ session.user.getFirstName()|escape }}</h1>
 
-<section class="modifier-user">
-    <h2>Modifier {{user.getFirstName}}</h2>
+<section class="modifier-user m-4">
+    <h2 class="mb-4">Modifier {{user.getFirstName}}</h2>
     <form action="index.php?route=check-modif" method="post">
         <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
         <input type="hidden" name="user-id" id="user-id" value="{{user.getId()}}">
-        <label for="last_name">Nom : </label>
-        <input type="text" name="last_name" id="last_name" value="{{user.getLastName()}}">
-        <label for="first_name">Prénom</label>
-        <input type="text" name="first_name" id="first_name" value="{{user.getFirstName()}}">
-        <label for="email">Email : </label>
-        <input type="email" name="email" id="email" value="{{user.getEmail()}}">
-        <label for="ADMIN">ADMIN : </label>
-        <select name="ADMIN" id="ADMIN">
+        <label for="last_name" class="form-label mt-3">Nom : </label>
+        <input type="text" name="last_name" id="last_name" value="{{user.getLastName()}}" class="form-control fs-5">
+        <label for="first_name" class="form-label mt-3">Prénom</label>
+        <input type="text" name="first_name" id="first_name" value="{{user.getFirstName()}}" class="form-control fs-5">
+        <label for="email" class="form-label mt-3">Email : </label>
+        <input type="email" name="email" id="email" value="{{user.getEmail()}}" class="form-control fs-5">
+        <label for="ADMIN" class="form-label mt-3">ADMIN : </label>
+        <select name="ADMIN" id="ADMIN" class="form-select fs-5 mb-3">
             {% if user.getAdmin() == "USER" %}
                 <option value="USER">USER</option>
                 <option value="ADMIN">ADMIN</option>
@@ -30,7 +30,7 @@
                 <option value="USER">USER</option>
             {% endif %}
         </select>
-        <button type="submit">Modifier</button>
+        <button type="submit" class="btn btn-dark fs-5 w-100">Modifier</button>
     </form>
 </section>
 

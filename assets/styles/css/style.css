@@ -13029,10 +13029,27 @@ body .hide {
   font-weight: bold;
 }
 
-.admin-space {
+.admin-space, .modifier-page {
   min-height: 95vh;
   padding: 5rem 0;
   overflow: hidden;
+  position: relative;
+}
+.admin-space .input-group, .modifier-page .input-group {
+  position: static;
+}
+.admin-space .espace-admin-modal, .admin-space .espace-admin-ticket-modal, .modifier-page .espace-admin-modal, .modifier-page .espace-admin-ticket-modal {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(189, 189, 189, 0.568627451);
+  top: 0;
+}
+.admin-space .user-modal, .admin-space .ticket-modal, .modifier-page .user-modal, .modifier-page .ticket-modal {
+  padding: 1rem;
+  border: 1px solid #020403;
+  margin-top: 33vh;
+  margin-bottom: 45vh;
+  background-color: #fff;
 }
 
 .page-footer {

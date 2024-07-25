@@ -12077,7 +12077,8 @@ body .hide {
 .page-header .header-nav .nav-logout {
   background-color: #FFE500;
   border: 1px solid #020403;
-  padding: 1rem;
+  font-size: 1.2rem;
+  padding: 0rem 1.5rem;
   border-radius: 1rem;
   font-family: "Roboto Slab", serif;
   font-weight: 800;

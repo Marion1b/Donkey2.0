@@ -921,6 +921,17 @@ body{
         }
     }
 
+    &-admin-space{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .admin-space-button{
+        @include purple-button();
+        padding: 1.5rem 5rem;
+    }
+
 }
 
 // ==========================================================================

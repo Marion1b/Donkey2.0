@@ -11991,8 +11991,25 @@ body .form {
 body .hide {
   display: none;
 }
+@media screen and (min-width: 768px) {
+  body h1, body .h1 {
+    font-size: 4.8rem;
+  }
+  body h2, body .h2 {
+    font-size: 3.2rem;
+  }
+  body h3, body .h3 {
+    font-size: 2.4rem;
+  }
+  body h4, body .h4 {
+    font-size: 1.6rem;
+  }
+  body p {
+    font-size: 1.6rem;
+  }
+}
 
-.page-header {
+.page-header-mobile {
   width: 100%;
   background-color: #020403;
   display: grid;
@@ -12000,12 +12017,12 @@ body .hide {
   justify-items: center;
   align-items: center;
 }
-.page-header .logo {
+.page-header-mobile .logo {
   padding: 0.5rem 0;
   grid-column-start: 2;
   width: 10rem;
 }
-.page-header .open span {
+.page-header-mobile .open span {
   display: block;
   width: 30px;
   height: 3px;
@@ -12014,30 +12031,30 @@ body .hide {
   border-radius: 2px;
   transition: all 200ms ease-in-out;
 }
-.page-header .open .burger-line1, .page-header .open .burger-line2, .page-header .open .burger-line3 {
+.page-header-mobile .open .burger-line1, .page-header-mobile .open .burger-line2, .page-header-mobile .open .burger-line3 {
   transition: all 400ms ease-in-out;
 }
-.page-header .close span {
+.page-header-mobile .close span {
   display: block;
   width: 30px;
   height: 4px;
   background-color: #FFE500;
   border-radius: 2px;
 }
-.page-header .close .burger-line1 {
+.page-header-mobile .close .burger-line1 {
   transform: rotate(0.15turn) translateY(3px);
   transition: all 400ms ease-in-out;
 }
-.page-header .close .burger-line2 {
+.page-header-mobile .close .burger-line2 {
   transform: rotate(-0.15turn) translateY(-3px);
   transition: all 500ms ease-in-out;
 }
-.page-header .close .burger-line3 {
+.page-header-mobile .close .burger-line3 {
   transform: translateY(12px);
   width: 26px;
   transition: all 400ms ease-in-out;
 }
-.page-header .header-nav {
+.page-header-mobile .header-nav {
   top: 76px;
   height: 90vh;
   width: 100%;
@@ -12046,13 +12063,13 @@ body .hide {
   position: absolute;
   z-index: 200;
 }
-.page-header .header-nav .nav-dys {
+.page-header-mobile .header-nav .nav-dys {
   font-family: "OpenDyslexic";
   display: flex;
   justify-content: end;
   align-items: center;
 }
-.page-header .header-nav .nav-dys button {
+.page-header-mobile .header-nav .nav-dys button {
   margin-left: 1rem;
   font-size: 0;
   width: fit-content;
@@ -12061,20 +12078,20 @@ body .hide {
   border-radius: 1rem;
   background-color: #FFE500;
 }
-.page-header .header-nav .nav-dys button .toggle {
+.page-header-mobile .header-nav .nav-dys button .toggle {
   margin: 0.5rem 3rem 0.5rem 0.5rem;
   padding: 0.5rem;
   border: 1px solid #020403;
   border-radius: 50%;
   background-color: #FFE500;
 }
-.page-header .header-nav .nav-dys .toggle-button-on {
+.page-header-mobile .header-nav .nav-dys .toggle-button-on {
   background-color: #4F09B9;
 }
-.page-header .header-nav .nav-dys .toggle-button-on div {
+.page-header-mobile .header-nav .nav-dys .toggle-button-on div {
   margin: 0.5rem 0.5rem 0.5rem 3rem;
 }
-.page-header .header-nav .nav-logout {
+.page-header-mobile .header-nav .nav-logout {
   background-color: #FFE500;
   border: 1px solid #020403;
   font-size: 1.2rem;
@@ -12083,10 +12100,10 @@ body .hide {
   font-family: "Roboto Slab", serif;
   font-weight: 800;
 }
-.page-header .header-nav .nav-logout i {
+.page-header-mobile .header-nav .nav-logout i {
   margin-left: 0.5rem;
 }
-.page-header .header-nav ul {
+.page-header-mobile .header-nav ul {
   position: relative;
   animation: 500ms nav;
   animation-iteration-count: 1;
@@ -12096,11 +12113,88 @@ body .hide {
   font-size: 1.8rem;
   line-height: 5rem;
 }
-.page-header .header-nav-hide {
+.page-header-mobile .header-nav-hide {
   z-index: -100;
   display: none;
 }
 
+.page-header-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .page-header-mobile {
+    display: none;
+  }
+  .page-header-desktop {
+    display: block;
+    background-color: #020403;
+    color: #FFE500;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-header-desktop img {
+    width: 15rem;
+    margin: 1.5rem;
+  }
+  .page-header-desktop nav {
+    max-width: 175rem;
+    display: flex;
+    align-items: center;
+  }
+  .page-header-desktop ul {
+    display: flex;
+    align-items: center;
+  }
+  .page-header-desktop ul li {
+    margin: 0rem 2rem;
+  }
+  .page-header-desktop a {
+    color: #FFE500;
+    font-weight: 800;
+  }
+  .page-header-desktop .nav-dys {
+    font-family: "OpenDyslexic";
+    display: flex;
+    flex-direction: column;
+  }
+  .page-header-desktop .nav-dys button {
+    margin-top: 1rem;
+    font-size: 0;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid #020403;
+    border-radius: 1rem;
+    background-color: #FFE500;
+  }
+  .page-header-desktop .nav-dys button .toggle {
+    margin: 0.5rem 3rem 0.5rem 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #020403;
+    border-radius: 50%;
+    background-color: #FFE500;
+  }
+  .page-header-desktop .nav-dys .toggle-button-on {
+    background-color: #4F09B9;
+  }
+  .page-header-desktop .nav-dys .toggle-button-on div {
+    margin: 0.5rem 0.5rem 0.5rem 3rem;
+  }
+  .page-header-desktop .nav-logout {
+    background-color: #FFE500;
+    border: 1px solid #020403;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-family: "Roboto Slab", serif;
+    font-weight: 800;
+  }
+  .page-header-desktop .nav-logout i {
+    margin-left: 0.5rem;
+  }
+}
 .home-display-names {
   position: relative;
   background-color: #FFE500;

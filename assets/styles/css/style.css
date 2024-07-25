@@ -12003,7 +12003,7 @@ body .hide {
 .page-header .logo {
   padding: 0.5rem 0;
   grid-column-start: 2;
-  width: 100%;
+  width: 10rem;
 }
 .page-header .open span {
   display: block;
@@ -12038,7 +12038,7 @@ body .hide {
   transition: all 400ms ease-in-out;
 }
 .page-header .header-nav {
-  top: 105px;
+  top: 76px;
   height: 90vh;
   width: 100%;
   background-color: #FFE500;

@@ -13126,6 +13126,31 @@ body .hide {
   animation: 3s linear infinite alternate formMoveDown2;
 }
 
+@media screen and (min-width: 1024px) {
+  .connexion form label, .connexion form input, .inscription form label, .inscription form input {
+    font-size: 1.6rem;
+  }
+  .connexion button, .inscription button {
+    transition: all 200ms ease-in, color 100ms ease-in;
+  }
+  .connexion button:hover, .inscription button:hover {
+    background-color: #FFE500;
+    color: #020403;
+    text-shadow: none;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
+  .connexion-form1, .inscription-form1 {
+    top: 30rem;
+    left: 23rem;
+  }
+  .connexion-form2, .inscription-form2 {
+    left: 34rem;
+  }
+  .connexion-form3, .inscription-form3 {
+    right: 28rem;
+  }
+}
 .espace-perso {
   background-color: #FFE500;
   position: relative;

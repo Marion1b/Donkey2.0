@@ -1172,6 +1172,37 @@ body{
 
 }
 
+@media screen and (min-width:1024px){
+    .connexion, .inscription{
+        form{
+            label, input{
+                font-size: 1.6rem;
+            }
+        }
+        button{
+            transition: all 200ms ease-in,
+                        color 100ms ease-in;
+            &:hover{
+                background-color: $secondary-color;
+                color: $black;
+                text-shadow: none;
+                box-shadow: none;
+                transform: translate(-2px, 2px);
+            }
+        }
+        &-form1{
+            top: 30rem;
+            left: 23rem;
+        }
+        &-form2{
+            left: 34rem;
+        }
+        &-form3{
+            right: 28rem;
+        }
+    }
+}
+
 
 // ==========================================================================
 // ESPACE PERSO

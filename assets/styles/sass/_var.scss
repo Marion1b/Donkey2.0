@@ -17,7 +17,7 @@ $opacity-black : rgba(2, 4, 3, 0.25);
 
 @mixin purple-button(){
     font-size: 1.4rem;
-    border: 2px solid $black;
+    border: .2rem solid $black;
     box-shadow: -5px 5px 4px $opacity-black;
     border-radius: 1.5rem;
     background-color: $main-color;

@@ -12020,11 +12020,6 @@ body .form {
   position: absolute;
   z-index: 5;
 }
-@media screen and (min-width: 1024px) {
-  body .form {
-    transform: scale(1.5);
-  }
-}
 body .hide {
   display: none;
 }
@@ -12809,6 +12804,15 @@ body .hide {
   position: relative;
   overflow: hidden;
 }
+.ticketing .tickets {
+  max-width: 120rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin-top: 5rem;
+}
 .ticketing .ticket-card {
   text-align: center;
   padding: 3rem;
@@ -12818,6 +12822,8 @@ body .hide {
   background-color: #4F09B9;
   color: #FFE500;
   z-index: 5;
+  width: 35rem;
+  height: 35rem;
   border: 0.2rem solid #020403;
   box-shadow: -8px 8px 6px rgba(2, 4, 3, 0.25);
 }
@@ -12870,6 +12876,27 @@ body .hide {
   animation: 5s linear infinite alternate formMoveRight2;
 }
 
+@media screen and (min-width: 1024px) {
+  .ticketing-form3 {
+    right: 5rem;
+  }
+  .ticketing-form1 {
+    left: 10rem;
+  }
+  .ticketing-form2 {
+    right: 25rem;
+  }
+  .ticket-card button {
+    transition: all 200ms ease-in, color 100ms ease-in;
+  }
+  .ticket-card button:hover {
+    background-color: #4F09B9;
+    color: #FFE500;
+    text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
+}
 .buy-tickets {
   display: flex;
   flex-direction: column;
@@ -12883,6 +12910,9 @@ body .hide {
 }
 .buy-tickets h1, .buy-tickets .h1 {
   text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
+}
+.buy-tickets .chose-tickets {
+  max-width: 120rem;
 }
 .buy-tickets form {
   margin-top: 3.5rem;
@@ -12952,6 +12982,39 @@ body .hide {
   animation: 5s linear infinite alternate formMoveLay1;
 }
 
+@media screen and (min-width: 1024px) {
+  .buy-tickets form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    margin-top: 5rem;
+    row-gap: 2rem;
+  }
+  .buy-tickets form label, .buy-tickets form .form-field select, .buy-tickets form .form-field input {
+    font-size: 1.8rem;
+  }
+  .buy-tickets form .form-field-email, .buy-tickets form button {
+    grid-column: 1/span 2;
+  }
+  .buy-tickets form button {
+    padding: 1.5rem 0;
+  }
+  .buy-tickets p {
+    font-size: 1.8rem;
+  }
+  .buy-tickets-form1a {
+    left: 5rem;
+  }
+  .buy-tickets-form2 {
+    right: 15rem;
+  }
+  .buy-tickets-form3 {
+    left: 10rem;
+  }
+  .buy-tickets-form1b {
+    right: 8rem;
+  }
+}
 .connexion, .inscription {
   background-color: #4F09B9;
   color: #FFE500;

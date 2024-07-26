@@ -56,9 +56,6 @@ body{
     .form{
         position: absolute; 
         z-index: 5;
-        @media screen and (min-width: 1024px){
-            transform: scale(1.5);
-        }
     }
     .hide{
         display: none;
@@ -821,6 +818,15 @@ body{
     padding:5rem 0;
     position: relative;
     overflow: hidden;
+    .tickets{
+        max-width: 120rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        margin-top: 5rem;
+    }
     .ticket-card{
         text-align: center;
         padding: 3rem;
@@ -830,6 +836,8 @@ body{
         background-color: $main-color;
         color: $secondary-color;
         z-index: 5;
+        width: 35rem;
+        height: 35rem;
         border: .2rem solid $black;
         box-shadow: -8px 8px 6px $opacity-black;
         &-tarif{
@@ -883,6 +891,37 @@ body{
     }
 }
 
+@media screen and (min-width:1024px){
+    .ticketing{
+        &-form3{
+            right: 5rem;
+        }
+        &-form1{
+            left: 10rem;
+        }
+        &-form2{
+            right: 25rem;
+        }
+    }
+    .ticket-card{
+        button{
+            transition: all 200ms ease-in,
+                        color 100ms ease-in;
+            &:hover{
+                background-color: $main-color;
+                color: $secondary-color;
+                text-shadow:
+                -1px -1px 0 $black,  
+                1px -1px 0 $black,
+                -1px  1px 0 $black,
+                1px  1px 0 $black;
+                box-shadow: none;
+                transform: translate(-2px, 2px);
+            }
+        }
+    }
+}
+
 // formulaire
 
 .buy-tickets{
@@ -901,6 +940,9 @@ body{
             1.5px -1.5px 0 $black,
             -1.5px  1.5px 0 $black,
             1.5px  1.5px 0 $black;
+    }
+    .chose-tickets{
+        max-width: 120rem;
     }
     form{
         margin-top: 3.5rem;
@@ -972,6 +1014,42 @@ body{
         bottom: 2rem;
         right: -3rem;
         animation: 5s linear infinite alternate formMoveLay1;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .buy-tickets{
+        form{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 3rem;
+            margin-top: 5rem;
+            row-gap: 2rem;
+            label, .form-field select, .form-field input{
+                font-size: 1.8rem;
+            }
+            .form-field-email, button{
+                grid-column: 1 / span 2;
+            }
+            button{
+                padding: 1.5rem 0;
+            }
+        }
+        p{
+            font-size: 1.8rem;
+        }
+        &-form1a{
+            left: 5rem;
+        }
+        &-form2{
+            right: 15rem;
+        }
+        &-form3{
+            left: 10rem;
+        }
+        &-form1b{
+            right: 8rem;
+        }
     }
 }
 

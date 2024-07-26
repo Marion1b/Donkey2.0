@@ -13574,6 +13574,14 @@ body .hide {
   animation: 2s linear infinite alternate formMoveLeft3;
 }
 
+@media screen and (min-width: 1024px) {
+  .contact-form2 {
+    left: 36rem;
+  }
+  .contact-form1 {
+    right: 14rem;
+  }
+}
 #dys h1, #dys .h1, #dys h2, #dys .h2, #dys h3, #dys .h3, #dys a, #dys label, #dys input, #dys p, #dys button {
   font-family: "OpenDyslexic";
 }

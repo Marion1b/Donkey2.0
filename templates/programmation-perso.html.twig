@@ -17,6 +17,13 @@
     <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
 </section>
 
+{% if session.user.getAdmin() == "ADMIN" %}
+    <section class="espace-perso-admin-space">
+        <h1 hidden>Espace administrateur</h1>
+        <a href="index.php?route=espace-admin&&admin-id={{session.user.getId()}}"><button class="admin-space-button">Espace admin</button></a>
+    </section>
+{% endif %}
+
 <section class="espace-perso-programmation">
     <h1>Ma programmation</h1>
 
@@ -27,6 +34,8 @@
     <a href="index.php?route=liste-artiste-fav&&user-id={{session.user.getId()}}">
         <button class="artist-fav-button">Mes artistes</button>
     </a>
+
+    <section class="perso-prog-container">
 
     <nav class="programmation-filter">
         <ul>
@@ -84,7 +93,8 @@
             {% endfor %}
             <p class="personnal-prog-hour">00h</p>
         {% endif %}
-</article>
+    </article>
+    </section>
 
 </section>
 

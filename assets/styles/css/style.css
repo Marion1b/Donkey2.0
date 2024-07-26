@@ -13185,6 +13185,13 @@ body .hide {
   align-items: center;
   position: relative;
 }
+.espace-perso-artists .artist-cards-container {
+  max-width: 120rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .espace-perso-artists h1, .espace-perso-artists .h1 {
   text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
 }
@@ -13241,7 +13248,7 @@ body .hide {
   text-shadow: -0.5px -0.5px 0 #020403, 0.5px -0.5px 0 #020403, -0.5px 0.5px 0 #020403, 0.5px 0.5px 0 #020403;
 }
 .espace-perso-artists-form3a {
-  top: 0;
+  top: 6rem;
   right: -5rem;
   animation: 4s linear infinite alternate formMoveRight3;
 }
@@ -13372,6 +13379,100 @@ body .hide {
   padding: 1.5rem 5rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .espace-perso-tickets button {
+    transition: all 200ms ease-in;
+    margin-top: 5rem;
+  }
+  .espace-perso-tickets button:hover {
+    background-color: #FFE500;
+    color: #020403;
+    text-shadow: none;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
+  .espace-perso-tickets-form2 {
+    left: 20rem;
+  }
+  .espace-perso-tickets-form1 {
+    right: 30rem;
+  }
+  .espace-perso-artists .planning-button, .espace-perso .artist-fav-button {
+    margin-top: 5rem;
+  }
+  .espace-perso .planning-button, .espace-perso .artist-fav-button {
+    transition: all 200ms ease-in, color 400ms ease-in;
+  }
+  .espace-perso .planning-button:hover, .espace-perso .artist-fav-button:hover {
+    background-color: #4F09B9;
+    color: #FFE500;
+    text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
+  .espace-perso-artists h1, .espace-perso-artists .h1 {
+    text-shadow: -2px -2px 0 #020403, 2px -2px 0 #020403, -2px 2px 0 #020403, 2px 2px 0 #020403;
+  }
+  .espace-perso-artists .artist-card {
+    transition: all 200ms ease-in;
+  }
+  .espace-perso-artists .artist-card:hover {
+    box-shadow: -8px 8px 8px #FFE500, 8px -8px 8px #FFE500;
+  }
+  .espace-perso-artists .artist-card button {
+    transition: all 200ms ease-in;
+  }
+  .espace-perso-artists .artist-card button:hover {
+    background-color: #FFE500;
+    color: #020403;
+    text-shadow: none;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
+  .espace-perso-artists .rotate1 {
+    transition: all 200ms ease-in;
+  }
+  .espace-perso-artists .rotate1:hover {
+    transform: rotate(5deg);
+  }
+  .espace-perso-artists .rotate2 {
+    transition: all 200ms ease-in;
+  }
+  .espace-perso-artists .rotate2:hover {
+    transform: rotate(-5deg);
+  }
+  .espace-perso-artists-form3a {
+    right: 15rem;
+  }
+  .espace-perso-artists-form2 {
+    left: 23rem;
+  }
+  .espace-perso-artists-form1 {
+    right: 10rem;
+  }
+  .espace-perso-artists-form3b {
+    left: 5rem;
+  }
+  .espace-perso-programmation-form3 {
+    left: 12rem;
+  }
+  .espace-perso-programmation-form1 {
+    right: 5rem;
+  }
+  .perso-prog-container {
+    width: 80%;
+    max-width: 100rem;
+  }
+  .perso-prog-container .programmation-filter ul li {
+    margin-top: 0;
+  }
+  .perso-prog-container .personnal-prog {
+    width: 100%;
+  }
+  .perso-prog-container .personnal-prog-artist {
+    width: 30rem;
+  }
+}
 .tickets-page, .paiement-valide {
   background-color: #4F09B9;
   color: #FFE500;

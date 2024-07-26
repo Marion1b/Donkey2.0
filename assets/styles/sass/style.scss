@@ -1217,6 +1217,13 @@ body{
         justify-content: center;
         align-items: center;
         position: relative;
+        .artist-cards-container{
+            max-width: 120rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
         h1{
             text-shadow:
             -1px -1px 0 $black,  
@@ -1228,7 +1235,7 @@ body{
             @include artist-card();
         }
         &-form3a{
-            top: 0;
+            top: 6rem;
             right: -5rem;
             animation: 4s linear infinite alternate formMoveRight3;
         }
@@ -1360,6 +1367,121 @@ body{
         padding: 1.5rem 5rem;
     }
 
+}
+
+@media screen and (min-width:1024px){
+    .espace-perso{
+        &-tickets{
+            button{
+                transition: all 200ms ease-in;
+                margin-top: 5rem;
+                &:hover{
+                    background-color: $secondary-color;
+                    color: $black;
+                    text-shadow:none;
+                    box-shadow: none;
+                    transform: translate(-2px, 2px);
+                }
+            }
+            &-form2{
+                left: 20rem;
+            }
+            &-form1{
+                right: 30rem;
+            }
+        }
+        &-artists .planning-button, .artist-fav-button{
+            margin-top: 5rem;
+        }
+        .planning-button, .artist-fav-button{
+            transition: all 200ms ease-in,
+                    color 400ms ease-in;
+            &:hover{
+                background-color: $main-color;
+                color: $secondary-color;
+                text-shadow:
+                -1px -1px 0 $black,  
+                1px -1px 0 $black,
+                -1px  1px 0 $black,
+                1px  1px 0 $black;
+                box-shadow: none;
+                transform: translate(-2px, 2px);
+            }
+        }
+        &-artists{
+            h1{
+                text-shadow: -2px -2px 0 $black,  
+                2px -2px 0 $black,
+                -2px  2px 0 $black,
+                2px  2px 0 $black;
+            }
+            .artist-card{
+                transition: all 200ms ease-in;
+                &:hover{
+                    box-shadow: -8px 8px 8px $secondary-color,
+                                8px -8px 8px $secondary-color;
+                }
+                button{
+                    transition: all 200ms ease-in;
+                    &:hover{
+                        background-color: $secondary-color;
+                        color: $black;
+                        text-shadow:none;
+                        box-shadow: none;
+                        transform: translate(-2px, 2px);
+                    }
+                }
+            }
+            .rotate1{
+                transition: all 200ms ease-in;
+                &:hover{
+                    transform: rotate(5deg);
+                }
+            }
+    
+            .rotate2{
+                transition: all 200ms ease-in;
+                &:hover{
+                    transform: rotate(-5deg);
+                }
+            }
+            &-form3a{
+                right: 15rem;
+            }
+            &-form2{
+                left: 23rem;
+            }
+            &-form1{
+                right: 10rem;
+            }
+            &-form3b{
+                left: 5rem;
+            }
+        }
+    }
+
+    .espace-perso-programmation{
+        &-form3{
+            left: 12rem;
+        }
+        &-form1{
+            right: 5rem;
+        }
+    }
+
+    .perso-prog-container{
+        width: 80%;
+        max-width: 100rem;
+        .programmation-filter ul li{
+            margin-top: 0;
+        }
+        .personnal-prog{
+            width: 100%;
+            &-artist{
+                width: 30rem;
+            }
+        }
+    }
 }
 
 // ==========================================================================

@@ -1190,6 +1190,12 @@ body{
                 transform: translate(-2px, 2px);
             }
         }
+        p>a{
+            transition: 200ms ease-in;
+            &:hover{
+                font-weight: 800;
+            }
+        }
         &-form1{
             top: 30rem;
             left: 23rem;

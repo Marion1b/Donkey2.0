@@ -13140,6 +13140,12 @@ body .hide {
     box-shadow: none;
     transform: translate(-2px, 2px);
   }
+  .connexion p > a, .inscription p > a {
+    transition: 200ms ease-in;
+  }
+  .connexion p > a:hover, .inscription p > a:hover {
+    font-weight: 800;
+  }
   .connexion-form1, .inscription-form1 {
     top: 30rem;
     left: 23rem;

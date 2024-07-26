@@ -12479,6 +12479,16 @@ body .hide {
   padding: 5rem 0;
   position: relative;
 }
+.programmation-page-container {
+  margin: auto;
+  max-width: 120rem;
+}
+.programmation-page .programmation-artists-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .programmation-page-form2a {
   left: -8rem;
   top: 15rem;
@@ -12520,6 +12530,7 @@ body .hide {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  width: 35rem;
 }
 .programmation-page .artist-card-image {
   width: 30rem;
@@ -12559,6 +12570,25 @@ body .hide {
   text-shadow: -0.5px -0.5px 0 #020403, 0.5px -0.5px 0 #020403, -0.5px 0.5px 0 #020403, 0.5px 0.5px 0 #020403;
 }
 
+@media screen and (min-width: 1024px) {
+  .programmation-filter ul li {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+  }
+  .programmation-page-form2a {
+    left: 10rem;
+  }
+  .programmation-page-form1 {
+    right: 5rem;
+  }
+  .programmation-page-form2b {
+    left: 8rem;
+  }
+  .programmation-page-form3 {
+    right: 2rem;
+  }
+}
 .fiche-artiste {
   background-color: #4F09B9;
   display: flex;
@@ -13008,6 +13038,7 @@ body .hide {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  width: 35rem;
 }
 .espace-perso-artists .artist-card-image {
   width: 30rem;

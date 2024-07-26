@@ -519,6 +519,16 @@ body{
     background-color: $main-color;
     padding: 5rem 0;
     position: relative;
+    &-container{
+        margin: auto;
+        max-width: 120rem;
+    }
+    .programmation-artists-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
     &-form2a{
         left: -8rem;
         top: 15rem;
@@ -554,6 +564,30 @@ body{
     
     .artist-card{
         @include artist-card();
+    }
+}
+
+@media screen and (min-width:1024px){
+    .programmation-filter{
+        ul li{
+            font-size: 1.6rem;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+        }
+    }
+    .programmation-page{
+        &-form2a{
+            left: 10rem;
+        }
+        &-form1{
+            right: 5rem;
+        }
+        &-form2b{
+            left: 8rem;
+        }
+        &-form3{
+            right: 2rem;
+        }
     }
 }
 

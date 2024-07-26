@@ -12734,20 +12734,24 @@ body .hide {
 }
 .infos {
   background-color: #FFE500;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.infos-container {
+  max-width: 120rem;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0;
-  position: relative;
-  overflow: hidden;
 }
 .infos ul {
   padding-left: 1rem;
   list-style: disc;
   font-style: italic;
 }
-.infos-sommaire, .infos section {
+.infos-sommaire, .infos article {
   background-color: #FFE500;
   z-index: 5;
   width: 34rem;
@@ -12757,19 +12761,19 @@ body .hide {
   margin: 1rem 0;
   box-shadow: 5px 5px 15px #d9c300 -5px -5px 15px #d9c300;
 }
-.infos-sommaire h2, .infos-sommaire .h2, .infos section h2, .infos section .h2 {
+.infos-sommaire h2, .infos-sommaire .h2, .infos article h2, .infos article .h2 {
   margin-bottom: 1.5rem;
 }
-.infos-sommaire h3, .infos-sommaire .h3, .infos section h3, .infos section .h3 {
+.infos-sommaire h3, .infos-sommaire .h3, .infos article h3, .infos article .h3 {
   margin: 1.5rem 0;
 }
-.infos-sommaire h4, .infos-sommaire .h4, .infos section h4, .infos section .h4 {
+.infos-sommaire h4, .infos-sommaire .h4, .infos article h4, .infos article .h4 {
   margin: 1rem 0 0.5rem 0;
 }
 .infos-sommaire {
   margin: 3.5rem 0;
 }
-.infos section a {
+.infos article a {
   color: #4F09B9;
   text-decoration: underline;
 }
@@ -12794,6 +12798,35 @@ body .hide {
   animation: 2s linear infinite alternate formMoveRight1;
 }
 
+@media screen and (min-width: 1024px) {
+  .infos a {
+    transition: 200ms all ease-in;
+  }
+  .infos a:hover {
+    font-weight: 800;
+  }
+  .infos .infos-sommaire {
+    margin-top: 5rem;
+    margin-bottom: 0;
+    width: 55rem;
+  }
+  .infos .infos-content article {
+    width: 55rem;
+    margin: 3rem auto;
+  }
+  .infos-form2a {
+    left: 20rem;
+  }
+  .infos-form3 {
+    right: 13rem;
+  }
+  .infos-form2b {
+    left: 15rem;
+  }
+  .infos-form1 {
+    right: 20rem;
+  }
+}
 .ticketing {
   background-color: #FFE500;
   display: flex;

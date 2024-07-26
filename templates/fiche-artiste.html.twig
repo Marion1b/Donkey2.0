@@ -7,35 +7,40 @@
 {% block main %}
 <main class="fiche-artiste">
 
-<h1>{{artist.getName()}}</h1>
+    <section class="fiche-artiste-container">
 
-<div class="fiche-artiste-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
-<div class="fiche-artiste-form2 form"><img src="./assets/img/forms/form2-yellow.png" alt=""></div>
-<div class="fiche-artiste-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
+        <h1>{{artist.getName()}}</h1>
 
-<div class="fiche-artiste-image {% if artist.getName() == "JeanneTo" or artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} fiche-artiste-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="image de {{artist.getName()}}"></div>
+        <div class="fiche-artiste-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
+        <div class="fiche-artiste-form2 form"><img src="./assets/img/forms/form2-yellow.png" alt=""></div>
+        <div class="fiche-artiste-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
 
-<p>{{artist.getBiography()}}</p>
+        <article class="fiche-artiste-content">
+            <div class="fiche-artiste-image {% if artist.getName() == "JeanneTo" or artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} fiche-artiste-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="image de {{artist.getName()}}"></div>
 
-{{artist.getPlaylist()|raw}}
+            <p>{{artist.getBiography()}}</p>
 
-{% if session.user is defined %}
-    <form action="index.php?route=liste-artiste" method="POST">
-        <input type="hidden" name="artist" id="artist" value="{{artist.getId()}}">
-        {% set isFavorite = false %}
-        {% for favoriteArtistId in favoriteArtistsId %}
-            {% if artist.getId() == favoriteArtistId.artist_id %}
-                {% set isFavorite = true %}
+            {{artist.getPlaylist()|raw}}
+
+            {% if session.user is defined %}
+                <form action="index.php?route=liste-artiste" method="POST">
+                    <input type="hidden" name="artist" id="artist" value="{{artist.getId()}}">
+                    {% set isFavorite = false %}
+                    {% for favoriteArtistId in favoriteArtistsId %}
+                        {% if artist.getId() == favoriteArtistId.artist_id %}
+                            {% set isFavorite = true %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if isFavorite %}
+                        <button type="submit">Retirer de la liste</button>
+                    {% else %}
+                        <button type="submit">Ajouter à la liste</button>
+                    {% endif %}
+                </form>
             {% endif %}
-        {% endfor %}
-        {% if isFavorite %}
-            <button type="submit">Retirer de la liste</button>
-        {% else %}
-            <button type="submit">Ajouter à la liste</button>
-        {% endif %}
-    </form>
-{% endif %}
+        </article>
 
+    </section>
 </main>
 {% endblock %}
 

@@ -588,6 +588,16 @@ body{
                 box-shadow: -8px 8px 8px $secondary-color,
                             8px -8px 8px $secondary-color;
             }
+            button{
+                transition: all 200ms ease-in;
+                &:hover{
+                    background-color: $secondary-color;
+                    color: $black;
+                    text-shadow:none;
+                    box-shadow: none;
+                    transform: translate(-2px, 2px);
+                }
+            }
         }
         .rotate1{
             transition: all 200ms ease-in;
@@ -630,6 +640,13 @@ body{
     padding:5rem 0;
     position: relative;
     overflow: hidden;
+    &-container{
+        max-width: 50rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     &-form1{
         top: 25rem;
         left: -5rem;
@@ -656,7 +673,7 @@ body{
     &-image{
         position: relative;
         z-index: 5;
-        margin: 3.5rem 0;
+        margin: 3.5rem auto;
         width: 35rem;
         height: 18rem;
         overflow: hidden;
@@ -676,7 +693,8 @@ body{
     p{
         position: relative;
         z-index: 5;
-        margin: 0 1rem 3.5rem 1rem;
+        margin: 0 1.5rem 3.5rem 1.5rem;
+        margin-bottom: 3.5rem;
         padding: 3rem 1.5rem;
         border: 2px solid $black;
         border-radius: 2rem;
@@ -687,14 +705,47 @@ body{
     iframe{
         position: relative;
         z-index: 5;
-        width: 95%;
         box-shadow: -8px 8px 6px $opacity-black;
+        margin: 0rem 1.5rem;
+        width: 93%;
+    }
+    form{
+        text-align: center;
     }
     button{
         margin-top: 3rem;
         @include yellow-button();
         z-index: 100;
         position: relative;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .fiche-artiste{
+        &-form1{
+            left: 20rem;
+        }
+        &-form2{
+            left: 30rem;
+        }
+        &-form3{
+            right: 10rem;
+        }
+        button{
+            transition: all 200ms ease-in,
+                        color 400ms ease-in;
+            &:hover{
+                background-color: $main-color;
+                color: $secondary-color;
+                text-shadow:
+                -1px -1px 0 $black,  
+                1px -1px 0 $black,
+                -1px  1px 0 $black,
+                1px  1px 0 $black;
+                box-shadow: none;
+                transform: translate(-2px, 2px);
+            }
+        }
     }
 }
 

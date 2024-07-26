@@ -12353,7 +12353,7 @@ body .hide {
   }
   .home-ticketing a:hover button {
     font-size: 1.4rem;
-    border: 2px solid #020403;
+    border: 0.2rem solid #020403;
     box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
     border-radius: 1.5rem;
     background-color: #4F09B9;
@@ -12588,6 +12588,16 @@ body .hide {
   .programmation-page .artist-card:hover {
     box-shadow: -8px 8px 8px #FFE500, 8px -8px 8px #FFE500;
   }
+  .programmation-page .artist-card button {
+    transition: all 200ms ease-in;
+  }
+  .programmation-page .artist-card button:hover {
+    background-color: #FFE500;
+    color: #020403;
+    text-shadow: none;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
   .programmation-page .rotate1 {
     transition: all 200ms ease-in;
   }
@@ -12623,6 +12633,13 @@ body .hide {
   position: relative;
   overflow: hidden;
 }
+.fiche-artiste-container {
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .fiche-artiste-form1 {
   top: 25rem;
   left: -5rem;
@@ -12645,7 +12662,7 @@ body .hide {
 .fiche-artiste-image {
   position: relative;
   z-index: 5;
-  margin: 3.5rem 0;
+  margin: 3.5rem auto;
   width: 35rem;
   height: 18rem;
   overflow: hidden;
@@ -12665,7 +12682,8 @@ body .hide {
 .fiche-artiste p {
   position: relative;
   z-index: 5;
-  margin: 0 1rem 3.5rem 1rem;
+  margin: 0 1.5rem 3.5rem 1.5rem;
+  margin-bottom: 3.5rem;
   padding: 3rem 1.5rem;
   border: 2px solid #020403;
   border-radius: 2rem;
@@ -12676,8 +12694,12 @@ body .hide {
 .fiche-artiste iframe {
   position: relative;
   z-index: 5;
-  width: 95%;
   box-shadow: -8px 8px 6px rgba(2, 4, 3, 0.25);
+  margin: 0rem 1.5rem;
+  width: 93%;
+}
+.fiche-artiste form {
+  text-align: center;
 }
 .fiche-artiste button {
   margin-top: 3rem;
@@ -12694,6 +12716,27 @@ body .hide {
   position: relative;
 }
 
+@media screen and (min-width: 1024px) {
+  .fiche-artiste-form1 {
+    left: 20rem;
+  }
+  .fiche-artiste-form2 {
+    left: 30rem;
+  }
+  .fiche-artiste-form3 {
+    right: 10rem;
+  }
+  .fiche-artiste button {
+    transition: all 200ms ease-in, color 400ms ease-in;
+  }
+  .fiche-artiste button:hover {
+    background-color: #4F09B9;
+    color: #FFE500;
+    text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
+}
 .infos {
   background-color: #FFE500;
   display: flex;
@@ -12957,7 +13000,7 @@ body .hide {
   width: 100%;
   padding: 1.5rem 0;
   font-size: 1.4rem;
-  border: 2px solid #020403;
+  border: 0.2rem solid #020403;
   box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
   border-radius: 1.5rem;
   background-color: #4F09B9;
@@ -13001,7 +13044,7 @@ body .hide {
 }
 .espace-perso-tickets button {
   font-size: 1.4rem;
-  border: 2px solid #020403;
+  border: 0.2rem solid #020403;
   box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
   border-radius: 1.5rem;
   background-color: #4F09B9;
@@ -13221,7 +13264,7 @@ body .hide {
 }
 .espace-perso .admin-space-button {
   font-size: 1.4rem;
-  border: 2px solid #020403;
+  border: 0.2rem solid #020403;
   box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
   border-radius: 1.5rem;
   background-color: #4F09B9;

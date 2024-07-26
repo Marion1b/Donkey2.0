@@ -573,9 +573,35 @@ body{
             font-size: 1.6rem;
             padding: 1rem 2rem;
             border-radius: 1rem;
+            transition: all 200ms ease-in;
+            margin-top: 5rem;
+            &:hover{
+                box-shadow: none;
+                transform: translate(-2px,2px);
+            }
         }
     }
     .programmation-page{
+        .artist-card{
+            transition: all 200ms ease-in;
+            &:hover{
+                box-shadow: -8px 8px 8px $secondary-color,
+                            8px -8px 8px $secondary-color;
+            }
+        }
+        .rotate1{
+            transition: all 200ms ease-in;
+            &:hover{
+                transform: rotate(5deg);
+            }
+        }
+
+        .rotate2{
+            transition: all 200ms ease-in;
+            &:hover{
+                transform: rotate(-5deg);
+            }
+        }
         &-form2a{
             left: 10rem;
         }

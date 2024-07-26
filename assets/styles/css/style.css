@@ -12575,6 +12575,30 @@ body .hide {
     font-size: 1.6rem;
     padding: 1rem 2rem;
     border-radius: 1rem;
+    transition: all 200ms ease-in;
+    margin-top: 5rem;
+  }
+  .programmation-filter ul li:hover {
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
+  .programmation-page .artist-card {
+    transition: all 200ms ease-in;
+  }
+  .programmation-page .artist-card:hover {
+    box-shadow: -8px 8px 8px #FFE500, 8px -8px 8px #FFE500;
+  }
+  .programmation-page .rotate1 {
+    transition: all 200ms ease-in;
+  }
+  .programmation-page .rotate1:hover {
+    transform: rotate(5deg);
+  }
+  .programmation-page .rotate2 {
+    transition: all 200ms ease-in;
+  }
+  .programmation-page .rotate2:hover {
+    transform: rotate(-5deg);
   }
   .programmation-page-form2a {
     left: 10rem;

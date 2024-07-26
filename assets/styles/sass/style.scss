@@ -233,6 +233,10 @@ body{
             align-items: center;
             li{
                 margin: 0rem 2rem;
+                transition: 200ms all ease-in;
+                &:hover{
+                    transform: translate(-2px,2px);
+                }
             }
         }
         a{
@@ -1712,6 +1716,10 @@ body{
     .page-footer{
         a{
             font-size: 1.2rem;
+            transition: 200ms all ease-in;
+            &:hover{
+                font-weight: 800;
+            }
         }
         .footer-social a{
             font-size: 2rem;

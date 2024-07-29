@@ -12338,6 +12338,9 @@ body .hide {
   border: solid #020403 0.2rem;
   box-shadow: -5px 5px 4px rgba(2, 4, 3, 0.25);
 }
+.home-ticketing .home-ticketing-circle {
+  display: none;
+}
 
 @media screen and (min-width: 1024px) {
   .home-ticketing {

@@ -1644,8 +1644,15 @@ body{
     position: relative;
     overflow: hidden;
     min-height: 95vh;
+    h1{
+        z-index: 100;
+        background-color: #ffe60091;
+        backdrop-filter: blur(10px);
+        border-radius: 2rem;
+    }
     &-infos{
         @include infos-section();
+        z-index: 100;
         margin: 5rem 0;
         p{
             margin: 3rem 0;
@@ -1654,7 +1661,7 @@ body{
     }
     &-form2{
         top: 5rem;
-        left: 1.5rem;
+        left: -2rem;
         animation: 4s linear infinite alternate formMoveRight2;
     }
     &-form1{

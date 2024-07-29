@@ -12151,6 +12151,9 @@ body .hide {
   z-index: -100;
   display: none;
 }
+.page-header-mobile .header-nav-active {
+  border-bottom: 2px solid #020403;
+}
 
 .page-header-desktop {
   display: none;

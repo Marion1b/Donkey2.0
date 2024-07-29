@@ -12409,7 +12409,6 @@ body .hide {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  z-index: -5;
 }
 .home-infos-container {
   position: relative;

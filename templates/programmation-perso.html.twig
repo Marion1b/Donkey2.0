@@ -66,7 +66,7 @@
                     {% if artist.getHourToString() == i %}
                     <article class="personnal-prog-artist">
                         <p class="personnal-prog-artist-name">{{artist.getName()}}</p>
-                        <aside class="{% if artist.getName() == "JeanneTo"%} personnal-prog-image-top {% endif %}">
+                        <aside>
                             <img src="{{artist.getPicture()}}" alt="">
                         </aside>
                     </article>

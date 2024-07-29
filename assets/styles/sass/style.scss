@@ -907,7 +907,7 @@ body{
         text-align: center;
         padding: 3rem;
         border-radius: 2rem;
-        margin: 5rem 0 3rem 0;
+        margin: 3rem 0;
         position: relative;
         background-color: $main-color;
         color: $secondary-color;
@@ -980,6 +980,7 @@ body{
         }
     }
     .ticket-card{
+        margin: 5rem 0 3rem 0;
         button{
             transition: all 200ms ease-in,
                         color 100ms ease-in;

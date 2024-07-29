@@ -90,9 +90,11 @@ body{
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
+    .logo-link{
+        grid-column-start: 2;
+    }
     .logo{
         padding: .5rem 0;
-        grid-column-start: 2;
         width: 10rem;
     }
     .open{

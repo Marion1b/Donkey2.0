@@ -12049,9 +12049,11 @@ body .hide {
   justify-items: center;
   align-items: center;
 }
+.page-header-mobile .logo-link {
+  grid-column-start: 2;
+}
 .page-header-mobile .logo {
   padding: 0.5rem 0;
-  grid-column-start: 2;
   width: 10rem;
 }
 .page-header-mobile .open span {

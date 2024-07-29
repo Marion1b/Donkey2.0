@@ -12189,11 +12189,16 @@ body .hide {
   }
   .page-header-desktop ul li {
     margin: 0rem 2rem;
+    transition: 200ms all ease-in;
+  }
+  .page-header-desktop ul li:hover {
+    transform: translate(-2px, 2px);
   }
   .page-header-desktop a {
     color: #FFE500;
     font-weight: 800;
     font-size: 1.4rem;
+    margin-bottom: 2px;
   }
   .page-header-desktop .nav-dys {
     font-family: "OpenDyslexic";
@@ -12231,9 +12236,20 @@ body .hide {
     border-radius: 1rem;
     font-family: "Roboto Slab", serif;
     font-weight: 800;
+    transition: all 200ms ease-in, color 100ms ease-in;
+  }
+  .page-header-desktop .nav-logout:hover {
+    background-color: #4F09B9;
+    color: #FFE500;
+    text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
   }
   .page-header-desktop .nav-logout i {
     margin-left: 0.5rem;
+  }
+  .page-header-desktop .header-nav-active {
+    border-bottom: 2px solid #FFE500;
   }
 }
 .home-display-names {
@@ -13672,6 +13688,10 @@ body .hide {
 @media screen and (min-width: 1024px) {
   .page-footer a {
     font-size: 1.2rem;
+    transition: 200ms all ease-in;
+  }
+  .page-footer a:hover {
+    font-weight: 800;
   }
   .page-footer .footer-social a {
     font-size: 2rem;

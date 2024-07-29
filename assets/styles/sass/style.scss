@@ -233,12 +233,17 @@ body{
             align-items: center;
             li{
                 margin: 0rem 2rem;
+                transition: 200ms all ease-in;
+                &:hover{
+                    transform: translate(-2px,2px);
+                }
             }
         }
         a{
             color: $secondary-color;
             font-weight: 800;
             font-size: 1.4rem;
+            margin-bottom: 2px;
         }
         .nav-dys{
             font-family: 'OpenDyslexic';
@@ -276,9 +281,25 @@ body{
             border-radius: 1rem;
             font-family: "Roboto Slab", serif;
             font-weight: 800;
+            transition: all 200ms ease-in,
+                        color 100ms ease-in;
+            &:hover{
+                background-color: $main-color;
+                color: $secondary-color;
+                text-shadow:
+                -1px -1px 0 $black,  
+                1px -1px 0 $black,
+                -1px  1px 0 $black,
+                1px  1px 0 $black;
+                box-shadow: none;
+                transform: translate(-2px, 2px);
+            }
             i{
                 margin-left: .5rem;
             }
+        }
+        .header-nav-active{
+            border-bottom: 2px solid $secondary-color
         }
     }
 }
@@ -1712,6 +1733,10 @@ body{
     .page-footer{
         a{
             font-size: 1.2rem;
+            transition: 200ms all ease-in;
+            &:hover{
+                font-weight: 800;
+            }
         }
         .footer-social a{
             font-size: 2rem;

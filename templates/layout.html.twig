@@ -59,7 +59,7 @@
                 <li><a href="index.php?route=infos_pratiques" {%if get.route == "infos_pratiques"%} class="header-nav-active" {%endif%}>Informations pratiques</a></li>
                 <li><a href="index.php?route=billetterie" {%if get.route == "billetterie" or get.route == "achat-billets"%} class="header-nav-active" {%endif%}>Billetterie</a></li>
             </ul>
-                <img src="./assets/img/other/Logo.svg" alt="logo" class="logo">
+                <a href="index.php"><img src="./assets/img/other/Logo.svg" alt="logo" class="logo"></a>
             <ul class="page-header-ul-2">
                 {% if session.user is defined %}
                     <li><a href="index.php?route=espace-perso&&user-id={{session.user.getId()}}" {%if get.route == "espace-perso" or get.route == "billets" or get.route == "espace-admin" or get.route == "programmation-perso"%} class="header-nav-article" {%endif%}>Espace personnel</a></li>

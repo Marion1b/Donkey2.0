@@ -387,6 +387,9 @@ body{
     button{
         @include yellow-button();
     }
+    .home-ticketing-circle{
+        display: none;
+    }
 }
 
 @media screen and (min-width:1024px){

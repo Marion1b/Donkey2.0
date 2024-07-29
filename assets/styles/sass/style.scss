@@ -90,9 +90,11 @@ body{
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
+    .logo-link{
+        grid-column-start: 2;
+    }
     .logo{
         padding: .5rem 0;
-        grid-column-start: 2;
         width: 10rem;
     }
     .open{
@@ -331,7 +333,7 @@ body{
         text-transform: uppercase;
     }
     &-form1{
-        bottom:1rem; 
+        bottom:-12rem; 
         right: 2rem;
         animation: 2.5s linear infinite alternate formMoveLay1;
         
@@ -343,7 +345,7 @@ body{
     }
     &-form3{
         left: 3rem;
-        bottom: 2.5rem;
+        bottom: -8rem;
         animation: 3s linear infinite alternate formMoveLeft3;
     }
 }
@@ -459,6 +461,8 @@ body{
     }
     &-container > article{
         @include infos-section();
+        position: relative;
+        z-index: 100;
         p, i{
             margin: 1rem 0;
         }
@@ -471,13 +475,13 @@ body{
         justify-content: space-between;
     }
     &-form1{
-        bottom: -3rem;
-        left: -.2rem;
+        bottom: -4rem;
+        left: -8rem;
         animation: 3s linear infinite alternate formMoveLeft1;
     }
     &-form3{
-        top: .5rem;
-        right: .2rem;
+        top: -2rem;
+        right: -12rem;
         animation: 5s linear infinite alternate formMoveLeft3;
     }
 }
@@ -492,6 +496,17 @@ body{
         padding: 15rem 0;
         & > article{
             width: 32rem;
+        }
+    }
+    .home-infos{
+        &-form1{
+            bottom: -3rem;
+            left: -.2rem;
+        }
+        &-form3{
+            top: .5rem;
+            right: .2rem;
+            animation: 5s linear infinite alternate formMoveLeft3;
         }
     }
 }

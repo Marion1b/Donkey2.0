@@ -196,6 +196,9 @@ body{
         z-index: -100;
         display: none;
     }
+    .header-nav-active{
+        border-bottom: 2px solid $black;
+    }
 }
 
 .page-header-desktop{
@@ -301,7 +304,7 @@ body{
             }
         }
         .header-nav-active{
-            border-bottom: 2px solid $secondary-color
+            border-bottom: 2px solid $secondary-color;
         }
     }
 }

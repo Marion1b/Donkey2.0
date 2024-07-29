@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const burgerMenu = document.querySelector(".burger-menu");
     const main = document.querySelector('main');
     const body = document.querySelector('body');
-    const dysButton = document.querySelector('#dys-font');
+    const dysButton = document.querySelectorAll('#dys-font');
     const userDelete = document.querySelectorAll('.user-delete');
     const ticketDelete = document.querySelectorAll('.ticket-delete');
     const formImg = document.querySelectorAll('.form img');
@@ -60,22 +60,24 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     
     // dys button
-    if(dysButton.value === "on"){
-        body.id = 'dys';
-        dysButton.classList.add('toggle-button-on');
-    }else{
-        body.id = '';
-        dysButton.classList.remove('toggle-button-on');
-    }
-    dysButton.addEventListener('click', ()=>{
-        if(dysButton.value === "on"){
-            dysButton.classList.add('toggle-button-on');
+    for(let i =0; i<dysButton.length; i++){
+        if(dysButton[i].value === "on"){
             body.id = 'dys';
+            dysButton[i].classList.add('toggle-button-on');
         }else{
             body.id = '';
-            dysButton.classList.remove('toggle-button-on');
+            dysButton[i].classList.remove('toggle-button-on');
         }
-    })
+        dysButton[i].addEventListener('click', ()=>{
+            if(dysButton[i].value === "on"){
+                dysButton[i].classList.add('toggle-button-on');
+                body.id = 'dys';
+            }else{
+                body.id = '';
+                dysButton[i].classList.remove('toggle-button-on');
+            }
+        })
+    }
 
     if(userDelete.length > 0){
         const p = document.querySelector('.espace-admin-modal p');

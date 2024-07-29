@@ -12881,7 +12881,7 @@ body .hide {
   text-align: center;
   padding: 3rem;
   border-radius: 2rem;
-  margin: 5rem 0 3rem 0;
+  margin: 3rem 0;
   position: relative;
   background-color: #4F09B9;
   color: #FFE500;
@@ -12949,6 +12949,9 @@ body .hide {
   }
   .ticketing-form2 {
     right: 25rem;
+  }
+  .ticket-card {
+    margin: 5rem 0 3rem 0;
   }
   .ticket-card button {
     transition: all 200ms ease-in, color 100ms ease-in;

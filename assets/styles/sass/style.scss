@@ -1771,6 +1771,70 @@ body{
 }
 
 // ==========================================================================
+// ERROR
+// ==========================================================================
+
+.error{
+    min-height: 95vh;
+    background-color: $secondary-color;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    h1{
+        position: relative;
+        z-index: 100;
+        background-color: $secondary-color;
+    }
+    p{
+        position: relative;
+        z-index: 100;
+        color: $secondary-color;
+        font-size: 2rem;
+        background-color: $black;
+    }
+    .shrek{
+        position: relative;
+        z-index: 100;
+        margin: 1rem;
+        width: 30rem;
+    }
+    &-form3a{
+        top: 5rem;
+        left: 2rem;
+        animation: 2s linear infinite alternate formMoveLeft3;
+    }
+    &-form1a{
+        top: 8rem;
+        right: 10rem;
+        animation: 5s linear infinite alternate formMoveLay1;
+    }
+    &-form2a{
+        bottom:9rem;
+        left: 15rem;
+        animation: 3s linear infinite alternate formMoveDown2;
+    }
+    &-form3b{
+        bottom: 10rem;
+        right: 9rem;
+        animation: 5s linear infinite alternate formMoveDown3;
+    }
+    &-form1b{
+        top: 20rem;
+        left: 5rem;
+        animation: 6s linear infinite alternate formMoveRight1;
+    }
+    &-form2b{
+        top: 15rem;
+        right: 25rem;
+        animation: 4s linear infinite alternate formMoveRight2;
+    }
+}
+
+// ==========================================================================
 // FOOTER
 // ==========================================================================
 

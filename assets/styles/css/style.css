@@ -13727,6 +13727,66 @@ body .hide {
   margin: 3rem 0;
 }
 
+.error {
+  min-height: 95vh;
+  background-color: #FFE500;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.error h1, .error .h1 {
+  position: relative;
+  z-index: 100;
+  background-color: #FFE500;
+}
+.error p {
+  position: relative;
+  z-index: 100;
+  color: #FFE500;
+  font-size: 2rem;
+  background-color: #020403;
+}
+.error .shrek {
+  position: relative;
+  z-index: 100;
+  margin: 1rem;
+  width: 30rem;
+}
+.error-form3a {
+  top: 5rem;
+  left: 2rem;
+  animation: 2s linear infinite alternate formMoveLeft3;
+}
+.error-form1a {
+  top: 8rem;
+  right: 10rem;
+  animation: 5s linear infinite alternate formMoveLay1;
+}
+.error-form2a {
+  bottom: 9rem;
+  left: 15rem;
+  animation: 3s linear infinite alternate formMoveDown2;
+}
+.error-form3b {
+  bottom: 10rem;
+  right: 9rem;
+  animation: 5s linear infinite alternate formMoveDown3;
+}
+.error-form1b {
+  top: 20rem;
+  left: 5rem;
+  animation: 6s linear infinite alternate formMoveRight1;
+}
+.error-form2b {
+  top: 15rem;
+  right: 25rem;
+  animation: 4s linear infinite alternate formMoveRight2;
+}
+
 .page-footer {
   background-color: #020403;
 }

@@ -11973,6 +11973,24 @@ textarea.form-control-lg {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #020403;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #353535;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -12511,6 +12529,7 @@ body .hide {
 .programmation-page-container {
   margin: auto;
   max-width: 120rem;
+  min-height: 95vh;
 }
 .programmation-page .programmation-artists-container {
   display: flex;

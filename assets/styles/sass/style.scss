@@ -1705,9 +1705,11 @@ body{
 
 .admin-space, .modifier-page{
     min-height: 95vh;
+    max-width: 80rem;
     padding:5rem 0;
     overflow: hidden;
     position: relative;
+    margin: auto;
     .input-group{
         position: static;
     }

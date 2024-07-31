@@ -1732,14 +1732,16 @@ body{
 // MENTIONS LEGALES
 // ==========================================================================
 
-.mentions-legales{
+.mentions-legales, .rgpd{
     background-color: $secondary-color;
     color: $black;
     min-height: 95vh;
     padding:5rem 0;
+    overflow: hidden;
     &-container{
         max-width: 80rem;
         margin: auto;
+        position: relative;
         &>*{
             margin: 0;
         }

@@ -36,7 +36,7 @@ class Router{
         }else if(isset($get["route"]) && $get["route"] === "billets"){
             $this->pc->getTicket();
         }else if(isset($get["route"]) && $get["route"] === "download"){
-            if(isset($get["file"]) && isset($get["user"]) && (int) $get["user"] === $_SESSION["user"]->getId()){
+            if(isset($get["file"]) && isset($get["user"]) && isset($_SESSION["user"]) && (int) $get["user"] === $_SESSION["user"]->getId() || isset($get["file"]) && (int) $get["user"] === $_SESSION["id"]){
                 $this->pc->download();
             }else{
                 var_dump($get["user"]);

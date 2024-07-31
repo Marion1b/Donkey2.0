@@ -13689,20 +13689,22 @@ body .hide {
   background-color: #fff;
 }
 
-.mentions-legales {
+.mentions-legales, .rgpd {
   background-color: #FFE500;
   color: #020403;
   min-height: 95vh;
   padding: 5rem 0;
+  overflow: hidden;
 }
-.mentions-legales-container {
+.mentions-legales-container, .rgpd-container {
   max-width: 80rem;
   margin: auto;
+  position: relative;
 }
-.mentions-legales-container > * {
+.mentions-legales-container > *, .rgpd-container > * {
   margin: 0;
 }
-.mentions-legales-container p {
+.mentions-legales-container p, .rgpd-container p {
   margin: 3rem 0;
 }
 

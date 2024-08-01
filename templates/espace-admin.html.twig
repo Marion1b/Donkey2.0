@@ -82,7 +82,7 @@
                         <th>Nom-prénom</th>
                         <th>Tarif</th>
                         <th>Email</th>
-                        <th>Action</th>
+                        <th colspan="2">Action</th>
                     </tr>
                     <tbody>
                         {% for ticket in ticketsFind %}
@@ -91,6 +91,7 @@
                                 <td>{{ticket.getContent()}}</td>
                                 <td>{{ticket.getTarif()}}</td>
                                 <td>{{ticket.getEmail()}}</td>
+                                <td class="ticket-download" id="{{ticket.getId()}}"><a href="index.php?route=download&&file={{ticket.getId()}}&&user={{session.user.getId()}}" target="__blank"><button class="btn btn-secondary fs-5">Télécharger</button></td></a>
                                 <td class="ticket-delete" id="{{ticket.getId()}}"><button class="btn btn-dark fs-5">Supprimer</button></td>
                             </tr>
                         {% endfor %}

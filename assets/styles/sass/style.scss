@@ -546,6 +546,7 @@ body{
         margin: 3.5rem 0;
         li{
             font-size: 1.2rem;
+            background-color: $main-color;
             border: 1px solid $black;
             box-shadow: -4px 4px 4px $opacity-black;
             border-radius: .5rem;
@@ -571,14 +572,18 @@ body{
 }
 
 .programmation-page{
-    overflow: hidden;
     background-color: $main-color;
     padding: 5rem 0;
     position: relative;
+    contain: paint;
     &-container{
         margin: auto;
+        position: relative;
+        width: 100%;
         max-width: 120rem;
         min-height: 95vh;
+        contain: paint;
+        z-index: 100;
     }
     .programmation-artists-container{
         display: flex;
@@ -618,13 +623,38 @@ body{
         position: relative;
         z-index: 100;
     }
-    
     .artist-card{
         @include artist-card();
     }
 }
 
+.scroll-top{
+    z-index: 150;
+    position: sticky;
+    bottom: 2rem;
+    left: 90%;
+    background-color: $opacity-black;
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 50%;
+    a{
+        padding: 3rem 1rem;
+    }
+    i{
+        color: $secondary-color;
+    }
+}
+
+@media screen and (min-width:780px) and (max-width:1023px){
+    .scroll-top{
+        left: 100%;
+    }
+}
+
 @media screen and (min-width:1024px){
+    .scroll-top{
+        left: 95%;
+    }
     .programmation-filter{
         ul li{
             font-size: 1.6rem;
@@ -1278,7 +1308,7 @@ body{
 .espace-perso{
     background-color: $secondary-color;
     position: relative;
-    overflow: hidden;
+    contain: paint;
     &-tickets{
         display: flex;
         flex-direction: column;
@@ -1580,6 +1610,16 @@ body{
             }
         }
     }
+    .admin-space-button{
+        transition: all 200ms ease-in;
+        &:hover{
+            background-color: $secondary-color;
+            color: $black;
+            text-shadow:none;
+            box-shadow: none;
+            transform: translate(-2px, 2px);
+        }
+    }
 }
 
 // ==========================================================================
@@ -1841,6 +1881,8 @@ body{
 
 .page-footer{
     background-color: $black;
+    position: relative;
+    z-index: 100;
     &-container{
         margin: auto;
         display: flex;

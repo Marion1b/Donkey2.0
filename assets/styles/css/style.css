@@ -12502,6 +12502,7 @@ body .hide {
 }
 .programmation-filter ul li {
   font-size: 1.2rem;
+  background-color: #4F09B9;
   border: 1px solid #020403;
   box-shadow: -4px 4px 4px rgba(2, 4, 3, 0.25);
   border-radius: 0.5rem;
@@ -12521,15 +12522,19 @@ body .hide {
 }
 
 .programmation-page {
-  overflow: hidden;
   background-color: #4F09B9;
   padding: 5rem 0;
   position: relative;
+  contain: paint;
 }
 .programmation-page-container {
   margin: auto;
+  position: relative;
+  width: 100%;
   max-width: 120rem;
   min-height: 95vh;
+  contain: paint;
+  z-index: 100;
 }
 .programmation-page .programmation-artists-container {
   display: flex;
@@ -12618,7 +12623,32 @@ body .hide {
   text-shadow: -0.5px -0.5px 0 #020403, 0.5px -0.5px 0 #020403, -0.5px 0.5px 0 #020403, 0.5px 0.5px 0 #020403;
 }
 
+.scroll-top {
+  z-index: 150;
+  position: sticky;
+  bottom: 2rem;
+  left: 90%;
+  background-color: rgba(2, 4, 3, 0.25);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+}
+.scroll-top a {
+  padding: 3rem 1rem;
+}
+.scroll-top i {
+  color: #FFE500;
+}
+
+@media screen and (min-width: 780px) and (max-width: 1023px) {
+  .scroll-top {
+    left: 100%;
+  }
+}
 @media screen and (min-width: 1024px) {
+  .scroll-top {
+    left: 95%;
+  }
   .programmation-filter ul li {
     font-size: 1.6rem;
     padding: 1rem 2rem;
@@ -13216,7 +13246,7 @@ body .hide {
 .espace-perso {
   background-color: #FFE500;
   position: relative;
-  overflow: hidden;
+  contain: paint;
 }
 .espace-perso-tickets {
   display: flex;
@@ -13559,6 +13589,16 @@ body .hide {
   .perso-prog-container .personnal-prog-artist {
     width: 30rem;
   }
+  .admin-space-button {
+    transition: all 200ms ease-in;
+  }
+  .admin-space-button:hover {
+    background-color: #FFE500;
+    color: #020403;
+    text-shadow: none;
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+  }
 }
 .tickets-page, .paiement-valide {
   background-color: #4F09B9;
@@ -13789,6 +13829,8 @@ body .hide {
 
 .page-footer {
   background-color: #020403;
+  position: relative;
+  z-index: 100;
 }
 .page-footer-container {
   margin: auto;

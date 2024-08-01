@@ -40,7 +40,7 @@
             {% for artist in favoriteArtists %}
             <article class="artist-card rotate{{random(1,2)}}">
                 <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
-                    <div class="artist-card-image {% if artist.getName() == "JeanneTo" or artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} artist-card-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="photo de {{artist.getPicture()}}"></div>
+                    <aside class="artist-card-image {% if artist.getName() == "JeanneTo" or artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} artist-card-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="photo de {{artist.getPicture()}}"></aside>
                     <p class="artist-card-name">{{artist.getName()}}</p>
                     <p class="artist-card-day">{{artist.getDayToString()}}</p>
                 </a>

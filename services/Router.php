@@ -15,19 +15,39 @@ class Router{
         if(!isset($get["route"])){
             $this->pc->home();
         }else if(isset($get["route"]) && $get["route"]==="connexion"){
-            $this->pc->connexion();
+            if(isset($get["error_connexion"]) && $get["error_connexion"]=="true"){
+                $this->pc->connexion(true);
+            }else{
+                $this->pc->connexion(false);
+            }
         }else if(isset($get["route"]) && $get["route"]==="checkLogin"){
-            $isLoginCorrect = $this->ac->checkLogin($_POST);
-            if($isLoginCorrect !== null){
-                $_SESSION["user"]=$isLoginCorrect;
+            if(!empty($_POST)){
+                $isLoginCorrect = $this->ac->checkLogin($_POST);
+                if($isLoginCorrect !== null){
+                    $_SESSION["user"]=$isLoginCorrect;
+                }
+            }else{
+                $this->pc->connexion(false);
             }
         }else if(isset($get["route"]) && $get["route"] === "inscription"){
-            $this->pc->inscription();
+            if(isset($get["isError"]) && $get["isError"] === "1"){
+                $this->pc->inscription(1);
+            }else if(isset($get["isError"]) && $get["isError"] === "2"){
+                $this->pc->inscription(2);
+            }else if(isset($get["isError"]) && $get["isError"]==="3"){
+                $this->pc->inscription(3);
+            }else{
+                $this->pc->inscription(0);
+            }
         }
         else if(isset($get["route"]) && $get["route"]==="checkSignUp"){
-            $isSignUpCorrect = $this->ac->checkSignUp($_POST);
-            if($isSignUpCorrect !== null){
-                $_SESSION["user"]=$isSignUpCorrect;
+            if(!empty($_POST)){
+                $isSignUpCorrect = $this->ac->checkSignUp($_POST);
+                if($isSignUpCorrect !== null){
+                    $_SESSION["user"]=$isSignUpCorrect;
+                }
+            }else{
+                $this->pc->inscription(0);
             }
         }else if(isset($get["route"]) && $get["route"] === "logout"){
             $this->pc->logout();
@@ -39,33 +59,59 @@ class Router{
             if(isset($get["file"]) && isset($get["user"]) && isset($_SESSION["user"]) && (int) $get["user"] === $_SESSION["user"]->getId() || isset($get["file"]) && (int) $get["user"] === $_SESSION["id"]){
                 $this->pc->download();
             }else{
-                var_dump($get["user"]);
+                $this->pc->error();
             }
         }else if(isset($get["route"]) && $get["route"] === "espace-admin"){
-            if((int) $get["admin-id"] === $_SESSION["user"]->getId() && $_SESSION["user"]->getAdmin() === "ADMIN"){
-                $this->pc->adminSpace();
+            if(isset($_SESSION["user"]) && !empty($_SESSION["user"])){
+                if((int) $get["admin-id"] === $_SESSION["user"]->getId() && $_SESSION["user"]->getAdmin() === "ADMIN"){
+                    $this->pc->adminSpace();
+                }else{
+                    $this->pc->error();
+                }
+            }else{
+                $this->pc->error();
             }
         }else if(isset($get["route"]) && $get["route"]==="check-modif"){
-            $this->pc->checkModifUser();
+            if(!empty($_POST)){
+                $this->pc->checkModifUser();
+            }else{
+                $this->pc->error();
+            }
         }else if(isset($get["route"]) && $get["route"]==="checkDelete"){
-            $this->pc->checkDeleteUser();
+            if(!empty($_POST)){
+                $this->pc->checkDeleteUser();
+            }else{
+                $this->pc->error();
+            }
         }else if(isset($get["route"]) && $get["route"]==="checkDeleteTicket"){
-            $this->pc->checkDeleteTicket();
+            if(!empty($POST)){
+                $this->pc->checkDeleteTicket();
+            }else{
+                $this->pc->error();
+            }
         }else if(isset($get["route"]) && $get["route"] === "billetterie"){
             $this->pc->ticketing();
         }else if(isset($get["route"]) && $get["route"] === "achat-billets"){
             $this->pc->buyTickets();
         }else if(isset($get["route"]) && $get["route"] === "paiement"){
-            $_SESSION["post_data"]=$_POST;
-            $this->pay->checkPay();
+            if(!empty($_POST)){
+                $_SESSION["post_data"]=$_POST;
+                $this->pay->checkPay();
+            }else{
+                $this->pc->ticketing();
+            }
         }else if(isset($get["route"]) && $get["route"]=== "paiement-valide"){
-            $randomId = (int) $get["id"];
-            if(isset($get["id"]) && isset($_SESSION['randomId']) && $randomId === $_SESSION['randomId']){
-                $post = $_SESSION['post_data'];
-                $this->pay->generateTicket($post);
-                $this->pc->paymentSuccess();
-                $_SESSION['post_data']="";
-                $_SESSION['randomId']="";
+            if(isset($_SESSION["post_data"]) && !empty($_SESSION["post_data"])){
+                $randomId = (int) $get["id"];
+                if(isset($get["id"]) && isset($_SESSION['randomId']) && $randomId === $_SESSION['randomId']){
+                    $post = $_SESSION['post_data'];
+                    $this->pay->generateTicket($post);
+                    $this->pc->paymentSuccess();
+                    $_SESSION['post_data']="";
+                    $_SESSION['randomId']="";
+                }
+            }else{
+                $this->pc->paymentCancel();
             }
         }else if(isset($get["route"]) && $get["route"] === "paiement-invalide"){
             $this->pc->paymentCancel();
@@ -80,20 +126,38 @@ class Router{
                 $this->pc->programmation();
             }
         }else if(isset($get["route"]) && $get["route"]==="fiche-artiste"){
-            $this->pc->artist();
-        }else if(isset($get["route"]) && $get["route"] === "liste-artiste"){
-            $this->pc->artistList();
-        }else if(isset($get["route"]) && $get["route"] === "liste-artiste-fav"){
-            $this->pc->personnalArtistList();
-        }else if(isset($get["route"]) && $get["route"] === "programmation-perso"){
-            if(isset($get["jour"]) && $get["jour"] === "vendredi"){
-                $this->pc->personnalProg("2024-07-05");
-            }else if(isset($get["jour"]) && $get["jour"] === "samedi"){
-                $this->pc->personnalProg("2024-07-06");
-            }else if(isset($get["jour"]) && $get["jour"] === "dimanche"){
-                $this->pc->personnalProg("2024-07-07");
+            if(isset($get["artiste"]) && !empty($get["artiste"])){
+                $this->pc->artist();
             }else{
-                $this->pc->personnalProg($get["jour"]);
+                $this->pc->error();
+            }
+        }else if(isset($get["route"]) && $get["route"] === "liste-artiste"){
+            if(isset($_SESSION["user"]) && !empty($_SESSION["user"])){
+                $this->pc->artistList();
+            }else{
+                $this->pc->error();
+            }
+        }else if(isset($get["route"]) && $get["route"] === "liste-artiste-fav"){
+            if(isset($_SESSION["user"]) && !empty($_SESSION["user"])){
+                $this->pc->personnalArtistList();
+            }else{
+                $this->pc->error();
+            }
+        }else if(isset($get["route"]) && $get["route"] === "programmation-perso"){
+            if(isset($_SESSION["user"]) && !empty($_SESSION["user"])){
+                if(isset($get["jour"]) && $get["jour"] === "vendredi"){
+                    $this->pc->personnalProg("2024-07-05");
+                }else if(isset($get["jour"]) && $get["jour"] === "samedi"){
+                    $this->pc->personnalProg("2024-07-06");
+                }else if(isset($get["jour"]) && $get["jour"] === "dimanche"){
+                    $this->pc->personnalProg("2024-07-07");
+                }else if(isset($get["jour"]) && !empty($get["jour"])){
+                    $this->pc->personnalProg($get["jour"]);
+                }else{
+                    $this->pc->error();
+                }
+            }else{
+                $this->pc->error();
             }
         }
         else if(isset($get["route"]) && $get["route"] === "dys"){

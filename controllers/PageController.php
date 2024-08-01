@@ -19,12 +19,12 @@ class PageController extends AbstractController{
         $this->render("home.html.twig", ["artists" => $artists]);
     }
 
-    public function connexion():void{
-        $this->render("connexion.html.twig", []);
+    public function connexion(bool $isError):void{
+        $this->render("connexion.html.twig", ["isError"=>$isError]);
     }
 
-    public function inscription():void{
-        $this->render("inscription.html.twig", []);
+    public function inscription(int $isError):void{
+        $this->render("inscription.html.twig", ["isError"=>$isError]);
     }
 
     public function logout():void{
@@ -52,7 +52,7 @@ class PageController extends AbstractController{
         if(isset($_SESSION["user"]) && (string) $_SESSION["user"]->getId() === $_GET["user-id"]){
             $this->showArtistList();
         }else{
-            $this->connexion();
+            $this->connexion(false);
         }
     }
 

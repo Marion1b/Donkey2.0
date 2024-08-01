@@ -13165,6 +13165,7 @@ body .hide {
   color: #020403;
   padding: 6rem;
   display: flex;
+  max-width: 40rem;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -13625,7 +13626,7 @@ body .hide {
     transform: translate(-2px, 2px);
   }
 }
-.tickets-page, .paiement-valide {
+.tickets-page, .paiement-valide, .paiement-invalide {
   background-color: #4F09B9;
   color: #FFE500;
   display: flex;
@@ -13637,11 +13638,11 @@ body .hide {
   overflow: hidden;
   min-height: 95vh;
 }
-.tickets-page h1, .tickets-page .h1, .paiement-valide h1, .paiement-valide .h1 {
+.tickets-page h1, .tickets-page .h1, .paiement-valide h1, .paiement-valide .h1, .paiement-invalide h1, .paiement-invalide .h1 {
   text-shadow: -1.5px -1.5px 0 #020403, 1.5px -1.5px 0 #020403, -1.5px 1.5px 0 #020403, 1.5px 1.5px 0 #020403;
   margin-bottom: 2rem;
 }
-.tickets-page .tickets, .paiement-valide .tickets {
+.tickets-page .tickets, .paiement-valide .tickets, .paiement-invalide .tickets {
   position: relative;
   z-index: 100;
   line-height: 3rem;
@@ -13655,29 +13656,29 @@ body .hide {
   border: 2px solid #020403;
   box-shadow: -4px 4px 6px rgba(2, 4, 3, 0.25);
 }
-.tickets-page .tickets-name, .paiement-valide .tickets-name {
+.tickets-page .tickets-name, .paiement-valide .tickets-name, .paiement-invalide .tickets-name {
   font-weight: bold;
 }
-.tickets-page .tickets a, .paiement-valide .tickets a {
+.tickets-page .tickets a, .paiement-valide .tickets a, .paiement-invalide .tickets a {
   width: 100%;
   border: 1px solid #020403;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
-.tickets-page-infos, .paiement-valide-infos {
+.tickets-page-infos, .paiement-valide-infos, .paiement-invalide-infos {
   padding: 2rem;
 }
-.tickets-page-form1, .paiement-valide-form1 {
+.tickets-page-form1, .paiement-valide-form1, .paiement-invalide-form1 {
   top: 23rem;
   left: 2rem;
   animation: 2s linear infinite alternate formMoveLay1;
 }
-.tickets-page-form2, .paiement-valide-form2 {
+.tickets-page-form2, .paiement-valide-form2, .paiement-invalide-form2 {
   top: 50rem;
   right: -1rem;
   animation: 4s linear infinite alternate formMoveLeft2;
 }
-.tickets-page-form3, .paiement-valide-form3 {
+.tickets-page-form3, .paiement-valide-form3, .paiement-invalide-form3 {
   bottom: 3rem;
   right: 20rem;
   animation: 6s linear infinite alternate formMoveLeft3;

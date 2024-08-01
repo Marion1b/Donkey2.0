@@ -10,6 +10,13 @@
     <h1>Inscription</h1>
 
     <form action="index.php?route=checkSignUp" method="post">
+        {% if isError == "1" %}
+            <p class="bold">Le mot de passe doit comporter au minimun une minuscule, une majuscule, un chiffre, un caractère spécial et un minimum de 8 caractères.</p>
+        {% elseif isError=="2" %}
+            <p class="bold">Les mots de passe ne correspondent pas.</p>
+        {% elseif isError=="3" %}
+            <p class="bold">Un compte à cette adresse mail existe déjà.</p>
+        {%endif%}
         <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
     
             <label for="last_name">nom de famille :</label>

@@ -10,6 +10,10 @@
     <h1>Se connecter</h1>
 
     <form action="index.php?route=checkLogin" method="post">
+
+        {% if isError == true%}
+            <p class="bold">email ou mot de passe invalide</p>
+        {%endif%}
         <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
         <label for="email">email :</label>
         <input type="email" name="email" id="email">

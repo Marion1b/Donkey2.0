@@ -1222,6 +1222,7 @@ body{
         color: $black;
         padding: 6rem;
         display: flex;
+        max-width: 40rem;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
@@ -1651,7 +1652,7 @@ body{
 // BILLETS
 // ==========================================================================
 
-.tickets-page, .paiement-valide{
+.tickets-page, .paiement-valide, .paiement-invalide{
     background-color: $main-color;
     color: $secondary-color;
     display: flex;

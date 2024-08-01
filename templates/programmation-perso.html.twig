@@ -7,14 +7,16 @@
 {% block main %}
 <main class="espace-perso">
 
-<section class="espace-perso-tickets">
+    <section class="espace-perso-tickets">
+        <article class="espace-perso-tickets-container">
 
-    <h1>Bonjour {{ session.user.getFirstName()|escape }}</h1>
 
+            <h1>Bonjour {{ session.user.getFirstName()|escape }}</h1>
+
+            <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
+        </article>
     <div class="espace-perso-tickets-form2 form"><img src="./assets/img/forms/form2.png" alt=""></div>
     <div class="espace-perso-tickets-form1 form"><img src="./assets/img/forms/form1.png" alt=""></div>
-
-    <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
 </section>
 
 {% if session.user.getAdmin() == "ADMIN" %}
@@ -25,11 +27,8 @@
 {% endif %}
 
 <section class="espace-perso-programmation">
+<article class="espace-perso-programmation-container">
     <h1>Ma programmation</h1>
-
-    <div class="espace-perso-programmation-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
-    <div class="espace-perso-programmation-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
-    <div class="espace-perso-programmation-form2 form"><img src="./assets/img/forms/form2-yellow.png" alt=""></div>
 
     <a href="index.php?route=liste-artiste-fav&&user-id={{session.user.getId()}}">
         <button class="artist-fav-button">Mes artistes</button>
@@ -95,7 +94,11 @@
         {% endif %}
     </article>
     </section>
+</article>
 
+    <div class="espace-perso-programmation-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
+    <div class="espace-perso-programmation-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
+    <div class="espace-perso-programmation-form2 form"><img src="./assets/img/forms/form2-yellow.png" alt=""></div>
 </section>
 
 </main>

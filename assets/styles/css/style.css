@@ -12464,12 +12464,12 @@ body .hide {
 }
 .home-infos-form1 {
   bottom: -4rem;
-  left: -8rem;
+  left: 8rem;
   animation: 3s linear infinite alternate formMoveLeft1;
 }
 .home-infos-form3 {
   top: -2rem;
-  right: -12rem;
+  right: 12rem;
   animation: 5s linear infinite alternate formMoveLeft3;
 }
 
@@ -12486,12 +12486,12 @@ body .hide {
     width: 32rem;
   }
   .home-infos-form1 {
-    bottom: -3rem;
-    left: -0.2rem;
+    bottom: 3rem;
+    left: 2rem;
   }
   .home-infos-form3 {
-    top: 0.5rem;
-    right: 0.2rem;
+    top: 5rem;
+    right: 8rem;
     animation: 5s linear infinite alternate formMoveLeft3;
   }
 }
@@ -12713,6 +12713,8 @@ body .hide {
 }
 .fiche-artiste-container {
   max-width: 50rem;
+  position: relative;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12818,8 +12820,8 @@ body .hide {
 .infos {
   background-color: #FFE500;
   padding: 5rem 0;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 .infos-container {
   max-width: 120rem;
@@ -12828,6 +12830,8 @@ body .hide {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 100;
 }
 .infos ul {
   padding-left: 1rem;
@@ -12927,6 +12931,8 @@ body .hide {
   align-items: center;
   flex-wrap: wrap;
   gap: 5rem;
+  position: relative;
+  z-index: 100;
   margin-top: 5rem;
 }
 .ticketing .ticket-card {
@@ -13032,11 +13038,12 @@ body .hide {
 }
 .buy-tickets .chose-tickets {
   max-width: 120rem;
+  position: relative;
+  z-index: 100;
 }
 .buy-tickets form {
   margin-top: 3.5rem;
   position: relative;
-  z-index: 5;
 }
 .buy-tickets form .form-field {
   display: flex;
@@ -13143,6 +13150,7 @@ body .hide {
   align-items: center;
   padding: 15rem 0;
   position: relative;
+  z-index: 100;
   overflow: hidden;
 }
 .connexion h1, .connexion .h1, .inscription h1, .inscription .h1 {
@@ -13249,11 +13257,20 @@ body .hide {
   contain: paint;
 }
 .espace-perso-tickets {
+  padding: 5rem 0;
+}
+.espace-perso-tickets-container {
+  position: relative;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0;
+}
+.espace-perso-tickets-container h1, .espace-perso-tickets-container .h1 {
+  background-color: rgba(255, 230, 0, 0.568627451);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
 }
 .espace-perso-tickets button {
   font-size: 1.4rem;
@@ -13296,11 +13313,15 @@ body .hide {
   width: 100%;
   padding: 5rem 0;
   min-height: 80vh;
+  position: relative;
+}
+.espace-perso-artists-container {
+  position: relative;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 .espace-perso-artists .artist-cards-container {
   max-width: 120rem;
@@ -13390,11 +13411,15 @@ body .hide {
   width: 100%;
   padding: 5rem 0;
   min-height: 80vh;
+  position: relative;
+}
+.espace-perso-programmation-container {
+  position: relative;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 .espace-perso-programmation h1, .espace-perso-programmation .h1 {
   text-shadow: -1px -1px 0 #020403, 1px -1px 0 #020403, -1px 1px 0 #020403, 1px 1px 0 #020403;
@@ -13658,6 +13683,14 @@ body .hide {
   animation: 6s linear infinite alternate formMoveLeft3;
 }
 
+.paiement-valide-infos {
+  background-color: rgba(2, 4, 3, 0.25);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 100;
+}
+
 .contact {
   background-color: #FFE500;
   color: #020403;
@@ -13667,6 +13700,7 @@ body .hide {
   align-items: center;
   padding: 5rem 0;
   position: relative;
+  z-index: 100;
   overflow: hidden;
   min-height: 95vh;
 }

@@ -11,12 +11,8 @@
 
         <h1>{{artist.getName()}}</h1>
 
-        <div class="fiche-artiste-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
-        <div class="fiche-artiste-form2 form"><img src="./assets/img/forms/form2-yellow.png" alt=""></div>
-        <div class="fiche-artiste-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
-
         <article class="fiche-artiste-content">
-            <aside class="fiche-artiste-image {% if artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} fiche-artiste-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="image de {{artist.getName()}}"></aside>
+            <div class="fiche-artiste-image {% if artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} fiche-artiste-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="image de {{artist.getName()}}"></div>
 
             <p>{{artist.getBiography()}}</p>
 
@@ -41,6 +37,9 @@
         </article>
 
     </section>
+    <div class="fiche-artiste-form1 form"><img src="./assets/img/forms/form1-yellow.png" alt=""></div>
+    <div class="fiche-artiste-form2 form"><img src="./assets/img/forms/form2-yellow.png" alt=""></div>
+    <div class="fiche-artiste-form3 form"><img src="./assets/img/forms/form3-yellow.png" alt=""></div>
 </main>
 {% endblock %}
 

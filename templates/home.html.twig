@@ -12,14 +12,14 @@
 <section class="home-display-names">
     <article class="home-display-names-container">
         <h2 hidden>Noms des artistes</h1>
-        <div class="home-display-names-form1 form"><img src="./assets/img/forms/form1.png" alt=""></div>
-        <div class="home-display-names-form2 form"><img src="./assets/img/forms/form2.png" alt=""></div>
-        <div class="home-display-names-form3 form"><img src="./assets/img/forms/form3.png" alt=""></div>
         <p>
             {% for artist in artists %}
                 {{ artist.getName() }} {% if not loop.last %} - {% endif %}
             {% endfor %}
         </p>
+        <div class="home-display-names-form1 form"><img src="./assets/img/forms/form1.png" alt=""></div>
+        <div class="home-display-names-form2 form"><img src="./assets/img/forms/form2.png" alt=""></div>
+        <div class="home-display-names-form3 form"><img src="./assets/img/forms/form3.png" alt=""></div>
     </article>
 </section>
 
@@ -40,8 +40,6 @@
 <section class="home-infos">
     <h2 hidden>Résumé informations pratiques</h2>
     <section class="home-infos-container">
-        <div class="home-infos-form1 form"><img src="./assets/img/forms/form1.png" alt=""></div>
-        <div class="home-infos-form3 form"><img src="./assets/img/forms/form3.png" alt=""></div>
         <article class="home-infos-dates">
             <h3>05, 06 et 07 juillet 2024</h3>
             <p><span class="bold">Vendredi 05 :</span> de 18h à 00h</p>
@@ -61,6 +59,8 @@
             </article>
         </article>
     </section>
+    <div class="home-infos-form1 form"><img src="./assets/img/forms/form1.png" alt=""></div>
+    <div class="home-infos-form3 form"><img src="./assets/img/forms/form3.png" alt=""></div>
 </section>
 
 </main>

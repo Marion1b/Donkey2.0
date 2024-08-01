@@ -26,7 +26,7 @@ class AuthController extends AbstractController{
                     return null;
                 }
             }else{
-                $this->redirect("index.php?route=connexion");
+                $this->redirect("index.php?route=connexion&&error_connexion=true");
                 return null;
             }
         }
@@ -49,16 +49,16 @@ class AuthController extends AbstractController{
                         // return to router.php
                         return $user;
                     }else{
-                        $this->redirect("index.php?route=inscription");
+                        $this->redirect("index.php?route=inscription&&isError=2");
                         return null;
                     }
                 }else{
-                    $this->redirect("index.php?route=inscription");
+                    $this->redirect("index.php?route=inscription&&isError=1");
                     return null;
                 }
                 
             }else{
-                $this->redirect("index.php?route=inscription");
+                $this->redirect("index.php?route=inscription&&isError=3");
                 return null;
             }
         }else{

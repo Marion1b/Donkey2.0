@@ -20,23 +20,23 @@
         <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
     
             <label for="last_name">nom de famille :</label>
-            <input type="text" name="last_name" id="last_name">
+            <input type="text" name="last_name" id="last_name"minlength="2" maxlength="100" required>
         
     
             <label for="first_name">prénom :</label>
-            <input type="text" name="first_name" id="first_name">
+            <input type="text" name="first_name" id="first_name" minlength="2" maxlength="50" required>
         
     
             <label for="email">email :</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" required>
         
     
             <label for="password">mot de passe :</label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" minlength="8" required>
         
     
             <label for="checkPassword">vérification du mot de passe :</label>
-            <input type="password" name="checkPassword" id="checkPassword">
+            <input type="password" name="checkPassword" id="checkPassword" minlength="8" required>
         
         <button type="submit">S'inscrire</button>
         <p>Déjà un compte ? <a href="index.php?route=connexion">Se connecter </a></p>

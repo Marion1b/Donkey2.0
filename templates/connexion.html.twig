@@ -16,9 +16,9 @@
         {%endif%}
         <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
         <label for="email">email :</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
         <label for="password">password :</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" minlength="8" required>
         <button type="submit">Se connecter</button>
     <p>Pas encore de compte ? <a href="index.php?route=inscription">S'inscrire </a></p>
     </form>

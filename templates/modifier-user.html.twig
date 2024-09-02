@@ -15,11 +15,11 @@
         <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
         <input type="hidden" name="user-id" id="user-id" value="{{user.getId()}}">
         <label for="last_name" class="form-label mt-3">Nom : </label>
-        <input type="text" name="last_name" id="last_name" value="{{user.getLastName()}}" class="form-control fs-5">
+        <input type="text" name="last_name" id="last_name" value="{{user.getLastName()}}" class="form-control fs-5" minlength="2" maxlength="100" required>
         <label for="first_name" class="form-label mt-3">Prénom</label>
-        <input type="text" name="first_name" id="first_name" value="{{user.getFirstName()}}" class="form-control fs-5">
+        <input type="text" name="first_name" id="first_name" value="{{user.getFirstName()}}" class="form-control fs-5" minlength="2" maxlength="50" required>
         <label for="email" class="form-label mt-3">Email : </label>
-        <input type="email" name="email" id="email" value="{{user.getEmail()}}" class="form-control fs-5">
+        <input type="email" name="email" id="email" value="{{user.getEmail()}}" class="form-control fs-5" required>
         <label for="ADMIN" class="form-label mt-3">ADMIN : </label>
         <select name="ADMIN" id="ADMIN" class="form-select fs-5 mb-3">
             {% if user.getAdmin() == "USER" %}

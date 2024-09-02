@@ -15,229 +15,61 @@
 
 <form action="index.php?route=paiement" method="POST">
     <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="friday">Billet 1 jour vendredi</label>
-        <select name="friday" id="friday">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="friday" name="friday" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="saturday">Billet 1 jour samedi</label>
-        <select name="saturday" id="saturday">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="saturday" name="saturday" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="sunday">Billet 1 jour dimanche</label>
-        <select name="sunday" id="sunday">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="sunday" name="sunday" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="friday-saturday">Pass 2 jours vendredi et samedi</label>
-        <select name="friday-saturday" id="friday-saturday">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="friday-saturday" name="friday-saturday" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="friday-sunday">Pass 2 jours vendredi et dimanche</label>
-        <select name="friday-sunday" id="friday-sunday">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="friday-sunday" name="friday-sunday" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="saturday-sunday">Pass 2 jours samedi et dimanche</label>
-        <select name="saturday-sunday" id="saturday-sunday">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="saturday-sunday" name="saturday-sunday" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="all-days">Pass 3 jours</label>
-        <select name="all-days" id="all-days">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="all-days" name="all-days" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="friday-reduce">Billet 1 jour vendredi - réduit</label>
-        <select name="friday-reduce" id="friday-reduce">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="friday-reduce" name="friday-reduce" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="saturday-reduce">Billet 1 jour samedi - réduit</label>
-        <select name="saturday-reduce" id="saturday-reduce">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="saturday-reduce" name="saturday-reduce" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="sunday-reduce">Billet 1 jour dimanche - réduit</label>
-        <select name="sunday-reduce" id="sunday-reduce">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="sunday-reduce" name="sunday-reduce" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="friday-saturday-reduce">Pass 2 jours vendredi et samedi - réduit</label>
-        <select name="friday-saturday-reduce" id="friday-saturday-reduce">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="friday-saturday-reduce" name="friday-saturday-reduce" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="friday-sunday-reduce">Pass 2 jours vendredi et dimanche - réduit</label>
-        <select name="friday-sunday-reduce" id="friday-sunday-reduce">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="friday-sunday-reduce" name="friday-sunday-reduce" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="saturday-sunday-reduce">Pass 2 jours samedi et dimanche - réduit</label>
-        <select name="saturday-sunday-reduce" id="saturday-sunday-reduce">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="saturday-sunday-reduce" name="saturday-sunday-reduce" min="0" max="10" />
     </div>
-    <div class="form-field">
+    <div class="form-field form-field-tickets">
         <label for="all-days-reduce">Pass 3 jours - réduit</label>
-        <select name="all-days-reduce" id="all-days-reduce">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
+        <input type="number" id="all-days-reduce" name="all-days-reduce" min="0" max="10" />
     </div>
     {% if session.user %}
         <div class="form-field">

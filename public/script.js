@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const formImg = document.querySelectorAll('.form img');
     // Check if buy tickets form is not empty
     if(buyTickets){
-        const select = document.querySelectorAll(".buy-tickets select");
+        const select = document.querySelectorAll(".form-field-tickets input");
+        console.log(select);
         const par = document.querySelector(".tickets-total p");
         const hidePrice = document.querySelector("#tickets-total-input");
         const button = document.querySelector(".buy-tickets button");

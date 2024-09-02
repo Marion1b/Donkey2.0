@@ -12,6 +12,7 @@
         <h1>{{artist.getName()}}</h1>
 
         <article class="fiche-artiste-content">
+            <h2 hidden>Informations sur {{artist.getName()}}</h2>
             <div class="fiche-artiste-image {% if artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} fiche-artiste-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="image de {{artist.getName()}}"></div>
 
             <p>{{artist.getBiography()}}</p>

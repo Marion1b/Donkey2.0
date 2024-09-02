@@ -12,6 +12,7 @@
         <h1>La programmation</h1>
 
         <nav class="programmation-filter">
+        <h2 hidden>Filtre programmation par jours</h2>
             <ul>
                 <a href="index.php?route=programmation">
                     <li {% if get.jour is not defined %} class="programmation-filter-active" {% endif %}>
@@ -37,8 +38,10 @@
         </nav>
 
         <section class="programmation-artists-container">
+            <h2 hidden>Les artistes programmé-e-s</h2>
             {% for artist in artists %}
             <article class="artist-card rotate{{random(1,2)}}">
+                <h3 hidden>Carte d'artiste</h3>
                 <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
                 <aside class="artist-card-image {% if artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} artist-card-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt=""></aside>
                 <p class="artist-card-name">{{artist.getName()}}</p>

@@ -11,6 +11,8 @@
 
 <section class="chose-tickets">
 
+<h2 hidden>Formulaire de sélection des billets</h2>
+
 <form action="index.php?route=paiement" method="POST">
     <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
     <div class="form-field">
@@ -269,6 +271,7 @@
 </form>
 
 <article class="tickets-total">
+    <h3 hidden>Total du ticket</h3>
     <p>Total : 0€</p>
 </article>
 

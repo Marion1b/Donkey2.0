@@ -8,6 +8,7 @@
 <main class="espace-perso">
 
     <section class="espace-perso-tickets">
+        <h1 hidden>Espace personnel</h1>
         <article class="espace-perso-tickets-container">
 
 
@@ -27,6 +28,8 @@
 {% endif %}
 
 <section class="espace-perso-programmation">
+    <h1 hidden>Artistes et programmation perso</h1>
+
 <article class="espace-perso-programmation-container">
     <h1>Ma programmation</h1>
 
@@ -36,7 +39,10 @@
 
     <section class="perso-prog-container">
 
+    <h2 hidden>Ma programmation</h2>
+
     <nav class="programmation-filter">
+        <h3 hidden>Filtrer la programmation par jour</h3>
         <ul>
             <a href="index.php?route=programmation-perso&&jour=vendredi">
                 <li {% if get.jour == "vendredi" or get.jour is not defined %} class="programmation-filter-active" {% endif %}>
@@ -57,6 +63,7 @@
     </nav>
 
     <article class="personnal-prog {% if get.jour == "vendredi" %}personnal-prog-ven{% else %} personnal-prog-other {% endif %}">
+    <h3 hidden>Planning personnel</h3>
         {% if get.jour == "vendredi" %}
             {% for i in 18..23 %}
             <div class="personnal-prog-row">
@@ -64,6 +71,7 @@
                 {% for artist in artists %}
                     {% if artist.getHourToString() == i %}
                     <article class="personnal-prog-artist">
+                        <h4 hidden>Artiste</h4>
                         <p class="personnal-prog-artist-name">{{artist.getName()}}</p>
                         <aside>
                             <img src="{{artist.getPicture()}}" alt="">
@@ -81,6 +89,7 @@
                 {% for artist in artists %}
                     {% if artist.getHourToString() == i %}
                         <article class="personnal-prog-artist">
+                        <h4 hidden>Artiste</h4>
                         <p class="personnal-prog-artist-name">{{artist.getName()}}</p>
                         <aside>
                             <img src="{{artist.getPicture()}}" alt="">

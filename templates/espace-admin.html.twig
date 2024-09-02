@@ -20,6 +20,7 @@
 
         {% if usersFind is defined %}
         <article class="overflow-scroll w-100">
+            <h2 hidden>Utilisateur-ice trouvé-e</h2>
             <table class="table table-striped my-3">
                 <thead class="table-dark">
                     <tr>
@@ -51,8 +52,10 @@
     </section>
 
     <section class="espace-admin-modal hide">
+        <h2 hidden>Vérification suppression d'un-e utilisateur-ice</h2>
         <article class="user-modal">
-            <p>ëtes-vous sûr de vouloir supprimer </p>
+            <h3 hidden>Validation de la suppression</h3>
+            <p>Êtes-vous sûr de vouloir supprimer </p>
             <form action="index.php?route=checkDelete" method="post">
                 <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
                 <input type="hidden" name="modal-user-email" id="modal-user-email" value="" class="espace-admin-modal-user-email">
@@ -75,6 +78,7 @@
 
         {% if ticketsFind is defined %}
         <article class="overflow-scroll w-100">
+            <h3 hidden>Billets trouvés</h3>
             <table class="table table-striped my-3">
                 <thead class="table-dark">
                     <tr>
@@ -103,8 +107,10 @@
     </section>
 
     <section class="espace-admin-ticket-modal hide">
+        <h2 hidden>Vérification suprresion d'un billet</h2>
         <article class="ticket-modal">
-            <p>ëtes-vous sûr de vouloir supprimer le ticket </p>
+            <h3 hidden>Validation de la suppression</h3>
+            <p>Êtes-vous sûr de vouloir supprimer le ticket </p>
             <form action="index.php?route=checkDeleteTicket" method="post">
                 <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
                 <input type="hidden" name="modal-ticket-id" id="modal-ticket-id" value="" class="espace-admin-modal-ticket-id">

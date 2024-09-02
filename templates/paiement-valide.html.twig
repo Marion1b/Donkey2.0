@@ -14,6 +14,7 @@
 
 {% for ticket in tickets %}
     <article class="tickets">
+        <h2 hidden>Informations tickets</h2>
         <p class="tickets-name"> {{ticket.getContent()|escape}} </p>
         <p> {{ticket.getTarif()}} </p>
         {% if session.user.getId() is defined %}

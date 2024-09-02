@@ -8,6 +8,7 @@
 <main class="espace-perso">
 
 <section class="espace-perso-tickets">
+    <h1 hidden>Espace personnel</h1>
     <article class="espace-perso-tickets-container">
         <h1>Bonjour {{ session.user.getFirstName()|escape }}</h1>
 
@@ -25,6 +26,7 @@
 {% endif %}
 
 <section class="espace-perso-artists" id="top-espace-perso-artists">
+    <h1 hidden>Artistes et programmation perso</h1>
     <article class="espace-perso-artists-container">
         <h1>Mes artistes</h1>
 
@@ -33,9 +35,11 @@
         </a>
 
         <section class="artist-cards-container">
+            <h2 hidden>Ma liste d'artistes</h2>
             {% if favoriteArtists|length >0 %}
                 {% for artist in favoriteArtists %}
                 <article class="artist-card rotate{{random(1,2)}}">
+                    <h3 hidden>Fiche artiste</h3>
                     <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
                         <aside class="artist-card-image {% if artist.getName() == "JeanneTo" or artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} artist-card-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="photo de {{artist.getPicture()}}"></aside>
                         <p class="artist-card-name">{{artist.getName()}}</p>

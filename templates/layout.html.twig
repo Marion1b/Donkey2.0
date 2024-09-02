@@ -26,6 +26,7 @@
             <span class="burger-line3"></span>
         </div>
         <nav class="header-nav-hide header-nav">
+            <h1 hidden>Navigation du site</h1>
             <ul>
                 <li><a href="index.php" {%if get.route is not defined%} class="header-nav-active"{%endif%}>Accueil</a></li>
                 <li><a href="index.php?route=programmation" {%if get.route == "programmation" or get.route == "fiche-artiste"%} class="header-nav-active" {%endif%}>Programmation</a></li>
@@ -54,6 +55,7 @@
 
     <header class="page-header-desktop">
         <nav>
+            <h1 hidden>Navigation du site</h1>
             <ul class="page-header-ul-1">
                 <li><a href="index.php" {%if get.route is not defined%} class="header-nav-active"{%endif%}>Accueil</a></li>
                 <li><a href="index.php?route=programmation" {%if get.route == "programmation" or get.route == "fiche-artiste"%} class="header-nav-active" {%endif%}>Programmation</a></li>
@@ -91,7 +93,9 @@
     {% block footer %}
     <footer class="page-footer">
         <section class="page-footer-container">
+            <h1 hidden>Contenu du pied de page</h1>
             <article class="footer-page-links">
+                <h2 hidden>Liens pages importantes</h2>
                 <ul>
                     <a href="index.php?route=contact">
                         <li>Contact</li>
@@ -102,6 +106,7 @@
                 </ul>
             </article>
             <article class="footer-social">
+                <h2 hidden>Liens réseaux sociaux</h2>
                 <ul>
                     <a href="https://www.instagram.com/">
                         <li><i class="fa-brands fa-instagram"></i></li>
@@ -118,6 +123,7 @@
                 </ul>
             </article>
             <article class="footer-legal">
+                <h2 hidden>Liens légaux</h2>
                 <ul>
                     <a href="index.php?route=rgpd">
                         <li>RGPD</li>

@@ -99,6 +99,40 @@ class UserManager extends AbstractManager{
         $user->setId($this->db->lastInsertId());
     }
 
+    public function persoModification():void{
+        $query = $this->db->prepare(
+            "UPDATE users
+            SET last_name = :last_name,
+            first_name = :first_name,
+            email = :email
+            WHERE id = :id"
+        );
+
+        $parameters = [
+            "last_name"=>$_POST["last_name"],
+            "first_name"=>$_POST["first_name"],
+            "email"=>$_POST["email"],
+            "id"=>$_POST["user-id"]
+        ];
+
+        $query->execute($parameters);
+    }
+
+    public function modifyPassword():void{
+        $query = $this->db->prepare(
+            "UPDATE users
+            SET password = :password
+            WHERE id=:id"
+        );
+
+        $parameters = [
+            "password"=>password_hash($_POST["new-password"], PASSWORD_DEFAULT),
+            "id"=>$_POST["user-id"]
+        ];
+
+        $query->execute($parameters);
+    }
+
     public function modifyUser():void{
         $query = $this->db->prepare(
             "UPDATE users

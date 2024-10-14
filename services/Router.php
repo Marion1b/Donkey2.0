@@ -170,6 +170,13 @@ class Router{
             $this->pc->rgpd();
         }else if(isset($get["route"]) && $get["route"] === "mentions_legales"){
             $this->pc->mentionsLegales();
+        }else if(isset($get["route"]) && $get["route"] === "modifier-mon-profil"){
+            if(isset($get["user-id"]) && !empty($get["user-id"]) && (int) $get["user-id"] === $_SESSION["user"]->getID()){
+                $this->pc->modify();
+            }
+        }
+        else if(isset($get["route"]) && $get["route"] === "check-perso-modif"){
+            $this->pc->checkPersoModify();
         }
         else{
             $this->pc->error();

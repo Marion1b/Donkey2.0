@@ -14,7 +14,7 @@
         <h2 hidden>Billet</h2>
         <p class="tickets-name"> {{ticket.getContent()|escape}} </p>
         <p> {{ticket.getTarif()}} </p>
-        <a href="index.php?route=download&&file={{ticket.getId()}}&&user={{session.user.getId()}}" target="__blank">Mon billet <i class="fa-solid fa-circle-down"></i></a>
+        <a href="index.php?route=download&&file={{ticket.getId()}}&&user={{session.user.getId()}}" target="_blank">Mon billet <i class="fa-solid fa-circle-down"></i></a>
     </article>
 {% endfor %}
 

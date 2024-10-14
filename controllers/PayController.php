@@ -2,21 +2,12 @@
 use Dompdf\Dompdf;
 
 class PayController extends AbstractController{
-    // private array $post = [];
     private TicketManager $tm;
 
     public function __construct()
     {
         $this->tm = new TicketManager();
     }
-
-    // public function getPost():array{
-    //     return $this->post;
-    // }
-
-    // public function setPost(array $post):void{
-    //     $this->post = $post;
-    // }
 
     public function checkPay():void{
         $csrft = new CSRFTokenManager();

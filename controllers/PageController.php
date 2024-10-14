@@ -227,6 +227,79 @@ class PageController extends AbstractController{
         }
     }
 
+    public function modify(){
+        if(!isset($_GET["isError"])){
+            $this->render("modifier-infos.html.twig", []);
+        }else if(isset($_GET["isError"]) && $_GET["isError"] === "0"){
+            $this->render("modifier-infos.html.twig", ["message"=>"Vos modifications ont été effectuées avec succès"]);
+        }else if(isset($_GET["isError"]) && $_GET["isError"] === "1"){
+            $this->render("modifier-infos.html.twig", ["message"=>"Le nouvau mot de passe ne correspond pas à celui renseigné dans la vérification"]);
+        }else if(isset($_GET["isError"]) && $_GET["isError"] === "2"){
+            $this->render("modifier-infos.html.twig", ["message"=>"Le nouvau mot de passe doit contenir au moins 8 caractères, dont une minuscule, une majuscule, un chiffre et un caractère spécial"]);
+        }else if(isset($_GET["isError"]) && $_GET["isError"] === "7"){
+            $this->render("modifier-infos.html.twig", ["message"=>"Mot de passe actuel incorrect"]);
+        }else if(isset($_GET["isError"]) && $_GET["isError"] === "3"){
+            $this->render("modifier-infos.html.twig", ["message"=>"Veuillez renseigner un nom de famille"]);
+        }else if(isset($_GET["isError"]) && $_GET["isError"] === "4"){
+            $this->render("modifier-infos.html.twig", ["message"=>"Veuillez renseigner un prénom"]);
+        }else if(isset($_GET["isError"]) && $_GET["isError"] === "5"){
+            $this->render("modifier-infos.html.twig", ["message"=>"Veuillez renseigner un email"]);
+        }else if(isset($_GET["isError"]) && $_GET["isError"] === "6"){
+            $this->render("modifier-infos.html.twig", ["message"=>"L'email renseigné existe déjà"]);
+        }
+    }
+
+    public function checkPersoModify():void{
+        $csrft = new CSRFTokenManager();
+        if(!empty($_POST['csrf-token']) && $csrft->validateCSRFToken($_SESSION["csrf_token"])){
+            //check password modification
+            $modifyPassword = false;
+            $user = $this->um->findById($_POST["user-id"]);
+            if(isset($_POST["current-password"]) && !empty($_POST["current-password"])){
+                if($user !== null){
+                    $password = $_POST["current-password"];
+                    $isPasswordCorrect = password_verify($password, $user->getPassword());
+                    if(!$isPasswordCorrect){
+                        $this->redirect("index.php?route=modifier-mon-profil&&user-id=" . $user->getId() . "&&isError=7");
+                    }
+                    $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+                    $newPassword = $_POST["new-password"];
+                    $checkNewPassword = $_POST["check-new-password"];
+                    // check if the two passwords are the same
+                    if(preg_match($pattern,$newPassword)){
+                        if($newPassword === $checkNewPassword){
+                            $modifyPassword = true;
+                        }else{
+                            $this->redirect("index.php?route=modifier-mon-profil&&user-id=" . $user->getId() . "&&isError=1");
+                        }
+                    }else{
+                        $this->redirect("index.php?route=modifier-mon-profil&&user-id=" . $user->getId() . "&&isError=2");
+                    }
+                }
+            }
+            $isLastName = isset($_POST["last_name"]) && !empty($_POST["last_name"]);
+            $isFirstName = isset($_POST["first_name"]) && !empty($_POST["first_name"]);
+            $isEmail = isset($_POST["email"]) && !empty($_POST["email"]);
+            $isUser = $this->um->findByEmail($_POST["email"]);
+            $isEmailValid = $isEmail && ($isUser->getId() === $user->getId() || $isUser === null);
+            if(!$isLastName){
+                $this->redirect("index.php?route=modifier-mon-profil&&user-id=" . $user->getId() . "&&isError=3");
+            }else if(!$isFirstName){
+                $this->redirect("index.php?route=modifier-mon-profil&&user-id=" . $user->getId() . "&&isError=4");
+            }else if(!$isEmail){
+                $this->redirect("index.php?route=modifier-mon-profil&&user-id=" . $user->getId() . "&&isError=5");
+            }else if(!$isEmailValid){
+                $this->redirect("index.php?route=modifier-mon-profil&&user-id=" . $user->getId() . "&&isError=6");
+            }else{
+                $this->um->persoModification();
+            }
+            if($modifyPassword === true){
+                $this->um->modifyPassword();
+            }
+            $this->redirect("index.php?route=modifier-mon-profil&&user-id=" . $user->getId() . "&&isError=0");
+        }
+    }
+
     public function error():void{
         $this->render("error404.html.twig", []);
     }

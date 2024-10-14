@@ -1,0 +1,50 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main class="modify-infos">
+    <h1>Modifier mes informations</h1>
+
+    <section class="modify-infos-container">
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+        <form action="index.php?route=check-perso-modif" method="post">
+            <input type="hidden" name="csrf-token" id="csrf-token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+            <input type="hidden" name="user-id" id="user-id" value="{{session.user.getId()}}">
+            <div class="form-field">
+                <label for="last_name" class="">Nom : </label>
+                <input type="text" name="last_name" id="last_name" value="{{ session.user.getLastName()|escape }}" class="" minlength="2" maxlength="100" required>
+            </div>
+            <div class="form-field">
+                <label for="first_name" class="">Prénom</label>
+                <input type="text" name="first_name" id="first_name" value="{{ session.user.getFirstName()|escape}}" class="" minlength="2" maxlength="50" required>
+            </div>
+            <div class="form-field">
+                <label for="email" class="">Email : </label>
+                <input type="email" name="email" id="email" value="{{ session.user.getEmail()|escape }}" class="" required>
+            </div>
+            <div class="form-field">
+                <label for="curent-password">Mot de passe actuel :</label>
+                <input type="password" name="current-password" id="current-password" minlength="8">
+            </div>
+            <div class="form-field">
+                <label for="new-password">Nouveau mot de passe :</label>
+                <input type="password" name="new-password" id="new-password" minlength="8">
+            </div>
+            <div class="form-field">
+                <label for="check-new-password">Vérification du nouveau mot de passe :</label>
+                <input type="password" name="check-new-password" id="check-new-password" minlength="8">
+            </div>
+            <button type="submit" class="">Modifier</button>
+        </form>
+    </section>
+</main>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}

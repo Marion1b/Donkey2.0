@@ -14,26 +14,22 @@
         <nav class="programmation-filter">
         <h2 hidden>Filtre programmation par jours</h2>
             <ul>
-                <a href="index.php?route=programmation">
-                    <li {% if get.jour is not defined %} class="programmation-filter-active" {% endif %}>
-                        Tout
-                    </li>
-                </a>
-                <a href="index.php?route=programmation&&jour=vendredi">
-                    <li {% if get.jour == "vendredi" %} class="programmation-filter-active" {% endif %}>
-                        Ven. 05
-                    </li>
-                </a>
-                <a href="index.php?route=programmation&&jour=samedi">
-                    <li {% if get.jour == "samedi" %} class="programmation-filter-active" {% endif %}>
-                        Sam. 06
-                    </li>
-                </a>
-                <a href="index.php?route=programmation&&jour=dimanche">
-                    <li {% if get.jour == "dimanche" %} class="programmation-filter-active" {% endif %}>
-                        Dim. 07
-                    </li>
-                </a>
+                <li {% if get.jour is not defined %} class="programmation-filter-active" {% endif %}>
+                    <a href="index.php?route=programmation">Tout</a>
+                </li>
+                
+                <li {% if get.jour == "vendredi" %} class="programmation-filter-active" {% endif %}>
+                    <a href="index.php?route=programmation&&jour=vendredi">Ven. 05</a>
+                </li>
+                
+                <li {% if get.jour == "samedi" %} class="programmation-filter-active" {% endif %}>
+                    <a href="index.php?route=programmation&&jour=samedi">Sam. 06</a>
+                </li>
+                
+                
+                <li {% if get.jour == "dimanche" %} class="programmation-filter-active" {% endif %}>
+                    <a href="index.php?route=programmation&&jour=dimanche">Dim. 07</a>
+                </li>
             </ul>
         </nav>
 
@@ -41,7 +37,7 @@
             <h2 hidden>Les artistes programmé-e-s</h2>
             {% for artist in artists %}
             <article class="artist-card rotate{{random(1,2)}}">
-                <h3 hidden>Carte d'artiste</h3>
+                <h3 hidden>Carte d'artiste {{artist.getName()}}</h3>
                 <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
                 <aside class="artist-card-image {% if artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} artist-card-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt=""></aside>
                 <p class="artist-card-name">{{artist.getName()}}</p>

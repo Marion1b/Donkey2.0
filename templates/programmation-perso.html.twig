@@ -12,7 +12,7 @@
         <article class="espace-perso-tickets-container">
 
 
-            <h1>Bonjour {{ session.user.getFirstName()|escape }}</h1>
+            <h2>Bonjour {{ session.user.getFirstName()|escape }}</h2>
 
             <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
         </article>
@@ -20,18 +20,23 @@
     <div class="espace-perso-tickets-form1 form"><img src="./assets/img/forms/form1.png" alt=""></div>
 </section>
 
+<section class="espace-perso-modify-space">
+    <h2 hidden>Modifier mes informations</h2>
+    <a href="index.php?route=modifier-mon-profil&&user-id={{session.user.getId()}}"><button class="modify-infos-button">Modifier mes informations</button></a>
+</section>
+
 {% if session.user.getAdmin() == "ADMIN" %}
     <section class="espace-perso-admin-space">
-        <h1 hidden>Espace administrateur</h1>
+        <h2 hidden>Espace administrateur</h2>
         <a href="index.php?route=espace-admin&&admin-id={{session.user.getId()}}"><button class="admin-space-button">Espace admin</button></a>
     </section>
 {% endif %}
 
 <section class="espace-perso-programmation">
-    <h1 hidden>Artistes et programmation perso</h1>
+    <h2 hidden>Artistes et programmation perso</h2>
 
 <article class="espace-perso-programmation-container">
-    <h1>Ma programmation</h1>
+    <h3>Ma programmation</h3>
 
     <a href="index.php?route=liste-artiste-fav&&user-id={{session.user.getId()}}">
         <button class="artist-fav-button">Mes artistes</button>
@@ -39,31 +44,28 @@
 
     <section class="perso-prog-container">
 
-    <h2 hidden>Ma programmation</h2>
+    <h4 hidden>Ma programmation</h4>
 
     <nav class="programmation-filter">
-        <h3 hidden>Filtrer la programmation par jour</h3>
+        <h5 hidden>Filtrer la programmation par jour</h5>
         <ul>
-            <a href="index.php?route=programmation-perso&&jour=vendredi">
-                <li {% if get.jour == "vendredi" or get.jour is not defined %} class="programmation-filter-active" {% endif %}>
-                    Ven. 05
-                </li>
-            </a>
-            <a href="index.php?route=programmation-perso&&jour=samedi">
-                <li {% if get.jour == "samedi" %} class="programmation-filter-active" {% endif %}>
-                    Sam. 06
-                </li>
-            </a>
-            <a href="index.php?route=programmation-perso&&jour=dimanche">
-                <li {% if get.jour == "dimanche" %} class="programmation-filter-active" {% endif %}>
-                    Dim. 07
-                </li>
-            </a>
+            
+            <li {% if get.jour == "vendredi" or get.jour is not defined %} class="programmation-filter-active" {% endif %}>
+                <a href="index.php?route=programmation-perso&&jour=vendredi">Ven. 05</a>
+            </li>
+        
+            <li {% if get.jour == "samedi" %} class="programmation-filter-active" {% endif %}>
+                <a href="index.php?route=programmation-perso&&jour=samedi">Sam. 06</a>
+            </li>
+        
+            <li {% if get.jour == "dimanche" %} class="programmation-filter-active" {% endif %}>
+                <a href="index.php?route=programmation-perso&&jour=dimanche">Dim. 07</a>
+            </li>
         </ul>
     </nav>
 
     <article class="personnal-prog {% if get.jour == "vendredi" %}personnal-prog-ven{% else %} personnal-prog-other {% endif %}">
-    <h3 hidden>Planning personnel</h3>
+    <h4 hidden>Planning personnel</h4>
         {% if get.jour == "vendredi" %}
             {% for i in 18..23 %}
             <div class="personnal-prog-row">
@@ -71,7 +73,7 @@
                 {% for artist in artists %}
                     {% if artist.getHourToString() == i %}
                     <article class="personnal-prog-artist">
-                        <h4 hidden>Artiste</h4>
+                        <h5 hidden>{{artist.getName()}}</h5>
                         <p class="personnal-prog-artist-name">{{artist.getName()}}</p>
                         <aside>
                             <img src="{{artist.getPicture()}}" alt="">
@@ -89,7 +91,7 @@
                 {% for artist in artists %}
                     {% if artist.getHourToString() == i %}
                         <article class="personnal-prog-artist">
-                        <h4 hidden>Artiste</h4>
+                        <h5 hidden>Artiste</h5>
                         <p class="personnal-prog-artist-name">{{artist.getName()}}</p>
                         <aside>
                             <img src="{{artist.getPicture()}}" alt="">

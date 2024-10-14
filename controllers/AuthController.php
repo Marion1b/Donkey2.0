@@ -62,7 +62,7 @@ class AuthController extends AbstractController{
                 return null;
             }
         }else{
-            $this->render("inder.php?route=error", []);
+            $this->render("index.php?route=error", []);
         }
     }
 }

@@ -63,7 +63,9 @@ body{
         font-weight: 800;
     }
     h4{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        font-weight: 800;
+
     }
     p{
         font-size: 1.2rem;
@@ -165,6 +167,7 @@ body{
             justify-content: end;
             align-items: center;
             button{
+                display: inline-flex;
                 margin-left: 1rem;
                 font-size: 0;
                 width: fit-content;
@@ -173,6 +176,7 @@ body{
                 border-radius: 1rem;
                 background-color: $secondary-color;
                 .toggle{
+                    display: inline-block;
                     margin: .5rem 3rem .5rem .5rem;
                     padding: .5rem;
                     border: 1px solid $black;
@@ -183,7 +187,7 @@ body{
             .toggle-button-on{
                 background-color: $main-color;
             }
-            .toggle-button-on div{
+            .toggle-button-on span{
                 margin: .5rem .5rem .5rem 3rem;
             }
         }
@@ -562,12 +566,15 @@ body{
         a{
             position: relative;
             z-index: 100;
+            color: $secondary-color;
         }
     }
     .programmation-filter-active{
         background-color: $secondary-color;
-        color: $black;
         text-shadow: none;
+        a{
+            color:$black
+        }
     }
 }
 
@@ -1318,6 +1325,15 @@ body{
     background-color: $secondary-color;
     position: relative;
     contain: paint;
+    h2, h3{
+        background-color: #ffe60091;
+        backdrop-filter: blur(10px);
+        border-radius: 2rem;
+        font-family: "Fascinate Inline", system-ui;
+        text-align: center;
+        font-weight: 400;
+        font-size: 4.8rem;
+    }
     &-tickets{
         padding: 5rem 0;
         &-container{
@@ -1327,11 +1343,6 @@ body{
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            h1{
-                background-color: #ffe60091;
-                backdrop-filter: blur(10px);
-                border-radius: 2rem;
-            }
         }
         button{
             @include purple-button();
@@ -1348,9 +1359,26 @@ body{
             animation: 5s linear infinite alternate formMoveRight1;
         }
     }
+    &-modify-space {
+        text-align: center;
+        button{
+            @include purple-button();
+            padding: 1.5rem 6rem;
+        }
+    }
     .planning-button, .artist-fav-button{
         @include yellow-button();
         margin: 3rem 0;
+    }
+    .no-artist{
+        text-align: center;
+        a{
+            color: $secondary-color;
+            text-decoration: underline;
+            &:hover{
+                font-weight: 800;
+            }
+        }
     }
     &-artists{
         background-color: $main-color;
@@ -1374,12 +1402,13 @@ body{
             justify-content: center;
             align-items: center;
         }
-        h1{
+        h3{
             text-shadow:
             -1px -1px 0 $black,  
             1px -1px 0 $black,
             -1px  1px 0 $black,
             1px  1px 0 $black;
+            background-color: transparent;
         }
         .artist-card{
             @include artist-card();
@@ -1420,15 +1449,19 @@ body{
             justify-content: center;
             align-items: center;
         }
-        h1{
+        h3{
             text-shadow:
             -1px -1px 0 $black,  
             1px -1px 0 $black,
             -1px  1px 0 $black,
             1px  1px 0 $black;
+            background-color: transparent;
         }
         nav{
             width: 100%;
+        }
+        .programmation-filter-active{
+            color: $black;
         }
         .personnal-prog-ven{
             display: grid;
@@ -1644,6 +1677,79 @@ body{
             text-shadow:none;
             box-shadow: none;
             transform: translate(-2px, 2px);
+        }
+    }
+    .modify-infos-button{
+        transition: all 200ms ease-in;
+        &:hover{
+            background-color: $secondary-color;
+            color: $black;
+            text-shadow:none;
+            box-shadow: none;
+            transform: translate(-2px, 2px);
+        }
+    }
+}
+
+// ==========================================================================
+// ESPACE MODIFICATION
+// ==========================================================================
+
+.modify-infos{
+    background-color: $secondary-color;
+    color: $black;
+    min-height: 95vh;
+    padding: 5rem 0;
+    &-container{
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .form-field{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        input{
+            margin: 1rem 0 2rem 0;
+            border: 2px solid $black;
+            box-shadow: -4px 4px 4px $opacity-black;
+            border-radius: 1rem;
+            padding: .5rem;
+            max-width: 200px;
+            background-color: $secondary-color;
+            font-size: 1.2rem;
+            &:focus{
+                outline: none;
+                border: 3px solid $black;
+            }
+        }
+        button{
+            width: 100%;
+            padding: 1.5rem 0;
+            @include purple-button();
+        }
+        a{
+            color: $main-color;
+            text-decoration: underline;
+        }
+    }
+}
+
+@media screen and (min-width:1024px){
+    .modify-infos-container{
+        button{
+            transition: all 200ms ease-in;
+            &:hover{
+                background-color: $secondary-color;
+                color: $black;
+                text-shadow:none;
+                box-shadow: none;
+                transform: translate(-2px, 2px);
+            }
         }
     }
 }

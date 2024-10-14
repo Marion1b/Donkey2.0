@@ -59,7 +59,19 @@ document.addEventListener('DOMContentLoaded', function(){
             main.classList.toggle('hide');
         })
     }
-    
+
+    //Show and hide burger nav with tabindex
+    if(burgerMenu){
+        const headerNav = document.querySelector(".header-nav");
+        burgerMenu.addEventListener('keydown', (e)=>{
+            if(e.key === 'Enter'){
+                headerNav.classList.toggle("header-nav-hide");
+                burgerMenu.classList.toggle("open");
+                burgerMenu.classList.toggle("close");
+                main.classList.toggle('hide');
+            }
+        })
+    }
     // dys button
     for(let i =0; i<dysButton.length; i++){
         if(dysButton[i].value === "on"){

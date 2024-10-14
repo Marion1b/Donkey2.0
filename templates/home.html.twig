@@ -12,7 +12,7 @@
 <section class="home-display-names">
     <h2 hidden>Aristes programmé-e-s</h2>
     <article class="home-display-names-container">
-        <h2 hidden>Noms des artistes</h1>
+        <h3 hidden>Noms des artistes</h3>
         <p>
             {% for artist in artists %}
                 {{ artist.getName() }} {% if not loop.last %} - {% endif %}
@@ -41,19 +41,20 @@
 <section class="home-infos">
     <h2 hidden>Résumé informations pratiques</h2>
     <section class="home-infos-container">
-        <h2 hidden>Cartes avec les différentes informations pratiques</h2>
+        <h3 hidden>Cartes avec les différentes informations pratiques</h3>
         <article class="home-infos-dates">
-            <h3>05, 06 et 07 juillet 2024</h3>
+            <h4>05, 06 et 07 juillet 2024</h4>
             <p><span class="bold">Vendredi 05 :</span> de 18h à 00h</p>
             <p><span class="bold">Samedi 06 et dimanche 07 :</span> de 14h à 00h</p>
         </article>
         <article class="homes-infos-lieu">
-            <h3>Parc du Thabor, 35000 Rennes</h3>
+            <h4>Parc du Thabor, 35000 Rennes</h4>
             <p>Centre-ville | parking | bus | métro | station vélo STAR</p>
         </article>
         <article class="home-infos-medias">
-            <h3>Suivez-nous</h3>
+            <h4>Suivez-nous</h4>
             <article class="home-infos-medias-links">
+                <h5 hidden>Liens vers les réseaux sociaux</h5>
                 <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/discover?lang=fr"><i class="fa-brands fa-tiktok"></i></a>
                 <a href="https://x.com/?lang=fr"><i class="fa-brands fa-x-twitter"></i></a>

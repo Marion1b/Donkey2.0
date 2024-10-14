@@ -10,7 +10,7 @@
 <section class="espace-perso-tickets">
     <h1 hidden>Espace personnel</h1>
     <article class="espace-perso-tickets-container">
-        <h1>Bonjour {{ session.user.getFirstName()|escape }}</h1>
+        <h2>Bonjour {{ session.user.getFirstName()|escape }}</h2>
 
         <a href="index.php?route=billets&&user-id={{session.user.getId()}}"><button class="ticket-button">Mes billets</button></a>
     </article>
@@ -18,28 +18,33 @@
     <div class="espace-perso-tickets-form1 form"><img src="./assets/img/forms/form1.png" alt=""></div>
 </section>
 
+<section class="espace-perso-modify-space">
+    <h2 hidden>Modifier mes informations</h2>
+    <a href="index.php?route=modifier-mon-profil&&user-id={{session.user.getId()}}"><button class="modify-infos-button">Modifier mes informations</button></a>
+</section>
+
 {% if session.user.getAdmin() == "ADMIN" %}
     <section class="espace-perso-admin-space">
-        <h1 hidden>Espace administrateur</h1>
+        <h2 hidden>Espace administrateur</h2>
         <a href="index.php?route=espace-admin&&admin-id={{session.user.getId()}}"><button class="admin-space-button">Espace admin</button></a>
     </section>
 {% endif %}
 
 <section class="espace-perso-artists" id="top-espace-perso-artists">
-    <h1 hidden>Artistes et programmation perso</h1>
+    <h2 hidden>Artistes et programmation perso</h2>
     <article class="espace-perso-artists-container">
-        <h1>Mes artistes</h1>
+        <h3>Mes artistes</h3>
 
         <a href="index.php?route=programmation-perso&&jour=vendredi">
             <button class="planning-button">Ma programmation</button>
         </a>
 
         <section class="artist-cards-container">
-            <h2 hidden>Ma liste d'artistes</h2>
+            <h4 hidden>Ma liste d'artistes</h4>
             {% if favoriteArtists|length >0 %}
                 {% for artist in favoriteArtists %}
                 <article class="artist-card rotate{{random(1,2)}}">
-                    <h3 hidden>Fiche artiste</h3>
+                    <h5 hidden>Fiche {{artist.getName()}}</h5>
                     <a href="index.php?route=fiche-artiste&&artiste={{artist.getName()}}">
                         <aside class="artist-card-image {% if artist.getName() == "JeanneTo" or artist.getName() == "Badflowers" or artist.getName() == "Ziak"%} artist-card-image-top {% endif %}"><img src="{{artist.getPicture()}}" alt="photo de {{artist.getPicture()}}"></aside>
                         <p class="artist-card-name">{{artist.getName()}}</p>
@@ -52,7 +57,8 @@
                 </article>
                 {% endfor %}
             {%else%}
-                <p>Pas encore d'artiste ajouté-e-s à la liste.</p>
+                <p class="no-artist">Pas encore d'artiste ajouté-e-s à la liste.<br>
+                <a href="index.php?route=programmation">Consulter la programmation</a></p>
             {%endif%}
             <button class="scroll-top"><a href="#top-espace-perso-artists"><i class="fa-solid fa-arrow-up"></i></a></button>
         </section>
